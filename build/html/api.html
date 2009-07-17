@@ -1,0 +1,1033 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FITSFigure &mdash; APLpy v0.9.1 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.9.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="APLpy v0.9.1 documentation" href="index.html" />
+    <link rel="prev" title="Making RGB images" href="howto_rgb.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="howto_rgb.html" title="Making RGB images"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">APLpy v0.9.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="fitsfigure">
+<h1>FITSFigure<a class="headerlink" href="#fitsfigure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-aplpy">
+<h2>Initialization<a class="headerlink" href="#module-aplpy" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="aplpy.FITSFigure">
+<em class="property">
+class </em><tt class="descclassname">aplpy.</tt><tt class="descname">FITSFigure</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>figure=None</em>, <em>subplot=None</em>, <em>downsample=False</em>, <em>north=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class for plotting FITS files.</p>
+<dl class="method">
+<dt id="aplpy.FITSFigure.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>figure=None</em>, <em>subplot=None</em>, <em>downsample=False</em>, <em>north=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a FITSFigure instance</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>data</em>: [ string | pyfits PrimaryHDU | pyfits ImageHDU ]</dt>
+<dd>Either the filename of the FITS file to open, or a pyfits
+PrimaryHDU or ImageHDU instance.</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>hdu</em>: [ integer ]</dt>
+<dd>By default, the image in the primary HDU is read in. If a
+different HDU is required, use this argument.</dd>
+<dt><em>figure</em>: [ matplotlib figure() instance ]</dt>
+<dd>If specified, a subplot will be added to this existing
+matplotlib figure() instance, rather than a new figure
+being created from scratch.</dd>
+<dt><em>subplot</em>: [ list of four floats ]</dt>
+<dd>If specified, a subplot will be added at this position. The
+list should contain [xmin, ymin, dx, dy] where xmin and ymin
+are the position of the bottom left corner of the subplot, and
+dx and dy are the width and height of the subplot respectively.
+These should all be given in units of the figure width and
+height. For example, [0.1,0.1,0.8,0.8] will almost fill the
+entire figure, leaving a 10 percent margin on all sides.
+Note: this requires matplotlib 0.98.6</dd>
+<dt><em>downsample</em>: [ integer ]</dt>
+<dd>If this option is specified, the image will be downsampled
+by a factor <em>downsample</em> when reading in the data.</dd>
+<dt><em>north</em>: [ True | False ]</dt>
+<dd>Whether to rotate the image so that the North Celestial
+Pole is up. Note that this option requires Montage to be
+installed.</dd>
+</dl>
+</blockquote>
+<p>Any additional arguments are passed on to matplotlib&#8217;s Figure() class.
+For example, to set the figure size, use the figsize=(xsize,ysize)
+argument (where xsize and ysize are in inches). For more information
+on these additional arguments, see the <em>Optional keyword arguments</em>
+section in the documentation for <a class="reference external" href="http://matplotlib.sourceforge.net/api/figure_api.html?#matplotlib.figure.Figure">Figure</a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="image">
+<h2>Image<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_grayscale">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_grayscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>invert='default'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_grayscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a grayscale image of the FITS file</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>vmin</em>: [ None | float ]</dt>
+<dd>Minimum pixel value to use for the grayscale. If set to None,
+the minimum pixel value is determined using pmin (default).</dd>
+<dt><em>vmax</em>: [ None | float ]</dt>
+<dd>Maximum pixel value to use for the grayscale. If set to None,
+the maximum pixel value is determined using pmax (default).</dd>
+<dt><em>pmin</em>: [ float ]</dt>
+<dd>Percentile value used to determine the minimum pixel value to
+use for the grayscale if vmin is set to None. The default
+value is 0.25%.</dd>
+<dt><em>pmax</em>: [ float ]</dt>
+<dd>Percentile value used to determine the maximum pixel value to
+use for the grayscale if vmax is set to None. The default
+value is 99.75%.</dd>
+<dt><em>stretch</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</dt>
+<dd>The stretch function to use</dd>
+<dt><em>vmid</em>: [ None | float ]</dt>
+<dd>Mid-pixel value used for the log and arcsinh stretches. If
+set to None, this is set to a sensible value.</dd>
+<dt><em>exponent</em>: [ float ]</dt>
+<dd>If stretch is set to &#8216;power&#8217;, this is the exponent to use</dd>
+<dt><em>invert</em>: [ True | False ]</dt>
+<dd>Whether to invert the grayscale or not. The default is False,
+unless set_theme is used, in which case the default depends on
+the theme.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_colorscale">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_colorscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>cmap='default'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_colorscale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a colorscale image of the FITS file</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>vmin</em>: [ None | float ]</dt>
+<dd>Minimum pixel value to use for the colorscale. If set to None,
+the minimum pixel value is determined using pmin (default).</dd>
+<dt><em>vmax</em>: [ None | float ]</dt>
+<dd>Maximum pixel value to use for the colorscale. If set to None,
+the maximum pixel value is determined using pmax (default).</dd>
+<dt><em>pmin</em>: [ float ]</dt>
+<dd>Percentile value used to determine the minimum pixel value to
+use for the colorscale if vmin is set to None. The default
+value is 0.25%.</dd>
+<dt><em>pmax</em>: [ float ]</dt>
+<dd>Percentile value used to determine the maximum pixel value to
+use for the colorscale if vmax is set to None. The default
+value is 99.75%.</dd>
+<dt><em>stretch</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</dt>
+<dd>The stretch function to use</dd>
+<dt><em>vmid</em>: [ None | float ]</dt>
+<dd>Mid-pixel value used for the log and arcsinh stretches. If
+set to None, this is set to a sensible value.</dd>
+<dt><em>exponent</em>: [ float ]</dt>
+<dd>If stretch is set to &#8216;power&#8217;, this is the exponent to use</dd>
+<dt><em>cmap</em>: [ string ]</dt>
+<dd>The name of the colormap to use</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_rgb">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_rgb</tt><big>(</big><em>filename</em>, <em>interpolation='nearest'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a 3-color image instead of the FITS file data</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>filename</em></dt>
+<dd>The 3-color image should have exactly the same dimensions as the FITS file, and
+will be shown with exactly the same projection.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.recenter">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">recenter</tt><big>(</big><em>x</em>, <em>y</em>, <em>radius=None</em>, <em>width=None</em>, <em>height=None</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.recenter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Center the image on a given position and with a given radius</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>x</em>: [ float ]</dt>
+<dd>Longitude of the position to center on (degrees)</dd>
+<dt><em>y</em>: [ float ]</dt>
+<dd>Latitude of the position to center on (degrees)</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<p>Either the radius or width/heigh arguments should be specified.</p>
+<dl class="docutils">
+<dt><em>radius</em>: [ float ]</dt>
+<dd>Radius of the region to view (degrees). This produces a square plot.</dd>
+<dt><em>width</em>: [ float ]</dt>
+<dd>Width of the region to view (degrees). This should be given in
+conjunction with the height argument.</dd>
+<dt><em>height</em>: [ float ]</dt>
+<dd>Height of the region to view (degrees). This should be given in
+conjunction with the width argument.</dd>
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="contours">
+<h2>Contours<a class="headerlink" href="#contours" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_contour">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_contour</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>layer=None</em>, <em>levels=5</em>, <em>filled=False</em>, <em>cmap=None</em>, <em>colors=None</em>, <em>returnlevels=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_contour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlay contours on the current plot</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>data</em>: [ string | pyfits PrimaryHDU | pyfits ImageHDU ]</dt>
+<dd>Either the filename of the FITS file to open, or a pyfits
+PrimaryHDU or ImageHDU instance.</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>hdu</em>: [ integer ]</dt>
+<dd>By default, the image in the primary HDU is read in. If a
+different HDU is required, use this argument.</dd>
+<dt><em>layer</em>: [ string ]</dt>
+<dd>The name of the contour layer. This is useful for giving
+custom names to layers (instead of contour_set_n) and for
+replacing existing layers.</dd>
+<dt><em>levels</em>: [ int | list ]</dt>
+<dd>This can either be the number of contour levels to compute
+(if an integer is provided) or the actual list of contours
+to show (if a list of floats is provided)</dd>
+<dt><em>filled</em>: [ True | False ]</dt>
+<dd>Whether to show filled or line contours</dd>
+<dt><em>cmap</em>: [ string ]</dt>
+<dd>The colormap to use for the contours</dd>
+<dt><em>colors</em>: [ string | tuple of strings ]</dt>
+<dd>If a single string is provided, all contour levels will be
+shown in this color. If a tuple of strings is provided,
+each contour will be colored according to the corresponding
+tuple element.</dd>
+<dt><em>returnlevels</em>: [ True | False ]</dt>
+<dd>Whether to return the list of contours to the caller.</dd>
+</dl>
+<p>Any additional keyword arguments will be passed on directly to
+matplotlib&#8217;s contour or contourf methods. This includes for
+example the alpha, linewidths, and linestyles arguments which
+can be used to further control the appearance of the contours.</p>
+<p>For more information on these additional arguments, see the
+<em>Optional keyword arguments</em> sections in the documentation for
+<a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.contour">contour</a> and <a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.contourf`">contourf</a>.</p>
+</blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="markers">
+<h2>Markers<a class="headerlink" href="#markers" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_markers">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_markers</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>layer=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_markers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlay markers on the current plot.</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>xw</em>: [ list | numpy.ndarray ]</dt>
+<dd>The x postions of the markers (in world coordinates)</dd>
+<dt><em>yw</em>: [ list | numpy.ndarray ]</dt>
+<dd>The y positions of the markers (in world coordinates)</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>layer</em>: [ string ]</dt>
+<dd>The name of the scatter layer. This is useful for giving
+custom names to layers (instead of scatter_set_n) and for
+replacing existing layers.</dd>
+</dl>
+<p>Any additional keyword arguments will be passed on directly to
+matplotlib&#8217;s scatter method. This includes for example the marker,
+alpha, edgecolor, and facecolor arguments which can be used to
+further control the appearance of the markers.</p>
+<p>For more information on these additional arguments, see the
+<em>Optional keyword arguments</em> sections in the documentation for
+<a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.scatter">scatter</a>.</p>
+</blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="frame">
+<h2>Frame<a class="headerlink" href="#frame" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_frame_color">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_frame_color</tt><big>(</big><em>color</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_frame_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set color of the frame</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>color</em>:</dt>
+<dd>The color to use for the frame.</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="ticks">
+<h2>Ticks<a class="headerlink" href="#ticks" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_tick_xspacing">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_xspacing</tt><big>(</big><em>xspacing</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_xspacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the x-axis tick spacing</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>xspacing</em>: [ float | &#8216;auto&#8217; ]</dt>
+<dd>The spacing of the ticks on the x-axis, in degrees. To set
+the tick spacing to be automatically determined, set this to &#8216;auto&#8217;</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_tick_yspacing">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_yspacing</tt><big>(</big><em>yspacing</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_yspacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the y-axis tick spacing</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>yspacing</em>: [ float | &#8216;auto&#8217; ]</dt>
+<dd>The spacing of the ticks on the y-axis, in degrees. To set
+the tick spacing to be automatically determined, set this to &#8216;auto&#8217;</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_tick_color">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_color</tt><big>(</big><em>color</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the tick color</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>color</em>: [ string ]</dt>
+<dd>The color of the ticks</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_tick_size">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_size</tt><big>(</big><em>size</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the tick size</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>size</em>: [ float ]</dt>
+<dd>The size of the ticks (in points)</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="tick-labels">
+<h2>Tick labels<a class="headerlink" href="#tick-labels" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_tick_labels">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_tick_labels</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_tick_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the tick labels</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.hide_tick_labels">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_tick_labels</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_tick_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the tick labels</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_tick_labels_xformat">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_xformat</tt><big>(</big><em>format</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_xformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the format of the x-axis tick labels</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>format</em>: [ string ]</dt>
+<dd><p class="first">The format for the tick labels. This can be:</p>
+<blockquote class="last">
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ddd.ddddd</span></tt> - decimal degrees, where the number of decimal places can be varied</li>
+<li><tt class="docutils literal"><span class="pre">hh</span></tt> or <tt class="docutils literal"><span class="pre">dd</span></tt> - hours (or degrees)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm</span></tt> - hours and minutes (or degrees and arcminutes)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm:ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm:ss.ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss.ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds), where the number of decimal places can be varied.</li>
+</ul>
+</blockquote>
+</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_tick_labels_yformat">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_yformat</tt><big>(</big><em>format</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_yformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the format of the x-axis tick labels</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>format</em>: [ string ]</dt>
+<dd><p class="first">The format for the tick labels. This can be:</p>
+<blockquote class="last">
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ddd.ddddd</span></tt> - decimal degrees, where the number of decimal places can be varied</li>
+<li><tt class="docutils literal"><span class="pre">hh</span></tt> or <tt class="docutils literal"><span class="pre">dd</span></tt> - hours (or degrees)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm</span></tt> - hours and minutes (or degrees and arcminutes)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm:ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm:ss.ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss.ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds), where the number of decimal places can be varied.</li>
+</ul>
+</blockquote>
+</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_tick_labels_style">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_style</tt><big>(</big><em>style</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the format of the x-axis tick labels</p>
+<p>Required Arguments:</p>
+<blockquote>
+<p><em>style</em>: [ &#8216;colons&#8217; | &#8216;plain&#8217; | &#8216;latex&#8217; ]</p>
+<blockquote>
+<p>How to style the tick labels:</p>
+<p>&#8216;colons&#8217; uses colons as separators, for example
+31:41:59.26 +27:18:28.1</p>
+<p>&#8216;plain&#8217; uses plain letters as separators, for example
+31:41:59.26 +27:18:28.1</p>
+<p>&#8216;latex&#8217; uses superscripts, and typesets the labels
+with LaTeX. To decide whether to use the matplotlib
+internal LaTeX engine or a real LaTeX installation, use
+the set_labels_latex() method.</p>
+</blockquote>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_tick_labels_family">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_family</tt><big>(</big><em>family</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_family" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the font family of the tick labels</p>
+<p>Required Arguments:</p>
+<blockquote>
+<p><em>family</em>: [ serif | sans-serif | cursive | fantasy | monospace ]</p>
+<blockquote>
+The font family of the numeric tick labels. Default is &#8216;sans-serif&#8217;.</blockquote>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_tick_labels_size">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_size</tt><big>(</big><em>size</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the size of the tick labels</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>size</em>: [ size in points | xx-small | x-small | small |</dt>
+<dd><blockquote class="first">
+medium | large | x-large | xx-large ]</blockquote>
+<p class="last">The size of the numeric tick labels. Default is &#8216;small&#8217;.</p>
+</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_tick_labels_weight">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_weight</tt><big>(</big><em>weight</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the weight of the tick labels</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>weight</em>: [ a numeric value in range 0-1000 | ultralight |</dt>
+<dd><blockquote class="first">
+light | normal | regular | book | medium |
+roman | semibold | demibold | demi | bold |
+heavy | extra bold | black ]</blockquote>
+<p class="last">The weight of the numeric tick labels. Default is &#8216;normal&#8217;.</p>
+</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="axis-labels">
+<h2>Axis labels<a class="headerlink" href="#axis-labels" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_axis_labels">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_axis_labels</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_axis_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the axis labels</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.hide_axis_labels">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_axis_labels</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_axis_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the axis labels</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_axis_labels">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels</tt><big>(</big><em>xlabel</em>, <em>ylabel</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the axes labels</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>xlabel</em>: [ string ]</dt>
+<dd>The x-axis label.</dd>
+<dt><em>ylabel</em>: [ string ]</dt>
+<dd>The y-axis label.</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_axis_labels_xdisp">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_xdisp</tt><big>(</big><em>displacement</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_xdisp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the vertical displacement of the x-axis label</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>dispacement</em>: [ float ]</dt>
+<dd>The vertical displacement of the x-axis label, in units of the
+size of the viewport. The default is -0.05. A value of 0 would
+place the label on the bottom x-axis, and a value of 1 would place
+the label on the top x-axis.</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_axis_labels_ydisp">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_ydisp</tt><big>(</big><em>displacement</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_ydisp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the horizontal displacement of the y-axis label</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>dispacement</em>: [ float ]</dt>
+<dd>The vertical displacement of the y-axis label, in units of the
+size of the viewport. The default is -0.13. A value of 0 would
+place the label on the left y-axis, and a value of 1 would place
+the label on the right y-axis.</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_axis_labels_family">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_family</tt><big>(</big><em>family</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_family" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the font family of the axis labels</p>
+<p>Required Arguments:</p>
+<blockquote>
+<p><em>family</em>: [ serif | sans-serif | cursive | fantasy | monospace ]</p>
+<blockquote>
+The font family of the axis labels. Default is &#8216;sans-serif&#8217;.</blockquote>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_axis_labels_size">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_size</tt><big>(</big><em>size</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the size of the axis labels</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>size</em>: [ size in points | xx-small | x-small | small |</dt>
+<dd><blockquote class="first">
+medium | large | x-large | xx-large ]</blockquote>
+<p class="last">The size of the axis labels. Default is &#8216;small&#8217;.</p>
+</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_axis_labels_weight">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_weight</tt><big>(</big><em>weight</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the weight of the axis labels</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>weight</em>: [ a numeric value in range 0-1000 | ultralight |</dt>
+<dd><blockquote class="first">
+light | normal | regular | book | medium |
+roman | semibold | demibold | demi | bold |
+heavy | extra bold | black ]</blockquote>
+<p class="last">The weight of the axis labels. Default is &#8216;normal&#8217;.</p>
+</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_labels_latex">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_labels_latex</tt><big>(</big><em>usetex</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_labels_latex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether to use a real LaTeX installation or the built-in matplotlib LaTeX</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>usetex</em>: [ True | False ]</dt>
+<dd>Whether to use a real LaTex installation (True) or the built-in
+matplotlib LaTeX (False). Note that if the former is chosen, an
+installation of LaTex is required.</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="coordinate-grid">
+<h2>Coordinate Grid<a class="headerlink" href="#coordinate-grid" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_grid">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_grid</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_grid" title="Permalink to this definition">¶</a></dt>
+<dd>Overlay the coordinate grid</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.hide_grid">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_grid</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_grid" title="Permalink to this definition">¶</a></dt>
+<dd>Hide the coordinate grid</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_grid_xspacing">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_xspacing</tt><big>(</big><em>xspacing</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_xspacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the grid line spacing in the longitudinal direction</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>xspacing</em>: [ float | &#8216;tick&#8217; ]</dt>
+<dd>The spacing in the longitudinal direction, in degrees.
+To set the spacing to be the same as the ticks, set this
+to &#8216;tick&#8217;</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_grid_yspacing">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_yspacing</tt><big>(</big><em>yspacing</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_yspacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the grid line spacing in the latitudinal direction</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>yspacing</em>: [ float | &#8216;tick&#8217; ]</dt>
+<dd>The spacing in the latitudinal direction, in degrees.
+To set the spacing to be the same as the ticks, set this
+to &#8216;tick&#8217;</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_grid_color">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_color</tt><big>(</big><em>color</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the color of the grid lines</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>color</em>: [ string ]</dt>
+<dd>The color of the grid lines</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_grid_alpha">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_alpha</tt><big>(</big><em>alpha</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the alpha (transparency) of the grid lines</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>alpha</em>: [ float ]</dt>
+<dd>The alpha value of the grid. This should be a floating
+point value between 0 and 1, where 0 is completely
+transparent, and 1 is completely opaque.</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display straight after setting the parameter.
+For non-interactive uses, this can be set to False.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="layers">
+<h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.list_layers">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">list_layers</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.list_layers" title="Permalink to this definition">¶</a></dt>
+<dd>Print a list of layers to standard output</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.remove_layer">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">remove_layer</tt><big>(</big><em>layer</em>, <em>raise_exception=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.remove_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove a layer</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>layer</em>: [ string ]</dt>
+<dd>The name of the layer to remove</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.hide_layer">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_layer</tt><big>(</big><em>layer</em>, <em>raise_exception=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide a layer</p>
+<p>This differs from remove_layer in that if a layer is hidden
+it can be shown again using show_layer.</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>layer</em>: [ string ]</dt>
+<dd>The name of the layer to hide</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_layer">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_layer</tt><big>(</big><em>layer</em>, <em>raise_exception=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a layer</p>
+<p>This shows a layer previously hidden with hide_layer</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>layer</em>: [ string ]</dt>
+<dd>The name of the layer to show</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">FITSFigure</a><ul>
+<li><a class="reference external" href="#module-aplpy">Initialization</a></li>
+<li><a class="reference external" href="#image">Image</a></li>
+<li><a class="reference external" href="#contours">Contours</a></li>
+<li><a class="reference external" href="#markers">Markers</a></li>
+<li><a class="reference external" href="#frame">Frame</a></li>
+<li><a class="reference external" href="#ticks">Ticks</a></li>
+<li><a class="reference external" href="#tick-labels">Tick labels</a></li>
+<li><a class="reference external" href="#axis-labels">Axis labels</a></li>
+<li><a class="reference external" href="#coordinate-grid">Coordinate Grid</a></li>
+<li><a class="reference external" href="#layers">Layers</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="howto_rgb.html"
+                                  title="previous chapter">Making RGB images</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/api.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="howto_rgb.html" title="Making RGB images"
+             >previous</a> |</li>
+        <li><a href="index.html">APLpy v0.9.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Eli Bressert and Thomas Robitaille.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.2.
+    </div>
+  </body>
+</html>

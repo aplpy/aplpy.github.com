@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Making RGB images &mdash; APLpy v0.9.1 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.9.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="APLpy v0.9.1 documentation" href="index.html" />
+    <link rel="up" title="HOWTOs" href="howtos.html" />
+    <link rel="prev" title="Installing Montage" href="howto_montage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             accesskey="M">modules</a> |</li>
+        <li class="right" >
+          <a href="howto_montage.html" title="Installing Montage"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">APLpy v0.9.1 documentation</a> &raquo;</li>
+          <li><a href="howtos.html" accesskey="U">HOWTOs</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="making-rgb-images">
+<h1>Making RGB images<a class="headerlink" href="#making-rgb-images" title="Permalink to this headline">¶</a></h1>
+<p>While the APLpy <tt class="docutils literal"><span class="pre">aplpy.FITSFigure.show_rgb()</span></tt> can be used to display an RGB
+image with the same projection as a given FITS file, it is also possible to
+use the <tt class="docutils literal"><span class="pre">aplpy.make_rgb_cube()</span></tt> and <tt class="docutils literal"><span class="pre">aplpy.make_rgb_image()</span></tt> to generate
+RGB images from scratch, even for files with initially different
+projections/resolutions.</p>
+<div class="section" id="reprojecting-three-images-to-the-same-projection">
+<h2>Reprojecting three images to the same projection<a class="headerlink" href="#reprojecting-three-images-to-the-same-projection" title="Permalink to this headline">¶</a></h2>
+<p>If you are starting from three images with different projections/resolutions,
+the first step is to reproject these to a common projection/resolution. The
+following code shows how this can be done using the <tt class="docutils literal"><span class="pre">aplpy.make_rgb_cube()</span></tt>
+method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">aplpy</span>
+<span class="n">aplpy</span><span class="o">.</span><span class="n">make_rgb_cube</span><span class="p">([</span><span class="s">&#39;2mass_k.fits&#39;</span><span class="p">,</span><span class="s">&#39;2mass_h.fits&#39;</span><span class="p">,</span> \
+                     <span class="s">&#39;2mass_j.fits&#39;</span><span class="p">],</span><span class="s">&#39;2mass_cube.fits&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This method makes use of Montage to reproject the images to a common
+projection. For more information on installing Montage, see here. The above
+example produces a FITS cube named <tt class="docutils literal"><span class="pre">2mass_cube.fits</span></tt> which contains the
+three channels in the same projection. This can be used to then produce an RGB
+image (see next section)</p>
+</div>
+<div class="section" id="producing-an-rgb-image-from-images-in-a-common-projection">
+<h2>Producing an RGB image from images in a common projection<a class="headerlink" href="#producing-an-rgb-image-from-images-in-a-common-projection" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">aplpy.make_rgb_image()</span></tt> method can be used to produce an RGB image from
+either three FITS files in the exact same projection, or a FITS cube
+containing the three channels (such as that output by
+<tt class="docutils literal"><span class="pre">aplpy.make_rgb_cube()</span></tt>). The following example illustrates how to do this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">aplpy</span>
+<span class="n">aplpy</span><span class="o">.</span><span class="n">make_rgb_image</span><span class="p">(</span><span class="s">&#39;2mass_cube.fits&#39;</span><span class="p">,</span><span class="s">&#39;2mass_rgb.tif&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the above example, APLpy will automatically adjust the stretch of the
+different channels to try and produce a reasonable image, but it is of course
+possible to specify one or more of the lower/upper limits of the scale to use
+for each channel. For each lower/upper scale limit, this can be done in two
+ways. The first is to use the vmin_r/g/b or vmax_r/g/b argument which specifies the
+pixel value to use for the lower or upper end of the scale respectively. The
+alternative is to use the pmin_r/g/b or pmax_r/g/b arguments, which specify the
+percentile value to use instead of an absolute value. The two can of course be
+mixed, such as in the following example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">aplpy</span>
+<span class="n">aplpy</span><span class="o">.</span><span class="n">make_rgb_image</span><span class="p">(</span><span class="s">&#39;2mass_cube.fits&#39;</span><span class="p">,</span><span class="s">&#39;2mass_rgb.tif&#39;</span><span class="p">,</span> \
+                      <span class="n">vmin_r</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span><span class="n">pmax_g</span><span class="o">=</span><span class="mf">90.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="">Making RGB images</a><ul>
+<li><a class="reference external" href="#reprojecting-three-images-to-the-same-projection">Reprojecting three images to the same projection</a></li>
+<li><a class="reference external" href="#producing-an-rgb-image-from-images-in-a-common-projection">Producing an RGB image from images in a common projection</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="howto_montage.html"
+                                  title="previous chapter">Installing Montage</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/howto_rgb.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="modindex.html" title="Global Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="howto_montage.html" title="Installing Montage"
+             >previous</a> |</li>
+        <li><a href="index.html">APLpy v0.9.1 documentation</a> &raquo;</li>
+          <li><a href="howtos.html" >HOWTOs</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Eli Bressert and Thomas Robitaille.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.2.
+    </div>
+  </body>
+</html>
