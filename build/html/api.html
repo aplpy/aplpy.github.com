@@ -273,8 +273,8 @@ can be used to further control the appearance of the contours.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="markers">
-<h2>Markers<a class="headerlink" href="#markers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="shapes">
+<h2>Shapes<a class="headerlink" href="#shapes" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_markers">
 <tt class="descclassname">FITSFigure.</tt><tt class="descname">show_markers</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>layer=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_markers" title="Permalink to this definition">¶</a></dt>
@@ -303,6 +303,112 @@ further control the appearance of the markers.</p>
 <p>For more information on these additional arguments, see the
 <em>Optional keyword arguments</em> sections in the documentation for
 <a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.scatter">scatter</a>.</p>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_circles">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_circles</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>r</em>, <em>layer=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_circles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlay circles on the current plot.</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>xw</em>: [ list | numpy.ndarray ]</dt>
+<dd>The x postions of the circles (in world coordinates)</dd>
+<dt><em>yw</em>: [ list | numpy.ndarray ]</dt>
+<dd>The y positions of the circles (in world coordinates)</dd>
+<dt><em>r</em>: [integer | float | list | numpy.ndarray ]</dt>
+<dd>The radii of the circles in degrees</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>layer</em>: [ string ]</dt>
+<dd>The name of the circle layer. This is useful for giving
+custom names to layers (instead of scatter_set_n) and for
+replacing existing layers.</dd>
+</dl>
+<p>Any additional keyword arguments will be passed on directly to
+matplotlib&#8217;s Circle method. This includes for example the fill,
+alpha, edgecolor, and facecolor arguments which can be used to
+further control the appearance of the markers.</p>
+<p>For more information on these additional arguments, see the
+matplotlib documation at the following link.</p>
+<p><a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html?highlight=circle#matplotlib.patches.Circle">http://matplotlib.sourceforge.net/api/artist_api.html?highlight=circle#matplotlib.patches.Circle</a></p>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_ellipses">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_ellipses</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>width</em>, <em>height</em>, <em>layer=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_ellipses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlay ellipses on the current plot.</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>xw</em>: [ list | numpy.ndarray ]</dt>
+<dd>The x postions of the ellipses (in world coordinates)</dd>
+<dt><em>yw</em>: [ list | numpy.ndarray ]</dt>
+<dd>The y positions of the ellipses (in world coordinates)</dd>
+<dt><em>width</em>: [integer | float | list | numpy.ndarray ]</dt>
+<dd>The width of the ellipse in degrees</dd>
+<dt><em>height</em>: [integer | float | list | numpy.ndarray ]</dt>
+<dd>The height of the ellipse in degrees</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>angle</em>: [integer | float | list | numpy.ndarray ]</dt>
+<dd>rotation in degrees (anti-clockwise). Default
+angle is 0.0.</dd>
+<dt><em>layer</em>: [ string ]</dt>
+<dd>The name of the ellipse layer. This is useful for giving
+custom names to layers (instead of scatter_set_n) and for
+replacing existing layers.</dd>
+</dl>
+<p>Any additional keyword arguments will be passed on directly to
+matplotlib&#8217;s ellipse method. This includes for example the fill,
+alpha, edgecolor, and facecolor arguments which can be used to
+further control the appearance of the markers.</p>
+<p>For more information on these additional arguments, see the
+matplotlib documation at the following link.</p>
+<p><a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html?highlight=ellipse#matplotlib.patches.Ellipse">http://matplotlib.sourceforge.net/api/artist_api.html?highlight=ellipse#matplotlib.patches.Ellipse</a></p>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_rectangles">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_rectangles</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>width</em>, <em>height</em>, <em>layer=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_rectangles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlay rectangles on the current plot.</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>xw</em>: [ list | numpy.ndarray ]</dt>
+<dd>The x postions of the rectangles (in world coordinates)</dd>
+<dt><em>yw</em>: [ list | numpy.ndarray ]</dt>
+<dd>The y positions of the rectangles (in world coordinates)</dd>
+<dt><em>width</em>: [integer | float | list | numpy.ndarray ]</dt>
+<dd>The width of the rectangle in degrees</dd>
+<dt><em>height</em>: [integer | float | list | numpy.ndarray ]</dt>
+<dd>The height of the rectangle in degrees</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>layer</em>: [ string ]</dt>
+<dd>The name of the rectangle layer. This is useful for giving
+custom names to layers (instead of scatter_set_n) and for
+replacing existing layers.</dd>
+</dl>
+<p>Any additional keyword arguments will be passed on directly to
+matplotlib&#8217;s rectangle method. This includes for example the fill,
+alpha, edgecolor, and facecolor arguments which can be used to
+further control the appearance of the markers.</p>
+<p>For more information on these additional arguments, see the
+matplotlib documation at the following link.</p>
+<p><a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html?highlight=ellipse#matplotlib.patches.Rectangle">http://matplotlib.sourceforge.net/api/artist_api.html?highlight=ellipse#matplotlib.patches.Rectangle</a></p>
 </blockquote>
 </dd></dl>
 
@@ -974,7 +1080,7 @@ it can be shown again using show_layer.</p>
 <li><a class="reference external" href="#module-aplpy">Initialization</a></li>
 <li><a class="reference external" href="#image">Image</a></li>
 <li><a class="reference external" href="#contours">Contours</a></li>
-<li><a class="reference external" href="#markers">Markers</a></li>
+<li><a class="reference external" href="#shapes">Shapes</a></li>
 <li><a class="reference external" href="#frame">Frame</a></li>
 <li><a class="reference external" href="#ticks">Ticks</a></li>
 <li><a class="reference external" href="#tick-labels">Tick labels</a></li>
@@ -1027,7 +1133,7 @@ it can be shown again using show_layer.</p>
     </div>
     <div class="footer">
       &copy; Copyright 2009, Eli Bressert and Thomas Robitaille.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
     </div>
   </body>
 </html>

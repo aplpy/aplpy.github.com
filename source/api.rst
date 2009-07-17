@@ -31,10 +31,13 @@ Contours
 .. automethod:: FITSFigure.show_contour
    
 -------
-Markers
+Shapes
 -------
 
 .. automethod:: FITSFigure.show_markers
+.. automethod:: FITSFigure.show_circles
+.. automethod:: FITSFigure.show_ellipses
+.. automethod:: FITSFigure.show_rectangles
    
 -----
 Frame

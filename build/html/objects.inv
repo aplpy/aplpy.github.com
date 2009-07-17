@@ -17,6 +17,7 @@ aplpy.FITSFigure.show_rgb method api.html
 aplpy.FITSFigure.hide_tick_labels method api.html
 aplpy.FITSFigure.show_tick_labels method api.html
 aplpy.FITSFigure.set_axis_labels_weight method api.html
+aplpy.FITSFigure.set_tick_xspacing method api.html
 aplpy.FITSFigure.show_axis_labels method api.html
 aplpy.FITSFigure.show_markers method api.html
 aplpy.FITSFigure.set_grid_yspacing method api.html
@@ -33,10 +34,12 @@ aplpy.FITSFigure.set_frame_color method api.html
 aplpy.FITSFigure.show_colorscale method api.html
 aplpy.FITSFigure.set_axis_labels_ydisp method api.html
 aplpy.FITSFigure.set_tick_labels_yformat method api.html
-aplpy.FITSFigure.set_tick_xspacing method api.html
+aplpy.FITSFigure.show_circles method api.html
+aplpy.FITSFigure.show_ellipses method api.html
 aplpy.FITSFigure.set_grid_color method api.html
 aplpy.FITSFigure.show_layer method api.html
 aplpy.FITSFigure.__init__ method api.html
+aplpy.FITSFigure.show_rectangles method api.html
 aplpy.FITSFigure.remove_layer method api.html
 aplpy.FITSFigure.set_axis_labels method api.html
 aplpy.FITSFigure.set_grid_xspacing method api.html

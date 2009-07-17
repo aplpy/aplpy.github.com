@@ -25,7 +25,7 @@ Configuring the ``$PATH`` environment variable
     
 Once Montage has been compiled, binaries will be present in ``bin/`` inside the Montage directory. For APLpy to correctly see the Montage binaries, you will need to add the ``bin/`` directory to your ``$PATH`` environment variable. For example, if you installed Montage in ``/usr/local``, you will need to add::
         
-            export PATH=/usr/local/Montage/bin:$PATH
+    export PATH=/usr/local/Montage/bin:$PATH
 
 to your ``.bashrc`` or ``.bash_profile`` file if you are using bash as your shell, or::
 
