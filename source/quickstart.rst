@@ -2,9 +2,7 @@ Quickstart Guide
 ----------------
 
 The following tutorial will take you, step by step, through the main features
-of APLpy. You will need to download the following file_.
-
-.. _file: downloads/tutorial.tar.gz
+of APLpy. You will need to download the following :download:`file <tutorial.tar.gz>`.
 
 First, unpack the example files and go to the ``tutorial`` directory::
 
@@ -32,7 +30,7 @@ and display the image using a grayscale stretch::
 Check out the buttons at the top or bottom of the canvas (depending on the
 version of matplotlib). You will see seven buttons:
 
-<img src="images/buttons.png">
+.. image:: buttons.png
 
 The first five are of interest to us here. The button with the magnifying
 glass will allow you to select an area on the plot and zoom in. To zoom out
@@ -159,9 +157,7 @@ To wrap up this tutorial, we will save the plot to a file. Type the following::
 
 This will produce the following file:
 
-    <div align="center">
-    <img src="images/myfirstplot.png">
-    </div>
+.. image:: myfirstplot.png
 
 You can of course save it as a PS/EPS, PDF, or SVG file instead. The EPS
 output is suitable for publication.

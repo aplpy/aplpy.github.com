@@ -23,6 +23,7 @@ Image
 .. automethod:: FITSFigure.show_colorscale
 .. automethod:: FITSFigure.show_rgb
 .. automethod:: FITSFigure.recenter
+
 --------
 Contours
 --------
