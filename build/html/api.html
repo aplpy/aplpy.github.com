@@ -253,7 +253,7 @@ set to None, this is set to a sensible value.</dd>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_rgb">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_rgb</tt><big>(</big><em>filename</em>, <em>interpolation='nearest'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_rgb" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_rgb</tt><big>(</big><em>filename</em>, <em>interpolation='nearest'</em>, <em>flip=False</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_rgb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a 3-color image instead of the FITS file data</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -261,6 +261,14 @@ set to None, this is set to a sensible value.</dd>
 <dt><em>filename</em></dt>
 <dd>The 3-color image should have exactly the same dimensions as the FITS file, and
 will be shown with exactly the same projection.</dd>
+</dl>
+</blockquote>
+<p>Optional Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>flip</em>: [ True | False ]</dt>
+<dd>Whether to vertically flip the RGB image in case it is the
+wrong way around.</dd>
 </dl>
 </blockquote>
 </dd></dl>

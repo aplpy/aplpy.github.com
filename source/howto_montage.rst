@@ -10,9 +10,11 @@ Montage needs to be installed.
 Obtaining and installing Montage
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     
-Montage can be downloaded from http://montage.ipac.caltech.edu/docs/download.html
+Montage can be downloaded from
+http://montage.ipac.caltech.edu/docs/download.html
 
-Installation instructions are provided at http://montage.ipac.caltech.edu/docs/build.html
+Installation instructions are provided at
+http://montage.ipac.caltech.edu/docs/build.html
 
 Once Montage is
 correctly installed, you are ready to use the Montage-dependent
