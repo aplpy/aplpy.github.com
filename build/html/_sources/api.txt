@@ -4,12 +4,12 @@ Complete API
 .. toctree::
   :maxdepth: 1
 
-Initialization
-^^^^^^^^^^^^^^
+Initialization and Saving
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. automodule:: aplpy
 .. autoclass:: FITSFigure
-   :members: __init__
+   :members: __init__,save
    
 Image
 ^^^^^
@@ -81,3 +81,10 @@ Layers
 .. automethod:: FITSFigure.remove_layer
 .. automethod:: FITSFigure.hide_layer
 .. automethod:: FITSFigure.show_layer
+
+RGB Images
+^^^^^^^^^^
+
+.. autofunction:: aplpy.make_rgb_cube
+.. autofunction:: aplpy.make_rgb_image
+
