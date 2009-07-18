@@ -1,6 +1,9 @@
 Quickstart Guide
 ----------------
 
+.. toctree::
+  :maxdepth: 1
+
 The following tutorial will take you, step by step, through the main features
 of APLpy. You will need to download the following :download:`file <tutorial.tar.gz>`.
 
@@ -41,7 +44,7 @@ from the left).
 The size of the canvas can be controlled through the ``figsize`` argument.
 Close the current canvas and create a new figure using::
 
-    gc = aplpy.FITSFigure('fits/2MASS_k.fits',figsize=(10,10))
+    gc = aplpy.FITSFigure('fits/2MASS_k.fits',figsize=(10,9))
     gc.show_grayscale()
 
 This will create a figure that is 10 by 10 inches and will show the image as a grayscale.
@@ -71,6 +74,15 @@ match those from the FITS file. An example is provided in the tutorial files.
 Try the following::
 
     gc.show_rgb('graphics/2MASS_arcsinh_color.png')
+
+Modifying fonts
+^^^^^^^^^^^^^^^
+
+It is very easy to modify the font properties of the various labels.
+For example, in this case, we can change the font size of the tick
+labels to be smaller than the default::
+
+    gc.set_tick_labels_font(size='small')
 
 Contours
 ^^^^^^^^
@@ -169,13 +181,20 @@ To summarize, the above plot was made using the following commands::
 
     import aplpy
     import numpy
-    gc = aplpy.FITSFigure('fits/2MASS_k.fits',figsize=(10,10))
+
+    gc = aplpy.FITSFigure('fits/2MASS_k.fits',figsize=(10,9))
     gc.show_rgb('graphics/2MASS_arcsinh_color.png')
+
+    gc.set_tick_labels_font(size='small')
+
+    gc.show_contour('fits/mips_24micron.fits',colors='white')
+
     data = numpy.loadtxt('data/yso_wcs_only.txt')
     ra,dec = data[:,0],data[:,1]
-    gc.show_contour('fits/mips_24micron.fits',colors='white')
+
     gc.show_markers(ra,dec,layer='scatter_set_1',edgecolor='red',
     facecolor='none',marker='o',s=10,alpha=0.5)
+
     gc.save('myfirstplot.png')
 
 There are many more methods and options, from setting the tick spacing and

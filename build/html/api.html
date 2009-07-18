@@ -5,13 +5,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>FITSFigure &mdash; APLpy v0.9.1 documentation</title>
+    <title>Complete API &mdash; APLpy v0.9.3 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9.1',
+        VERSION:     '0.9.3',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -19,7 +19,7 @@
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="APLpy v0.9.1 documentation" href="index.html" />
+    <link rel="top" title="APLpy v0.9.3 documentation" href="index.html" />
     <link rel="prev" title="Making RGB images" href="howto_rgb.html" /> 
   </head>
   <body>
@@ -35,7 +35,7 @@
         <li class="right" >
           <a href="howto_rgb.html" title="Making RGB images"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">APLpy v0.9.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">APLpy v0.9.3 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -44,8 +44,10 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="fitsfigure">
-<h1>FITSFigure<a class="headerlink" href="#fitsfigure" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="complete-api">
+<h1>Complete API<a class="headerlink" href="#complete-api" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+</ul>
 <div class="section" id="module-aplpy">
 <h2>Initialization<a class="headerlink" href="#module-aplpy" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
@@ -557,15 +559,16 @@ For non-interactive uses, this can be set to False.</dd>
 </dd></dl>
 
 <dl class="method">
-<dt id="aplpy.FITSFigure.set_tick_labels_xformat">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_xformat</tt><big>(</big><em>format</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_xformat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the format of the x-axis tick labels</p>
-<p>Required Arguments:</p>
+<dt id="aplpy.FITSFigure.set_tick_labels_format">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_format</tt><big>(</big><em>xformat=None</em>, <em>yformat=None</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the format of the tick labels</p>
+<p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
-<dt><em>format</em>: [ string ]</dt>
-<dd><p class="first">The format for the tick labels. This can be:</p>
-<blockquote class="last">
+<p><em>xformat</em>: [ string ]</p>
+<p><em>yformat</em>: [ string ]</p>
+<blockquote>
+<p>The x and y formats for the tick labels. These can be:</p>
+<blockquote>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">ddd.ddddd</span></tt> - decimal degrees, where the number of decimal places can be varied</li>
 <li><tt class="docutils literal"><span class="pre">hh</span></tt> or <tt class="docutils literal"><span class="pre">dd</span></tt> - hours (or degrees)</li>
@@ -574,42 +577,9 @@ For non-interactive uses, this can be set to False.</dd>
 <li><tt class="docutils literal"><span class="pre">hh:mm:ss.ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss.ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds), where the number of decimal places can be varied.</li>
 </ul>
 </blockquote>
-</dd>
-</dl>
+<p>If one of these arguments is not specified, the format for that axis
+is left unchanged.</p>
 </blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_tick_labels_yformat">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_yformat</tt><big>(</big><em>format</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_yformat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the format of the x-axis tick labels</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>format</em>: [ string ]</dt>
-<dd><p class="first">The format for the tick labels. This can be:</p>
-<blockquote class="last">
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">ddd.ddddd</span></tt> - decimal degrees, where the number of decimal places can be varied</li>
-<li><tt class="docutils literal"><span class="pre">hh</span></tt> or <tt class="docutils literal"><span class="pre">dd</span></tt> - hours (or degrees)</li>
-<li><tt class="docutils literal"><span class="pre">hh:mm</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm</span></tt> - hours and minutes (or degrees and arcminutes)</li>
-<li><tt class="docutils literal"><span class="pre">hh:mm:ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds)</li>
-<li><tt class="docutils literal"><span class="pre">hh:mm:ss.ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss.ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds), where the number of decimal places can be varied.</li>
-</ul>
-</blockquote>
-</dd>
-</dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
 <dl class="docutils">
 <dt><em>refresh</em>: [ True | False ]</dt>
 <dd>Whether to refresh the display straight after setting the parameter.
@@ -648,67 +618,32 @@ For non-interactive uses, this can be set to False.</dd>
 </dd></dl>
 
 <dl class="method">
-<dt id="aplpy.FITSFigure.set_tick_labels_family">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_family</tt><big>(</big><em>family</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_family" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the font family of the tick labels</p>
-<p>Required Arguments:</p>
-<blockquote>
-<p><em>family</em>: [ serif | sans-serif | cursive | fantasy | monospace ]</p>
-<blockquote>
-The font family of the numeric tick labels. Default is &#8216;sans-serif&#8217;.</blockquote>
-</blockquote>
+<dt id="aplpy.FITSFigure.set_tick_labels_font">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_font</tt><big>(</big><em>size=None</em>, <em>weight=None</em>, <em>family=None</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the size of the tick labels</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_tick_labels_size">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_size</tt><big>(</big><em>size</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the size of the tick labels</p>
-<p>Required Arguments:</p>
-<blockquote>
+<p>Default values for size/weight/family are set by matplotlib
+or previously set values if set_tick_labels_font has
+already been called. Global default values can be set by
+editing the matplotlibrc file.</p>
 <dl class="docutils">
 <dt><em>size</em>: [ size in points | xx-small | x-small | small |</dt>
 <dd><blockquote class="first">
 medium | large | x-large | xx-large ]</blockquote>
-<p class="last">The size of the numeric tick labels. Default is &#8216;small&#8217;.</p>
+<p class="last">The size of the numeric tick labels.</p>
 </dd>
-</dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_tick_labels_weight">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_weight</tt><big>(</big><em>weight</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_weight" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the weight of the tick labels</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
 <dt><em>weight</em>: [ a numeric value in range 0-1000 | ultralight |</dt>
 <dd><blockquote class="first">
 light | normal | regular | book | medium |
 roman | semibold | demibold | demi | bold |
 heavy | extra bold | black ]</blockquote>
-<p class="last">The weight of the numeric tick labels. Default is &#8216;normal&#8217;.</p>
+<p class="last">The weight of the numeric tick labels.</p>
 </dd>
 </dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
+<p><em>family</em>: [ serif | sans-serif | cursive | fantasy | monospace ]</p>
 <blockquote>
+The font family of the numeric tick labels.</blockquote>
 <dl class="docutils">
 <dt><em>refresh</em>: [ True | False ]</dt>
 <dd>Whether to refresh the display straight after setting the parameter.
@@ -750,20 +685,19 @@ For non-interactive uses, this can be set to False.</dd>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_axis_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels</tt><big>(</big><em>xlabel</em>, <em>ylabel</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels</tt><big>(</big><em>xlabel='default'</em>, <em>ylabel='default'</em>, <em>xpad=0</em>, <em>ypad=0</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the axes labels</p>
-<p>Required Arguments:</p>
+<p>Optional Keyword Arguments:</p>
 <blockquote>
 <dl class="docutils">
 <dt><em>xlabel</em>: [ string ]</dt>
-<dd>The x-axis label.</dd>
+<dd>The x-axis label. The default is chosen based on the WCS coordinate system.</dd>
 <dt><em>ylabel</em>: [ string ]</dt>
-<dd>The y-axis label.</dd>
-</dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
+<dd>The y-axis label. The default is chosen based on the WCS coordinate system.</dd>
+<dt><em>xpad</em>: [ integer ]</dt>
+<dd>Correction to the x label vertical position relative to default position, in points</dd>
+<dt><em>ypad</em>: [ integer ]</dt>
+<dd>Correction to the y label horizontal position relative to default position, in points</dd>
 <dt><em>refresh</em>: [ True | False ]</dt>
 <dd>Whether to refresh the display straight after setting the parameter.
 For non-interactive uses, this can be set to False.</dd>
@@ -772,115 +706,32 @@ For non-interactive uses, this can be set to False.</dd>
 </dd></dl>
 
 <dl class="method">
-<dt id="aplpy.FITSFigure.set_axis_labels_xdisp">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_xdisp</tt><big>(</big><em>displacement</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_xdisp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the vertical displacement of the x-axis label</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>dispacement</em>: [ float ]</dt>
-<dd>The vertical displacement of the x-axis label, in units of the
-size of the viewport. The default is -0.05. A value of 0 would
-place the label on the bottom x-axis, and a value of 1 would place
-the label on the top x-axis.</dd>
-</dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_axis_labels_ydisp">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_ydisp</tt><big>(</big><em>displacement</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_ydisp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the horizontal displacement of the y-axis label</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>dispacement</em>: [ float ]</dt>
-<dd>The vertical displacement of the y-axis label, in units of the
-size of the viewport. The default is -0.13. A value of 0 would
-place the label on the left y-axis, and a value of 1 would place
-the label on the right y-axis.</dd>
-</dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_axis_labels_family">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_family</tt><big>(</big><em>family</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_family" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the font family of the axis labels</p>
-<p>Required Arguments:</p>
-<blockquote>
-<p><em>family</em>: [ serif | sans-serif | cursive | fantasy | monospace ]</p>
-<blockquote>
-The font family of the axis labels. Default is &#8216;sans-serif&#8217;.</blockquote>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_axis_labels_size">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_size</tt><big>(</big><em>size</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_size" title="Permalink to this definition">¶</a></dt>
+<dt id="aplpy.FITSFigure.set_axis_labels_font">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_font</tt><big>(</big><em>size=None</em>, <em>weight=None</em>, <em>family=None</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_font" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the size of the axis labels</p>
-<p>Required Arguments:</p>
+<p>Default values for size/weight/family are set by matplotlib
+or previously set values if set_axis_labels_font has
+already been called. Global default values can be set by
+editing the matplotlibrc file.</p>
+<p>Optional Keyword Arguments:</p>
 <blockquote>
 <dl class="docutils">
 <dt><em>size</em>: [ size in points | xx-small | x-small | small |</dt>
 <dd><blockquote class="first">
 medium | large | x-large | xx-large ]</blockquote>
-<p class="last">The size of the axis labels. Default is &#8216;small&#8217;.</p>
+<p class="last">The size of the axis labels</p>
 </dd>
-</dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_axis_labels_weight">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_weight</tt><big>(</big><em>weight</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_weight" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the weight of the axis labels</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
 <dt><em>weight</em>: [ a numeric value in range 0-1000 | ultralight |</dt>
 <dd><blockquote class="first">
 light | normal | regular | book | medium |
 roman | semibold | demibold | demi | bold |
 heavy | extra bold | black ]</blockquote>
-<p class="last">The weight of the axis labels. Default is &#8216;normal&#8217;.</p>
+<p class="last">The weight of the axis labels</p>
 </dd>
 </dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
+<p><em>family</em>: [ serif | sans-serif | cursive | fantasy | monospace ]</p>
 <blockquote>
+The font family of the axis labels.</blockquote>
 <dl class="docutils">
 <dt><em>refresh</em>: [ True | False ]</dt>
 <dd>Whether to refresh the display straight after setting the parameter.
@@ -1076,7 +927,7 @@ it can be shown again using show_layer.</p>
         <div class="sphinxsidebarwrapper">
             <h3><a href="index.html">Table Of Contents</a></h3>
             <ul>
-<li><a class="reference external" href="">FITSFigure</a><ul>
+<li><a class="reference external" href="">Complete API</a><ul>
 <li><a class="reference external" href="#module-aplpy">Initialization</a></li>
 <li><a class="reference external" href="#image">Image</a></li>
 <li><a class="reference external" href="#contours">Contours</a></li>
@@ -1128,12 +979,12 @@ it can be shown again using show_layer.</p>
         <li class="right" >
           <a href="howto_rgb.html" title="Making RGB images"
              >previous</a> |</li>
-        <li><a href="index.html">APLpy v0.9.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">APLpy v0.9.3 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
       &copy; Copyright 2009, Eli Bressert and Thomas Robitaille.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.2.
     </div>
   </body>
 </html>
