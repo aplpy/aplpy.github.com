@@ -50,6 +50,10 @@ Tick labels
 
 .. automethod:: FITSFigure.show_tick_labels
 .. automethod:: FITSFigure.hide_tick_labels
+.. automethod:: FITSFigure.show_xtick_labels
+.. automethod:: FITSFigure.hide_xtick_labels
+.. automethod:: FITSFigure.show_ytick_labels
+.. automethod:: FITSFigure.hide_ytick_labels
 .. automethod:: FITSFigure.set_tick_labels_format
 .. automethod:: FITSFigure.set_tick_labels_style
 .. automethod:: FITSFigure.set_tick_labels_font
@@ -58,7 +62,11 @@ Axis labels
 ^^^^^^^^^^^^^^^^
 
 .. automethod:: FITSFigure.show_axis_labels       
-.. automethod:: FITSFigure.hide_axis_labels 
+.. automethod:: FITSFigure.hide_axis_labels
+.. automethod:: FITSFigure.show_xaxis_label       
+.. automethod:: FITSFigure.hide_xaxis_label
+.. automethod:: FITSFigure.show_yaxis_label       
+.. automethod:: FITSFigure.hide_yaxis_label
 .. automethod:: FITSFigure.set_axis_labels
 .. automethod:: FITSFigure.set_axis_labels_font
 .. automethod:: FITSFigure.set_labels_latex
