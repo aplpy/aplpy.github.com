@@ -221,7 +221,7 @@ which can be manipulated in a basic way. Type:</p>
 <div class="highlight-python"><pre>There are 2 layers in this figure:
 
 -&gt; contour_set_1
--&gt; markers_set_1</pre>
+-&gt; marker_set_1</pre>
 </div>
 <p>You can use <tt class="docutils literal"><span class="pre">remove_layer</span></tt>, <tt class="docutils literal"><span class="pre">hide_layer</span></tt>, and <tt class="docutils literal"><span class="pre">show_layer</span></tt> to manipulate
 the layers, and you can also specify the <tt class="docutils literal"><span class="pre">layer=name</span></tt> argument to
@@ -229,11 +229,11 @@ the layers, and you can also specify the <tt class="docutils literal"><span clas
 the layer you are creating with the name provided, and can also be used to
 replace an existing layer. For example, let&#8217;s change the color of the markers
 from green to red:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">gc</span><span class="o">.</span><span class="n">show_markers</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span><span class="n">dec</span><span class="p">,</span><span class="n">layer</span><span class="o">=</span><span class="s">&#39;markers_set_1&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;green&#39;</span><span class="p">,</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">gc</span><span class="o">.</span><span class="n">show_markers</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span><span class="n">dec</span><span class="p">,</span><span class="n">layer</span><span class="o">=</span><span class="s">&#39;marker_set_1&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;green&#39;</span><span class="p">,</span>
        <span class="n">facecolor</span><span class="o">=</span><span class="s">&#39;none&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s">&#39;o&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mf">10</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note the presence of the <tt class="docutils literal"><span class="pre">layer='markers_set_1'</span></tt> which means that the
+<p>Note the presence of the <tt class="docutils literal"><span class="pre">layer='marker_set_1'</span></tt> which means that the
 current markers plot will be replaced. For more information about layers, see
 the see the <a class="reference external" href="http://aplpy.sourceforge.net/doc/#layers">layers</a> documentation.</p>
 </div>
@@ -264,7 +264,7 @@ output is suitable for publication.</p>
 <span class="n">data</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s">&#39;data/yso_wcs_only.txt&#39;</span><span class="p">)</span>
 <span class="n">ra</span><span class="p">,</span><span class="n">dec</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mf">0</span><span class="p">],</span><span class="n">data</span><span class="p">[:,</span><span class="mf">1</span><span class="p">]</span>
 
-<span class="n">gc</span><span class="o">.</span><span class="n">show_markers</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span><span class="n">dec</span><span class="p">,</span><span class="n">layer</span><span class="o">=</span><span class="s">&#39;markers_set_1&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span>
+<span class="n">gc</span><span class="o">.</span><span class="n">show_markers</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span><span class="n">dec</span><span class="p">,</span><span class="n">layer</span><span class="o">=</span><span class="s">&#39;marker_set_1&#39;</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span>
 <span class="n">facecolor</span><span class="o">=</span><span class="s">&#39;none&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s">&#39;o&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mf">10</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
 <span class="n">gc</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;myfirstplot.png&#39;</span><span class="p">)</span>

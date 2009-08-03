@@ -142,7 +142,7 @@ which will print out something like this::
     There are 2 layers in this figure:
 
     -> contour_set_1
-    -> markers_set_1
+    -> marker_set_1
 
 You can use ``remove_layer``, ``hide_layer``, and ``show_layer`` to manipulate
 the layers, and you can also specify the ``layer=name`` argument to
@@ -151,10 +151,10 @@ the layer you are creating with the name provided, and can also be used to
 replace an existing layer. For example, let's change the color of the markers
 from green to red::
 
-    gc.show_markers(ra,dec,layer='markers_set_1',edgecolor='green',
+    gc.show_markers(ra,dec,layer='marker_set_1',edgecolor='green',
            facecolor='none',marker='o',s=10,alpha=0.5)
 
-Note the presence of the ``layer='markers_set_1'`` which means that the
+Note the presence of the ``layer='marker_set_1'`` which means that the
 current markers plot will be replaced. For more information about layers, see
 the see the layers_ documentation.
 
@@ -192,7 +192,7 @@ To summarize, the above plot was made using the following commands::
     data = numpy.loadtxt('data/yso_wcs_only.txt')
     ra,dec = data[:,0],data[:,1]
 
-    gc.show_markers(ra,dec,layer='markers_set_1',edgecolor='red',
+    gc.show_markers(ra,dec,layer='marker_set_1',edgecolor='red',
     facecolor='none',marker='o',s=10,alpha=0.5)
 
     gc.save('myfirstplot.png')
