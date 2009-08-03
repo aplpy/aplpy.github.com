@@ -377,7 +377,7 @@ can be used to further control the appearance of the contours.</p>
 <dl class="docutils">
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the scatter layer. This is useful for giving
-custom names to layers (instead of scatter_set_n) and for
+custom names to layers (instead of markers_set_n) and for
 replacing existing layers.</dd>
 </dl>
 <p>Any additional keyword arguments will be passed on directly to
@@ -410,7 +410,7 @@ further control the appearance of the markers.</p>
 <dl class="docutils">
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the circle layer. This is useful for giving
-custom names to layers (instead of scatter_set_n) and for
+custom names to layers (instead of circle_set_n) and for
 replacing existing layers.</dd>
 </dl>
 <p>Any additional keyword arguments will be passed on directly to
@@ -448,7 +448,7 @@ matplotlib documation at the following link.</p>
 angle is 0.0.</dd>
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the ellipse layer. This is useful for giving
-custom names to layers (instead of scatter_set_n) and for
+custom names to layers (instead of ellipse_set_n) and for
 replacing existing layers.</dd>
 </dl>
 <p>Any additional keyword arguments will be passed on directly to
@@ -483,7 +483,7 @@ matplotlib documation at the following link.</p>
 <dl class="docutils">
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the rectangle layer. This is useful for giving
-custom names to layers (instead of scatter_set_n) and for
+custom names to layers (instead of rectangle_set_n) and for
 replacing existing layers.</dd>
 </dl>
 <p>Any additional keyword arguments will be passed on directly to
@@ -1106,6 +1106,19 @@ it can be shown again using show_layer.</p>
 <dl class="docutils">
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the layer to show</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.get_layer">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">get_layer</tt><big>(</big><em>layer</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.get_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a layer object</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>layer</em>: [ string ]</dt>
+<dd>The name of the layer to return</dd>
 </dl>
 </blockquote>
 </dd></dl>

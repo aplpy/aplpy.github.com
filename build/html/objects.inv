@@ -25,6 +25,7 @@ aplpy.FITSFigure.show_axis_labels method api.html
 aplpy.FITSFigure.show_markers method api.html
 aplpy.FITSFigure.set_grid_yspacing method api.html
 aplpy.FITSFigure.hide_axis_labels method api.html
+aplpy.FITSFigure.get_layer method api.html
 aplpy.FITSFigure.show_grid method api.html
 aplpy.FITSFigure.hide_yaxis_label method api.html
 aplpy.FITSFigure.show_grayscale method api.html

@@ -89,6 +89,8 @@ Layers
 .. automethod:: FITSFigure.remove_layer
 .. automethod:: FITSFigure.hide_layer
 .. automethod:: FITSFigure.show_layer
+.. automethod:: FITSFigure.get_layer
+
 
 RGB Images
 ^^^^^^^^^^
