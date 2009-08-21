@@ -48,6 +48,7 @@
 <li><a class="reference external" href="">Complete API</a><ul>
 <li><a class="reference external" href="#module-aplpy">Initialization and Saving</a></li>
 <li><a class="reference external" href="#image">Image</a></li>
+<li><a class="reference external" href="#coordinates">Coordinates</a></li>
 <li><a class="reference external" href="#contours">Contours</a></li>
 <li><a class="reference external" href="#shapes">Shapes</a></li>
 <li><a class="reference external" href="#frame">Frame</a></li>
@@ -56,6 +57,7 @@
 <li><a class="reference external" href="#axis-labels">Axis labels</a></li>
 <li><a class="reference external" href="#coordinate-grid">Coordinate Grid</a></li>
 <li><a class="reference external" href="#layers">Layers</a></li>
+<li><a class="reference external" href="#beam">Beam</a></li>
 <li><a class="reference external" href="#rgb-images">RGB Images</a></li>
 </ul>
 </li>
@@ -306,6 +308,41 @@ For non-interactive uses, this can be set to False.</dd>
 </dd></dl>
 
 </div>
+<div class="section" id="coordinates">
+<h2>Coordinates<a class="headerlink" href="#coordinates" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.world2pixel">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">world2pixel</tt><big>(</big><em>xw</em>, <em>yw</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.world2pixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert world to pixel coordinates</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>xw</em>: [ scalar | list | numpy array ]</dt>
+<dd>x world coordinate</dd>
+<dt><em>yw</em>: [ scalar | list | numpy array ]</dt>
+<dd>y world coordinate</dd>
+</dl>
+</blockquote>
+<p>Returns the pixel coordinates as a tuple of scalars, lists, or numpy arrays depending on the input</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.pixel2world">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">pixel2world</tt><big>(</big><em>xp</em>, <em>yp</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.pixel2world" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert pixel to world coordinates</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>xp</em>: [ scalar | list | numpy array ]</dt>
+<dd>x pixel coordinate</dd>
+<dt><em>yp</em>: [ scalar | list | numpy array ]</dt>
+<dd>y pixel coordinate</dd>
+</dl>
+</blockquote>
+<p>Returns the world coordinates as a tuple of scalars, lists, or numpy arrays depending on the input</p>
+</dd></dl>
+
+</div>
 <div class="section" id="contours">
 <h2>Contours<a class="headerlink" href="#contours" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
@@ -377,7 +414,7 @@ can be used to further control the appearance of the contours.</p>
 <dl class="docutils">
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the scatter layer. This is useful for giving
-custom names to layers (instead of markers_set_n) and for
+custom names to layers (instead of marker_set_n) and for
 replacing existing layers.</dd>
 </dl>
 <p>Any additional keyword arguments will be passed on directly to
@@ -935,8 +972,8 @@ For non-interactive uses, this can be set to False.</dd>
 </dd></dl>
 
 <dl class="method">
-<dt id="aplpy.FITSFigure.set_labels_latex">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_labels_latex</tt><big>(</big><em>usetex</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_labels_latex" title="Permalink to this definition">¶</a></dt>
+<dt id="aplpy.FITSFigure.set_system_latex">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_system_latex</tt><big>(</big><em>usetex</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_system_latex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set whether to use a real LaTeX installation or the built-in matplotlib LaTeX</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -1122,6 +1159,24 @@ it can be shown again using show_layer.</p>
 </dl>
 </blockquote>
 </dd></dl>
+
+</div>
+<div class="section" id="beam">
+<h2>Beam<a class="headerlink" href="#beam" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_beam">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_beam</tt><big>(</big><em>major='BMAJ'</em>, <em>minor='BMIN'</em>, <em>angle='BPA'</em>, <em>corner=3</em>, <em>frame=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_beam" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.hide_beam">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_beam</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_beam" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_beam_properties">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_beam_properties</tt><big>(</big><em>refresh=True</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_beam_properties" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </div>
 <div class="section" id="rgb-images">

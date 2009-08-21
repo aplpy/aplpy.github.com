@@ -19,6 +19,12 @@ Image
 .. automethod:: FITSFigure.show_rgb
 .. automethod:: FITSFigure.recenter
 
+Coordinates
+^^^^^^^^^^^
+
+.. automethod:: FITSFigure.world2pixel
+.. automethod:: FITSFigure.pixel2world
+
 Contours
 ^^^^^^^^
 
@@ -69,7 +75,7 @@ Axis labels
 .. automethod:: FITSFigure.hide_yaxis_label
 .. automethod:: FITSFigure.set_axis_labels
 .. automethod:: FITSFigure.set_axis_labels_font
-.. automethod:: FITSFigure.set_labels_latex
+.. automethod:: FITSFigure.set_system_latex
 
 Coordinate Grid
 ^^^^^^^^^^^^^^^
@@ -90,6 +96,14 @@ Layers
 .. automethod:: FITSFigure.hide_layer
 .. automethod:: FITSFigure.show_layer
 .. automethod:: FITSFigure.get_layer
+
+
+Beam
+^^^^
+
+.. automethod:: FITSFigure.show_beam
+.. automethod:: FITSFigure.hide_beam
+.. automethod:: FITSFigure.set_beam_properties
 
 
 RGB Images
