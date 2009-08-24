@@ -46,7 +46,8 @@
             <h3><a href="index.html">Table Of Contents</a></h3>
             <ul>
 <li><a class="reference external" href="">Complete API</a><ul>
-<li><a class="reference external" href="#module-aplpy">Initialization and Saving</a></li>
+<li><a class="reference external" href="#module-aplpy">Initialization</a></li>
+<li><a class="reference external" href="#general-routines">General routines</a></li>
 <li><a class="reference external" href="#image">Image</a></li>
 <li><a class="reference external" href="#coordinates">Coordinates</a></li>
 <li><a class="reference external" href="#contours">Contours</a></li>
@@ -97,7 +98,7 @@
 <ul class="simple">
 </ul>
 <div class="section" id="module-aplpy">
-<h2>Initialization and Saving<a class="headerlink" href="#module-aplpy" title="Permalink to this headline">¶</a></h2>
+<h2>Initialization<a class="headerlink" href="#module-aplpy" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="aplpy.FITSFigure">
 <em class="property">
@@ -150,9 +151,46 @@ on these additional arguments, see the <em>Optional keyword arguments</em>
 section in the documentation for <a class="reference external" href="http://matplotlib.sourceforge.net/api/figure_api.html?#matplotlib.figure.Figure">Figure</a></p>
 </dd></dl>
 
+</dd></dl>
+
+</div>
+<div class="section" id="general-routines">
+<h2>General routines<a class="headerlink" href="#general-routines" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_auto_refresh">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_auto_refresh</tt><big>(</big><em>refresh</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_auto_refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether the display should refresh after each method call</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display every time a FITSFigure
+method is called. The default is True. If set to false,
+the display can be refreshed manually using the refresh()
+method</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.refresh">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">refresh</tt><big>(</big><em>force=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh the display</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>force</em>: [ True | False ]</dt>
+<dd>If set to False, refresh() will only have an effect if
+auto refresh is on. If set to True, the display will be
+refreshed whatever the auto refresh setting is set to.
+The default is True.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
 <dl class="method">
 <dt id="aplpy.FITSFigure.save">
-<tt class="descname">save</tt><big>(</big><em>filename</em>, <em>dpi=None</em>, <em>transparent=False</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.save" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">save</tt><big>(</big><em>filename</em>, <em>dpi=None</em>, <em>transparent=False</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save the current figure to a file</p>
 <p>Required arguments:</p>
 <blockquote>
@@ -178,6 +216,19 @@ larger than 300, then dpi is set to 300.</dd>
 </blockquote>
 </dd></dl>
 
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_system_latex">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_system_latex</tt><big>(</big><em>usetex</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_system_latex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether to use a real LaTeX installation or the built-in matplotlib LaTeX</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>usetex</em>: [ True | False ]</dt>
+<dd>Whether to use a real LaTex installation (True) or the built-in
+matplotlib LaTeX (False). Note that if the former is chosen, an
+installation of LaTex is required.</dd>
+</dl>
+</blockquote>
 </dd></dl>
 
 </div>
@@ -778,21 +829,6 @@ heavy | extra bold | black ]</blockquote>
 <p><em>family</em>: [ serif | sans-serif | cursive | fantasy | monospace ]</p>
 <blockquote>
 The font family of the axis labels.</blockquote>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_system_latex">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_system_latex</tt><big>(</big><em>usetex</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_system_latex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set whether to use a real LaTeX installation or the built-in matplotlib LaTeX</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>usetex</em>: [ True | False ]</dt>
-<dd>Whether to use a real LaTex installation (True) or the built-in
-matplotlib LaTeX (False). Note that if the former is chosen, an
-installation of LaTex is required.</dd>
-</dl>
 </blockquote>
 </dd></dl>
 

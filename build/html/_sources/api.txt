@@ -4,13 +4,21 @@ Complete API
 .. toctree::
   :maxdepth: 1
 
-Initialization and Saving
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Initialization
+^^^^^^^^^^^^^^
 
 .. automodule:: aplpy
 .. autoclass:: FITSFigure
-   :members: __init__,save
+   :members: __init__
    
+General routines
+^^^^^^^^^^^^^^^^
+
+.. automethod:: FITSFigure.set_auto_refresh
+.. automethod:: FITSFigure.refresh
+.. automethod:: FITSFigure.save
+.. automethod:: FITSFigure.set_system_latex
+  
 Image
 ^^^^^
 
@@ -75,7 +83,6 @@ Axis labels
 .. automethod:: FITSFigure.hide_yaxis_label
 .. automethod:: FITSFigure.set_axis_labels
 .. automethod:: FITSFigure.set_axis_labels_font
-.. automethod:: FITSFigure.set_system_latex
 
 Coordinate Grid
 ^^^^^^^^^^^^^^^
