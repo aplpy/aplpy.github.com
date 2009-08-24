@@ -277,7 +277,7 @@ wrong way around.</dd>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.recenter">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">recenter</tt><big>(</big><em>x</em>, <em>y</em>, <em>radius=None</em>, <em>width=None</em>, <em>height=None</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.recenter" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">recenter</tt><big>(</big><em>x</em>, <em>y</em>, <em>radius=None</em>, <em>width=None</em>, <em>height=None</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.recenter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Center the image on a given position and with a given radius</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -300,9 +300,6 @@ conjunction with the height argument.</dd>
 <dt><em>height</em>: [ float ]</dt>
 <dd>Height of the region to view (degrees). This should be given in
 conjunction with the width argument.</dd>
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
 </dl>
 </blockquote>
 </dd></dl>
@@ -383,13 +380,11 @@ tuple element.</dd>
 <dt><em>returnlevels</em>: [ True | False ]</dt>
 <dd>Whether to return the list of contours to the caller.</dd>
 </dl>
-<p>Any additional keyword arguments will be passed on directly to
-matplotlib&#8217;s contour or contourf methods. This includes for
-example the alpha, linewidths, and linestyles arguments which
-can be used to further control the appearance of the contours.</p>
-<p>For more information on these additional arguments, see the
-<em>Optional keyword arguments</em> sections in the documentation for
-<a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.contour">contour</a> and <a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.contourf`">contourf</a>.</p>
+<p>Additional keyword arguments (such as alpha, linewidths, or
+linestyles) will be passed on directly to matplotlib&#8217;s contour or
+contourf methods. For more information on these additional
+arguments, see the <em>Optional keyword arguments</em> sections in the
+documentation for <a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.contour">contour</a> and <a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.contourf">contourf</a>.</p>
 </blockquote>
 </dd></dl>
 
@@ -417,14 +412,12 @@ can be used to further control the appearance of the contours.</p>
 custom names to layers (instead of marker_set_n) and for
 replacing existing layers.</dd>
 </dl>
-<p>Any additional keyword arguments will be passed on directly to
-matplotlib&#8217;s scatter method. This includes for example the marker,
-alpha, edgecolor, and facecolor arguments which can be used to
-further control the appearance of the markers.</p>
-<p>For more information on these additional arguments, see the
-<em>Optional keyword arguments</em> sections in the documentation for
-<a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.scatter">scatter</a>.</p>
 </blockquote>
+<p>Additional keyword arguments (such as marker, facecolor, edgecolor,
+alpha, or linewidth) will be passed on directly to matplotlib&#8217;s
+scatter method. For more information on these additional arguments,
+see the <em>Optional keyword arguments</em> sections in the documentation for
+<a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.scatter">scatter</a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -450,14 +443,11 @@ further control the appearance of the markers.</p>
 custom names to layers (instead of circle_set_n) and for
 replacing existing layers.</dd>
 </dl>
-<p>Any additional keyword arguments will be passed on directly to
-matplotlib&#8217;s Circle method. This includes for example the fill,
-alpha, edgecolor, and facecolor arguments which can be used to
-further control the appearance of the markers.</p>
-<p>For more information on these additional arguments, see the
-matplotlib documation at the following link.</p>
-<p><a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html?highlight=circle#matplotlib.patches.Circle">http://matplotlib.sourceforge.net/api/artist_api.html?highlight=circle#matplotlib.patches.Circle</a></p>
 </blockquote>
+<p>Additional keyword arguments (such as facecolor, edgecolor, alpha,
+or linewidth) can be used to control the appearance of the
+circles, which are instances of the matplotlib Circle class. For
+more information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Circle">Circle</a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -488,14 +478,11 @@ angle is 0.0.</dd>
 custom names to layers (instead of ellipse_set_n) and for
 replacing existing layers.</dd>
 </dl>
-<p>Any additional keyword arguments will be passed on directly to
-matplotlib&#8217;s ellipse method. This includes for example the fill,
-alpha, edgecolor, and facecolor arguments which can be used to
-further control the appearance of the markers.</p>
-<p>For more information on these additional arguments, see the
-matplotlib documation at the following link.</p>
-<p><a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html?highlight=ellipse#matplotlib.patches.Ellipse">http://matplotlib.sourceforge.net/api/artist_api.html?highlight=ellipse#matplotlib.patches.Ellipse</a></p>
 </blockquote>
+<p>Additional keyword arguments (such as facecolor, edgecolor, alpha,
+or linewidth) can be used to control the appearance of the
+ellipses, which are instances of the matplotlib Ellipse class. For
+more information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Ellipse">Ellipse</a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -523,14 +510,11 @@ matplotlib documation at the following link.</p>
 custom names to layers (instead of rectangle_set_n) and for
 replacing existing layers.</dd>
 </dl>
-<p>Any additional keyword arguments will be passed on directly to
-matplotlib&#8217;s rectangle method. This includes for example the fill,
-alpha, edgecolor, and facecolor arguments which can be used to
-further control the appearance of the markers.</p>
-<p>For more information on these additional arguments, see the
-matplotlib documation at the following link.</p>
-<p><a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html?highlight=ellipse#matplotlib.patches.Rectangle">http://matplotlib.sourceforge.net/api/artist_api.html?highlight=ellipse#matplotlib.patches.Rectangle</a></p>
 </blockquote>
+<p>Additional keyword arguments (such as facecolor, edgecolor, alpha,
+or linewidth) can be used to control the appearance of the
+rectangles, which are instances of the matplotlib Rectangle class.
+For more information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Rectangle">Rectangle</a>.</p>
 </dd></dl>
 
 </div>
@@ -538,21 +522,13 @@ matplotlib documation at the following link.</p>
 <h2>Frame<a class="headerlink" href="#frame" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_frame_color">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_frame_color</tt><big>(</big><em>color</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_frame_color" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_frame_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_frame_color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set color of the frame</p>
 <p>Required arguments:</p>
 <blockquote>
 <dl class="docutils">
 <dt><em>color</em>:</dt>
 <dd>The color to use for the frame.</dd>
-</dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
 </dl>
 </blockquote>
 </dd></dl>
@@ -562,7 +538,7 @@ For non-interactive uses, this can be set to False.</dd>
 <h2>Ticks<a class="headerlink" href="#ticks" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_tick_xspacing">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_xspacing</tt><big>(</big><em>xspacing</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_xspacing" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_xspacing</tt><big>(</big><em>xspacing</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_xspacing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the x-axis tick spacing</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -572,19 +548,11 @@ For non-interactive uses, this can be set to False.</dd>
 the tick spacing to be automatically determined, set this to &#8216;auto&#8217;</dd>
 </dl>
 </blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_tick_yspacing">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_yspacing</tt><big>(</big><em>yspacing</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_yspacing" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_yspacing</tt><big>(</big><em>yspacing</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_yspacing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the y-axis tick spacing</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -594,19 +562,11 @@ For non-interactive uses, this can be set to False.</dd>
 the tick spacing to be automatically determined, set this to &#8216;auto&#8217;</dd>
 </dl>
 </blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_tick_color">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_color</tt><big>(</big><em>color</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_color" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the tick color</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -615,33 +575,17 @@ For non-interactive uses, this can be set to False.</dd>
 <dd>The color of the ticks</dd>
 </dl>
 </blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_tick_size">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_size</tt><big>(</big><em>size</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_size" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_size</tt><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the tick size</p>
 <p>Required Arguments:</p>
 <blockquote>
 <dl class="docutils">
 <dt><em>size</em>: [ float ]</dt>
 <dd>The size of the ticks (in points)</dd>
-</dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
 </dl>
 </blockquote>
 </dd></dl>
@@ -651,91 +595,37 @@ For non-interactive uses, this can be set to False.</dd>
 <h2>Tick labels<a class="headerlink" href="#tick-labels" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_tick_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_tick_labels</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_tick_labels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Show the tick labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_tick_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_tick_labels" title="Permalink to this definition">¶</a></dt>
+<dd>Show the tick labels</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.hide_tick_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_tick_labels</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_tick_labels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hide the tick labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_tick_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_tick_labels" title="Permalink to this definition">¶</a></dt>
+<dd>Hide the tick labels</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_xtick_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_xtick_labels</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_xtick_labels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Show the x-axis tick labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_xtick_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_xtick_labels" title="Permalink to this definition">¶</a></dt>
+<dd>Show the x-axis tick labels</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.hide_xtick_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_xtick_labels</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_xtick_labels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hide the x-axis tick labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_xtick_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_xtick_labels" title="Permalink to this definition">¶</a></dt>
+<dd>Hide the x-axis tick labels</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_ytick_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_ytick_labels</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_ytick_labels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Show the y-axis tick labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_ytick_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_ytick_labels" title="Permalink to this definition">¶</a></dt>
+<dd>Show the y-axis tick labels</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.hide_ytick_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_ytick_labels</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_ytick_labels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hide the y-axis tick labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_ytick_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_ytick_labels" title="Permalink to this definition">¶</a></dt>
+<dd>Hide the y-axis tick labels</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_tick_labels_format">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_format</tt><big>(</big><em>xformat=None</em>, <em>yformat=None</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_format" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_format</tt><big>(</big><em>xformat=None</em>, <em>yformat=None</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_format" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the format of the tick labels</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
@@ -755,17 +645,12 @@ For non-interactive uses, this can be set to False.</dd>
 <p>If one of these arguments is not specified, the format for that axis
 is left unchanged.</p>
 </blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
 </blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_tick_labels_style">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_style</tt><big>(</big><em>style</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_style" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_style</tt><big>(</big><em>style</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_style" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the format of the x-axis tick labels</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -782,19 +667,11 @@ internal LaTeX engine or a real LaTeX installation, use
 the set_labels_latex() method.</p>
 </blockquote>
 </blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_tick_labels_font">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_font</tt><big>(</big><em>size=None</em>, <em>weight=None</em>, <em>family=None</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_font" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_font</tt><big>(</big><em>size=None</em>, <em>weight=None</em>, <em>family=None</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_font" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the size of the tick labels</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
@@ -819,11 +696,6 @@ heavy | extra bold | black ]</blockquote>
 <p><em>family</em>: [ serif | sans-serif | cursive | fantasy | monospace ]</p>
 <blockquote>
 The font family of the numeric tick labels.</blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
 </blockquote>
 </dd></dl>
 
@@ -832,91 +704,37 @@ For non-interactive uses, this can be set to False.</dd>
 <h2>Axis labels<a class="headerlink" href="#axis-labels" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_axis_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_axis_labels</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_axis_labels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Show the axis labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_axis_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_axis_labels" title="Permalink to this definition">¶</a></dt>
+<dd>Show the axis labels</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.hide_axis_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_axis_labels</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_axis_labels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hide the axis labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_axis_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_axis_labels" title="Permalink to this definition">¶</a></dt>
+<dd>Hide the axis labels</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_xaxis_label">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_xaxis_label</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_xaxis_label" title="Permalink to this definition">¶</a></dt>
-<dd><p>Show the x-axis labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_xaxis_label</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_xaxis_label" title="Permalink to this definition">¶</a></dt>
+<dd>Show the x-axis labels</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.hide_xaxis_label">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_xaxis_label</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_xaxis_label" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hide the x-axis labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_xaxis_label</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_xaxis_label" title="Permalink to this definition">¶</a></dt>
+<dd>Hide the x-axis labels</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_yaxis_label">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_yaxis_label</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_yaxis_label" title="Permalink to this definition">¶</a></dt>
-<dd><p>Show the y-axis labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_yaxis_label</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_yaxis_label" title="Permalink to this definition">¶</a></dt>
+<dd>Show the y-axis labels</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.hide_yaxis_label">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_yaxis_label</tt><big>(</big><em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_yaxis_label" title="Permalink to this definition">¶</a></dt>
-<dd><p>Hide the y-axis labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
-</dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_yaxis_label</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_yaxis_label" title="Permalink to this definition">¶</a></dt>
+<dd>Hide the y-axis labels</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_axis_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels</tt><big>(</big><em>xlabel='default'</em>, <em>ylabel='default'</em>, <em>xpad=0</em>, <em>ypad=0</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels</tt><big>(</big><em>xlabel='default'</em>, <em>ylabel='default'</em>, <em>xpad=0</em>, <em>ypad=0</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the axes labels</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
@@ -929,16 +747,13 @@ For non-interactive uses, this can be set to False.</dd>
 <dd>Correction to the x label vertical position relative to default position, in points</dd>
 <dt><em>ypad</em>: [ integer ]</dt>
 <dd>Correction to the y label horizontal position relative to default position, in points</dd>
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
 </dl>
 </blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_axis_labels_font">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_font</tt><big>(</big><em>size=None</em>, <em>weight=None</em>, <em>family=None</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_font" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_font</tt><big>(</big><em>size=None</em>, <em>weight=None</em>, <em>family=None</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_font" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the size of the axis labels</p>
 <p>Default values for size/weight/family are set by matplotlib
 or previously set values if set_axis_labels_font has
@@ -963,11 +778,6 @@ heavy | extra bold | black ]</blockquote>
 <p><em>family</em>: [ serif | sans-serif | cursive | fantasy | monospace ]</p>
 <blockquote>
 The font family of the axis labels.</blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
 </blockquote>
 </dd></dl>
 
@@ -982,14 +792,6 @@ For non-interactive uses, this can be set to False.</dd>
 <dd>Whether to use a real LaTex installation (True) or the built-in
 matplotlib LaTeX (False). Note that if the former is chosen, an
 installation of LaTex is required.</dd>
-</dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
 </dl>
 </blockquote>
 </dd></dl>
@@ -1009,7 +811,7 @@ For non-interactive uses, this can be set to False.</dd>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_grid_xspacing">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_xspacing</tt><big>(</big><em>xspacing</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_xspacing" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_xspacing</tt><big>(</big><em>xspacing</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_xspacing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the grid line spacing in the longitudinal direction</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -1020,19 +822,11 @@ To set the spacing to be the same as the ticks, set this
 to &#8216;tick&#8217;</dd>
 </dl>
 </blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_grid_yspacing">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_yspacing</tt><big>(</big><em>yspacing</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_yspacing" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_yspacing</tt><big>(</big><em>yspacing</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_yspacing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the grid line spacing in the latitudinal direction</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -1043,19 +837,11 @@ To set the spacing to be the same as the ticks, set this
 to &#8216;tick&#8217;</dd>
 </dl>
 </blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_grid_color">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_color</tt><big>(</big><em>color</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_color" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the color of the grid lines</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -1064,19 +850,11 @@ For non-interactive uses, this can be set to False.</dd>
 <dd>The color of the grid lines</dd>
 </dl>
 </blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
-</dl>
-</blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_grid_alpha">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_alpha</tt><big>(</big><em>alpha</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_alpha" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_alpha</tt><big>(</big><em>alpha</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_alpha" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the alpha (transparency) of the grid lines</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -1085,14 +863,6 @@ For non-interactive uses, this can be set to False.</dd>
 <dd>The alpha value of the grid. This should be a floating
 point value between 0 and 1, where 0 is completely
 transparent, and 1 is completely opaque.</dd>
-</dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display straight after setting the parameter.
-For non-interactive uses, this can be set to False.</dd>
 </dl>
 </blockquote>
 </dd></dl>
@@ -1166,17 +936,53 @@ it can be shown again using show_layer.</p>
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_beam">
 <tt class="descclassname">FITSFigure.</tt><tt class="descname">show_beam</tt><big>(</big><em>major='BMAJ'</em>, <em>minor='BMIN'</em>, <em>angle='BPA'</em>, <em>corner=3</em>, <em>frame=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_beam" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Display the beam shape and size for the primary image</p>
+<p>By default, this method will search for the BMAJ, BMIN, and BPA
+keywords in the FITS header to set the major and minor axes and the
+position angle on the sky.</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>major</em>: [ float ]</dt>
+<dd>Major axis of the beam in degrees (overrides BMAJ if present)</dd>
+<dt><em>minor</em>: [ float ]</dt>
+<dd>Minor axis of the beam in degrees (overrides BMIN if present)</dd>
+<dt><em>angle</em>: [ float ]</dt>
+<dd>Position angle of the beam on the sky in degrees (overrides
+BPA if present)</dd>
+<dt><em>corner</em>: [ integer ]</dt>
+<dd>Where to place the beam. Acceptable values are:
+1: top right
+2: top left
+3: bottom left (default)
+4: bottom right
+5: center right
+6: center left
+7: center right (same as 5)
+8: bottom center
+9: top center</dd>
+<dt><em>frame</em>: [ True | False ]</dt>
+<dd>Whether to display a frame behind the beam (default is False)</dd>
+</dl>
+<p>Additional keyword arguments can be used to control the appearance
+of the beam, which is an instance of the matplotlib Ellipse class.
+For more information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Ellipse">Ellipse</a>.</p>
+</blockquote>
+</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.hide_beam">
 <tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_beam</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_beam" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd>Hide the beam</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.set_beam_properties">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_beam_properties</tt><big>(</big><em>refresh=True</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_beam_properties" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_beam_properties</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_beam_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the beam properties</p>
+<p>All arguments are passed to the beam, which is an instance of the
+matplotlib Ellipse class. For more information on available arguments,
+see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Ellipse">Ellipse</a>.</p>
+</dd></dl>
 
 </div>
 <div class="section" id="rgb-images">
@@ -1225,7 +1031,7 @@ the Python Imaging Library can be used.</dd>
 <blockquote>
 Minimum pixel value to use for the red, green, and blue channels.
 If set to None for a given channel, the minimum pixel value for
-that channel is determined using the corresponding <a href="#id1"><span class="problematic" id="id2">pmin_</span></a>? argument
+that channel is determined using the corresponding <a href="#id3"><span class="problematic" id="id4">pmin_</span></a>? argument
 (default).</blockquote>
 <p><em>vmax_r</em>: [ None | float ]</p>
 <p><em>vmax_g</em>: [ None | float ]</p>
@@ -1233,7 +1039,7 @@ that channel is determined using the corresponding <a href="#id1"><span class="p
 <blockquote>
 Maximum pixel value to use for the red, green, and blue channels.
 If set to None for a given channel, the maximum pixel value for
-that channel is determined using the corresponding <a href="#id3"><span class="problematic" id="id4">pmax_</span></a>? argument
+that channel is determined using the corresponding <a href="#id5"><span class="problematic" id="id6">pmax_</span></a>? argument
 (default).</blockquote>
 <p><em>pmin_r</em>: [ float ]</p>
 <p><em>pmin_g</em>: [ float ]</p>
@@ -1241,14 +1047,14 @@ that channel is determined using the corresponding <a href="#id3"><span class="p
 <blockquote>
 Percentile values used to determine for a given channel the
 minimum pixel value to use for that channel if the corresponding
-<a href="#id5"><span class="problematic" id="id6">vmin_</span></a>? is set to None. The default is 0.25% for all channels.</blockquote>
+<a href="#id7"><span class="problematic" id="id8">vmin_</span></a>? is set to None. The default is 0.25% for all channels.</blockquote>
 <p><em>pmax_r</em>: [ float ]</p>
 <p><em>pmax_g</em>: [ float ]</p>
 <p><em>pmax_b</em>: [ float ]</p>
 <blockquote>
 Percentile values used to determine for a given channel the
 maximum pixel value to use for that channel if the corresponding
-<a href="#id7"><span class="problematic" id="id8">vmax_</span></a>? is set to None. The default is 99.75% for all channels.</blockquote>
+<a href="#id9"><span class="problematic" id="id10">vmax_</span></a>? is set to None. The default is 99.75% for all channels.</blockquote>
 <p><em>stretch_r</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</p>
 <p><em>stretch_g</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</p>
 <p><em>stretch_b</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</p>
@@ -1264,7 +1070,7 @@ set to None, this is set to a sensible value.</blockquote>
 <p><em>exponent_g</em>: [ float ]</p>
 <p><em>exponent_b</em>: [ float ]</p>
 <blockquote>
-If <a href="#id9"><span class="problematic" id="id10">stretch_</span></a>? is set to &#8216;power&#8217;, this is the exponent to use.</blockquote>
+If <a href="#id11"><span class="problematic" id="id12">stretch_</span></a>? is set to &#8216;power&#8217;, this is the exponent to use.</blockquote>
 </blockquote>
 </dd></dl>
 
