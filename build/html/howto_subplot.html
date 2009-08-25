@@ -87,7 +87,8 @@
 occupies the entire figure. However, APLpy can be used to place a subplot in
 an existing matplotlib figure instance. To do this, <tt class="docutils literal"><span class="pre">FITSFigure</span></tt> should be
 called with the <tt class="docutils literal"><span class="pre">figure=</span></tt> argument as follows:</p>
-<div class="highlight-python"><pre>import aplpy import matplotlib.pyplot as mpl
+<div class="highlight-python"><pre>import aplpy
+import matplotlib.pyplot as mpl
 
  fig = mpl.figure()
  f = aplpy.FITSFigure('some_image.fits', figure=fig)</pre>

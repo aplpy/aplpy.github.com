@@ -6,7 +6,8 @@ occupies the entire figure. However, APLpy can be used to place a subplot in
 an existing matplotlib figure instance. To do this, ``FITSFigure`` should be
 called with the ``figure=`` argument as follows::
 
-    import aplpy import matplotlib.pyplot as mpl
+    import aplpy
+    import matplotlib.pyplot as mpl
     
      fig = mpl.figure()
      f = aplpy.FITSFigure('some_image.fits', figure=fig)
