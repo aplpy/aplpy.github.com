@@ -7,3 +7,4 @@ HOWTOs
   howto_noninteractive.rst
   howto_montage.rst
   howto_rgb.rst
+  howto_subplot.rst
