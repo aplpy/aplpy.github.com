@@ -11,7 +11,9 @@ aplpy.FITSFigure.set_auto_refresh method api.html
 aplpy.FITSFigure.show_ellipses method api.html
 aplpy.FITSFigure.hide_grid method api.html
 aplpy.FITSFigure class api.html
+aplpy.FITSFigure.hide_scalebar method api.html
 aplpy.FITSFigure.set_grid_alpha method api.html
+aplpy.FITSFigure.show_scalebar method api.html
 aplpy.make_rgb_cube function api.html
 aplpy.FITSFigure.set_grid_color method api.html
 aplpy.FITSFigure.hide_xtick_labels method api.html
@@ -28,6 +30,7 @@ aplpy.FITSFigure.show_markers method api.html
 aplpy.FITSFigure.set_grid_yspacing method api.html
 aplpy.FITSFigure.set_tick_labels_font method api.html
 aplpy.FITSFigure.get_layer method api.html
+aplpy.FITSFigure.set_scalebar_properties method api.html
 aplpy.FITSFigure.show_grid method api.html
 aplpy.FITSFigure.hide_yaxis_label method api.html
 aplpy.FITSFigure.show_grayscale method api.html

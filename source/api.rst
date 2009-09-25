@@ -113,6 +113,14 @@ Beam
 .. automethod:: FITSFigure.set_beam_properties
 
 
+Scalebar
+^^^^^^^^
+
+.. automethod:: FITSFigure.show_scalebar
+.. automethod:: FITSFigure.hide_scalebar
+.. automethod:: FITSFigure.set_scalebar_properties
+
+
 RGB Images
 ^^^^^^^^^^
 

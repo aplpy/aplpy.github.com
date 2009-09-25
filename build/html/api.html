@@ -59,6 +59,7 @@
 <li><a class="reference external" href="#coordinate-grid">Coordinate Grid</a></li>
 <li><a class="reference external" href="#layers">Layers</a></li>
 <li><a class="reference external" href="#beam">Beam</a></li>
+<li><a class="reference external" href="#scalebar">Scalebar</a></li>
 <li><a class="reference external" href="#rgb-images">RGB Images</a></li>
 </ul>
 </li>
@@ -102,11 +103,11 @@
 <dl class="class">
 <dt id="aplpy.FITSFigure">
 <em class="property">
-class </em><tt class="descclassname">aplpy.</tt><tt class="descname">FITSFigure</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>figure=None</em>, <em>subplot=None</em>, <em>downsample=False</em>, <em>north=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure" title="Permalink to this definition">¶</a></dt>
+class </em><tt class="descclassname">aplpy.</tt><tt class="descname">FITSFigure</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>figure=None</em>, <em>subplot=None</em>, <em>downsample=False</em>, <em>north=False</em>, <em>convention=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure" title="Permalink to this definition">¶</a></dt>
 <dd><p>A class for plotting FITS files.</p>
 <dl class="method">
 <dt id="aplpy.FITSFigure.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>figure=None</em>, <em>subplot=None</em>, <em>downsample=False</em>, <em>north=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>figure=None</em>, <em>subplot=None</em>, <em>downsample=False</em>, <em>north=False</em>, <em>convention=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a FITSFigure instance</p>
 <p>Required arguments:</p>
 <blockquote>
@@ -133,8 +134,7 @@ are the position of the bottom left corner of the subplot, and
 dx and dy are the width and height of the subplot respectively.
 These should all be given in units of the figure width and
 height. For example, [0.1, 0.1, 0.8, 0.8] will almost fill the
-entire figure, leaving a 10 percent margin on all sides.
-Note: this requires matplotlib 0.98.6</dd>
+entire figure, leaving a 10 percent margin on all sides.</dd>
 <dt><em>downsample</em>: [ integer ]</dt>
 <dd>If this option is specified, the image will be downsampled
 by a factor <em>downsample</em> when reading in the data.</dd>
@@ -142,6 +142,11 @@ by a factor <em>downsample</em> when reading in the data.</dd>
 <dd>Whether to rotate the image so that the North Celestial
 Pole is up. Note that this option requires Montage to be
 installed.</dd>
+<dt><em>convention</em>: [ string ]</dt>
+<dd>This is used in cases where a FITS header can be interpreted
+in multiple ways. For example, for files with a -CAR
+projection and CRVAL2=0, this can be set to &#8216;wells&#8217; or
+&#8216;calabretta&#8217; to choose the appropriate convention.</dd>
 </dl>
 </blockquote>
 <p>Any additional arguments are passed on to matplotlib&#8217;s Figure() class.
@@ -395,7 +400,7 @@ conjunction with the width argument.</dd>
 <h2>Contours<a class="headerlink" href="#contours" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_contour">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_contour</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>layer=None</em>, <em>levels=5</em>, <em>filled=False</em>, <em>cmap=None</em>, <em>colors=None</em>, <em>returnlevels=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_contour" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_contour</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>layer=None</em>, <em>levels=5</em>, <em>filled=False</em>, <em>cmap=None</em>, <em>colors=None</em>, <em>returnlevels=False</em>, <em>convention=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_contour" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlay contours on the current plot</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -430,6 +435,11 @@ each contour will be colored according to the corresponding
 tuple element.</dd>
 <dt><em>returnlevels</em>: [ True | False ]</dt>
 <dd>Whether to return the list of contours to the caller.</dd>
+<dt><em>convention</em>: [ string ]</dt>
+<dd>This is used in cases where a FITS header can be interpreted
+in multiple ways. For example, for files with a -CAR
+projection and CRVAL2=0, this can be set to &#8216;wells&#8217; or
+&#8216;calabretta&#8217; to choose the appropriate convention.</dd>
 </dl>
 <p>Additional keyword arguments (such as alpha, linewidths, or
 linestyles) will be passed on directly to matplotlib&#8217;s contour or
@@ -1021,6 +1031,70 @@ see <a class="reference external" href="http://matplotlib.sourceforge.net/api/ar
 </dd></dl>
 
 </div>
+<div class="section" id="scalebar">
+<h2>Scalebar<a class="headerlink" href="#scalebar" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_scalebar">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_scalebar</tt><big>(</big><em>length</em>, <em>label=None</em>, <em>corner=4</em>, <em>frame=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_scalebar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a scalebar</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>length</em>:[ float ]</dt>
+<dd>The length of the scalebar, in degrees</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>label</em>: [ string ]</dt>
+<dd>Label to place above the scalebar</dd>
+<dt><em>corner</em>: [ integer ]</dt>
+<dd>Where to place the scalebar. Acceptable values are:
+1: top right
+2: top left
+3: bottom left (default)
+4: bottom right
+5: center right
+6: center left
+7: center right (same as 5)
+8: bottom center
+9: top center</dd>
+<dt><em>frame</em>: [ True | False ]</dt>
+<dd>Whether to display a frame behind the scalebar (default is False)</dd>
+</dl>
+<p>Additional keyword arguments can be used to control the appearance
+of the scalebar, which is made up of an instance of the matplotlib
+Rectangle class and a an instance of the Text class. For more
+information on available arguments, see</p>
+<p><a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Rectangle">Rectangle</a></p>
+<p>and</p>
+<p><cite>Text &lt;http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.text.Text&gt;`_</cite>.</p>
+<p>In cases where the same argument exists for the two objects, the
+argument is passed to both the Text and Rectangle instance</p>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.hide_scalebar">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_scalebar</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_scalebar" title="Permalink to this definition">¶</a></dt>
+<dd>Hide the scalebar</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_scalebar_properties">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_scalebar_properties</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_scalebar_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the scalebar properties</p>
+<p>All arguments are passed to the scalebar, which is made up of an
+instance of the matplotlib Rectangle class and a an instance of the
+Text class. For more information on available arguments, see</p>
+<p><a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Rectangle">Rectangle</a></p>
+<p>and</p>
+<p><cite>Text &lt;http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.text.Text&gt;`_</cite>.</p>
+<p>In cases where the same argument exists for the two objects, the
+argument is passed to both the Text and Rectangle instance</p>
+</dd></dl>
+
+</div>
 <div class="section" id="rgb-images">
 <h2>RGB Images<a class="headerlink" href="#rgb-images" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -1067,7 +1141,7 @@ the Python Imaging Library can be used.</dd>
 <blockquote>
 Minimum pixel value to use for the red, green, and blue channels.
 If set to None for a given channel, the minimum pixel value for
-that channel is determined using the corresponding <a href="#id3"><span class="problematic" id="id4">pmin_</span></a>? argument
+that channel is determined using the corresponding <a href="#id5"><span class="problematic" id="id6">pmin_</span></a>? argument
 (default).</blockquote>
 <p><em>vmax_r</em>: [ None | float ]</p>
 <p><em>vmax_g</em>: [ None | float ]</p>
@@ -1075,7 +1149,7 @@ that channel is determined using the corresponding <a href="#id3"><span class="p
 <blockquote>
 Maximum pixel value to use for the red, green, and blue channels.
 If set to None for a given channel, the maximum pixel value for
-that channel is determined using the corresponding <a href="#id5"><span class="problematic" id="id6">pmax_</span></a>? argument
+that channel is determined using the corresponding <a href="#id7"><span class="problematic" id="id8">pmax_</span></a>? argument
 (default).</blockquote>
 <p><em>pmin_r</em>: [ float ]</p>
 <p><em>pmin_g</em>: [ float ]</p>
@@ -1083,14 +1157,14 @@ that channel is determined using the corresponding <a href="#id5"><span class="p
 <blockquote>
 Percentile values used to determine for a given channel the
 minimum pixel value to use for that channel if the corresponding
-<a href="#id7"><span class="problematic" id="id8">vmin_</span></a>? is set to None. The default is 0.25% for all channels.</blockquote>
+<a href="#id9"><span class="problematic" id="id10">vmin_</span></a>? is set to None. The default is 0.25% for all channels.</blockquote>
 <p><em>pmax_r</em>: [ float ]</p>
 <p><em>pmax_g</em>: [ float ]</p>
 <p><em>pmax_b</em>: [ float ]</p>
 <blockquote>
 Percentile values used to determine for a given channel the
 maximum pixel value to use for that channel if the corresponding
-<a href="#id9"><span class="problematic" id="id10">vmax_</span></a>? is set to None. The default is 99.75% for all channels.</blockquote>
+<a href="#id11"><span class="problematic" id="id12">vmax_</span></a>? is set to None. The default is 99.75% for all channels.</blockquote>
 <p><em>stretch_r</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</p>
 <p><em>stretch_g</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</p>
 <p><em>stretch_b</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</p>
@@ -1106,7 +1180,7 @@ set to None, this is set to a sensible value.</blockquote>
 <p><em>exponent_g</em>: [ float ]</p>
 <p><em>exponent_b</em>: [ float ]</p>
 <blockquote>
-If <a href="#id11"><span class="problematic" id="id12">stretch_</span></a>? is set to &#8216;power&#8217;, this is the exponent to use.</blockquote>
+If <a href="#id13"><span class="problematic" id="id14">stretch_</span></a>? is set to &#8216;power&#8217;, this is the exponent to use.</blockquote>
 </blockquote>
 </dd></dl>
 
