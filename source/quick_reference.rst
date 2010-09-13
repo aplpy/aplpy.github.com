@@ -158,10 +158,10 @@ Once ``add_colorbar()`` has been called, the ``fig.colorbar`` object is created 
                           stretch='normal', family='sans-serif', \
                           style='normal', variant='normal')
 
-Grid
-^^^^
+Coordinate Grid
+^^^^^^^^^^^^^^^
 
-A grid can be added and removed using the following commands::
+A coordinate grid can be added and removed using the following commands::
 
     fig.add_grid()
     fig.remove_grid()
