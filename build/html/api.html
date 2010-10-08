@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,21 +7,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Complete API &mdash; APLpy v0.9.4 documentation</title>
+    <title>Complete API &mdash; APLpy v0.9.5 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9.4',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '0.9.5',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="APLpy v0.9.4 documentation" href="index.html" />
+    <link rel="top" title="APLpy v0.9.5 documentation" href="index.html" />
     <link rel="prev" title="Creating subplots" href="howto_subplot.html" /> 
   </head>
   <body>
@@ -30,12 +33,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="howto_subplot.html" title="Creating subplots"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">APLpy v0.9.4 documentation</a> &raquo;</li> 
+        <li><a href="index.html">APLpy v0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -43,49 +46,50 @@
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/aplpy_web_py_blue.png" alt="Logo"/>
             </a></p>
-            <h3><a href="index.html">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href="">Complete API</a><ul>
-<li><a class="reference external" href="#module-aplpy">Initialization</a></li>
-<li><a class="reference external" href="#general-routines">General routines</a></li>
-<li><a class="reference external" href="#image">Image</a></li>
-<li><a class="reference external" href="#coordinates">Coordinates</a></li>
-<li><a class="reference external" href="#contours">Contours</a></li>
-<li><a class="reference external" href="#shapes">Shapes</a></li>
-<li><a class="reference external" href="#frame">Frame</a></li>
-<li><a class="reference external" href="#ticks">Ticks</a></li>
-<li><a class="reference external" href="#tick-labels">Tick labels</a></li>
-<li><a class="reference external" href="#axis-labels">Axis labels</a></li>
-<li><a class="reference external" href="#coordinate-grid">Coordinate Grid</a></li>
-<li><a class="reference external" href="#layers">Layers</a></li>
-<li><a class="reference external" href="#beam">Beam</a></li>
-<li><a class="reference external" href="#scalebar">Scalebar</a></li>
-<li><a class="reference external" href="#rgb-images">RGB Images</a></li>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Complete API</a><ul>
+<li><a class="reference internal" href="#module-aplpy">Initialization</a></li>
+<li><a class="reference internal" href="#general-routines">General routines</a></li>
+<li><a class="reference internal" href="#labels">Labels</a></li>
+<li><a class="reference internal" href="#shapes">Shapes</a></li>
+<li><a class="reference internal" href="#layers">Layers</a></li>
+<li><a class="reference internal" href="#coordinates">Coordinates</a></li>
+<li><a class="reference internal" href="#frame">Frame</a></li>
+<li><a class="reference internal" href="#colorbar">Colorbar</a></li>
+<li><a class="reference internal" href="#coordinate-grid">Coordinate Grid</a></li>
+<li><a class="reference internal" href="#scalebar">Scalebar</a></li>
+<li><a class="reference internal" href="#beam">Beam</a></li>
+<li><a class="reference internal" href="#axis-labels">Axis labels</a></li>
+<li><a class="reference internal" href="#tick-labels">Tick labels</a></li>
+<li><a class="reference internal" href="#ticks">Ticks</a></li>
+<li><a class="reference internal" href="#advanced">Advanced</a></li>
+<li><a class="reference internal" href="#rgb-images">RGB Images</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Previous topic</h4>
-            <p class="topless"><a href="howto_subplot.html"
-                                  title="previous chapter">Creating subplots</a></p>
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="_sources/api.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="howto_subplot.html"
+                        title="previous chapter">Creating subplots</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/api.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -96,18 +100,19 @@
             
   <div class="section" id="complete-api">
 <h1>Complete API<a class="headerlink" href="#complete-api" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
 <ul class="simple">
 </ul>
+</div>
 <div class="section" id="module-aplpy">
-<h2>Initialization<a class="headerlink" href="#module-aplpy" title="Permalink to this headline">¶</a></h2>
+<span id="initialization"></span><h2>Initialization<a class="headerlink" href="#module-aplpy" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="aplpy.FITSFigure">
-<em class="property">
-class </em><tt class="descclassname">aplpy.</tt><tt class="descname">FITSFigure</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>figure=None</em>, <em>subplot=None</em>, <em>downsample=False</em>, <em>north=False</em>, <em>convention=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">aplpy.</tt><tt class="descname">FITSFigure</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>figure=None</em>, <em>subplot=None</em>, <em>downsample=False</em>, <em>north=False</em>, <em>convention=None</em>, <em>slices=</em><span class="optional">[</span><span class="optional">]</span>, <em>auto_refresh=True</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure" title="Permalink to this definition">¶</a></dt>
 <dd><p>A class for plotting FITS files.</p>
 <dl class="method">
 <dt id="aplpy.FITSFigure.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>figure=None</em>, <em>subplot=None</em>, <em>downsample=False</em>, <em>north=False</em>, <em>convention=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>figure=None</em>, <em>subplot=None</em>, <em>downsample=False</em>, <em>north=False</em>, <em>convention=None</em>, <em>slices=</em><span class="optional">[</span><span class="optional">]</span>, <em>auto_refresh=True</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a FITSFigure instance</p>
 <p>Required arguments:</p>
 <blockquote>
@@ -147,6 +152,14 @@ installed.</dd>
 in multiple ways. For example, for files with a -CAR
 projection and CRVAL2=0, this can be set to &#8216;wells&#8217; or
 &#8216;calabretta&#8217; to choose the appropriate convention.</dd>
+<dt><em>slices</em>: [ tuple or list ]</dt>
+<dd>If a FITS file with more than two dimensions is specified,
+then these are the slices to extract. If all extra dimensions
+only have size 1, then this is not required.</dd>
+<dt><em>auto_refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the figure automatically every time a
+plotting method is called. This can also be set using the
+set_auto_refresh method.</dd>
 </dl>
 </blockquote>
 <p>Any additional arguments are passed on to matplotlib&#8217;s Figure() class.
@@ -162,86 +175,8 @@ section in the documentation for <a class="reference external" href="http://matp
 <div class="section" id="general-routines">
 <h2>General routines<a class="headerlink" href="#general-routines" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
-<dt id="aplpy.FITSFigure.set_auto_refresh">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_auto_refresh</tt><big>(</big><em>refresh</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_auto_refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set whether the display should refresh after each method call</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>refresh</em>: [ True | False ]</dt>
-<dd>Whether to refresh the display every time a FITSFigure
-method is called. The default is True. If set to false,
-the display can be refreshed manually using the refresh()
-method</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.refresh">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">refresh</tt><big>(</big><em>force=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.refresh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Refresh the display</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>force</em>: [ True | False ]</dt>
-<dd>If set to False, refresh() will only have an effect if
-auto refresh is on. If set to True, the display will be
-refreshed whatever the auto refresh setting is set to.
-The default is True.</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.save">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">save</tt><big>(</big><em>filename</em>, <em>dpi=None</em>, <em>transparent=False</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.save" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save the current figure to a file</p>
-<p>Required arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>filename</em>: [ string ]</dt>
-<dd>The name of the file to save the plot to. This can be
-for example a PS, EPS, PDF, PNG, JPEG, or SVG file.</dd>
-</dl>
-</blockquote>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>dpi</em>: [ float ]</dt>
-<dd>The output resolution, in dots per inch. If the output file
-is a vector graphics format (such as PS, EPS, PDF or SVG) only
-the image itself will be rasterized. If the output is a PS or
-EPS file and no dpi is specified, the dpi is automatically
-calculated to match the resolution of the image. If this value is
-larger than 300, then dpi is set to 300.</dd>
-<dt><em>transparent</em>: [ True | False ]</dt>
-<dd>Whether to preserve transparency</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_system_latex">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_system_latex</tt><big>(</big><em>usetex</em>, <em>refresh=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_system_latex" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set whether to use a real LaTeX installation or the built-in matplotlib LaTeX</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>usetex</em>: [ True | False ]</dt>
-<dd>Whether to use a real LaTex installation (True) or the built-in
-matplotlib LaTeX (False). Note that if the former is chosen, an
-installation of LaTex is required.</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-</div>
-<div class="section" id="image">
-<h2>Image<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
 <dt id="aplpy.FITSFigure.show_grayscale">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_grayscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>invert='default'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_grayscale" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_grayscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>invert='default'</em>, <em>smooth=None</em>, <em>kernel='gauss'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_grayscale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a grayscale image of the FITS file</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
@@ -271,13 +206,27 @@ set to None, this is set to a sensible value.</dd>
 <dd>Whether to invert the grayscale or not. The default is False,
 unless set_theme is used, in which case the default depends on
 the theme.</dd>
+<dt><em>smooth</em>: [ integer | tuple ]</dt>
+<dd>Default smoothing scale is 3 pixels across. User can define
+whether they want an NxN kernel (integer), or NxM kernel
+(tuple). This argument corresponds to the &#8216;gauss&#8217; and &#8216;box&#8217;
+smoothing kernels.</dd>
+<dt><em>kernel</em>: [ &#8216;gauss&#8217; | &#8216;box&#8217; | numpy.array]</dt>
+<dd>Default kernel used for smoothing is &#8216;gauss&#8217;. The user can
+specify if they would prefer &#8216;gauss&#8217;, &#8216;box&#8217;, or a custom
+kernel. All kernels are normalized to ensure flux retention.</dd>
 </dl>
 </blockquote>
 </dd></dl>
 
 <dl class="method">
+<dt id="aplpy.FITSFigure.hide_grayscale">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_grayscale</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_grayscale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="aplpy.FITSFigure.show_colorscale">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_colorscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>cmap='default'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_colorscale" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_colorscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>cmap='default'</em>, <em>smooth=None</em>, <em>kernel='gauss'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_colorscale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a colorscale image of the FITS file</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
@@ -305,9 +254,23 @@ set to None, this is set to a sensible value.</dd>
 <dd>If stretch is set to &#8216;power&#8217;, this is the exponent to use</dd>
 <dt><em>cmap</em>: [ string ]</dt>
 <dd>The name of the colormap to use</dd>
+<dt><em>smooth</em>: [ integer | tuple ]</dt>
+<dd>Default smoothing scale is 3 pixels across. User can define
+whether they want an NxN kernel (integer), or NxM kernel
+(tuple). This argument corresponds to the &#8216;gauss&#8217; and &#8216;box&#8217;
+smoothing kernels.</dd>
+<dt><em>kernel</em>: [ &#8216;gauss&#8217; | &#8216;box&#8217; | numpy.array]</dt>
+<dd>Default kernel used for smoothing is &#8216;gauss&#8217;. The user can
+specify if they would prefer &#8216;gauss&#8217;, &#8216;box&#8217;, or a custom
+kernel. All kernels are normalized to ensure flux retention.</dd>
 </dl>
 </blockquote>
 </dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.hide_colorscale">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_colorscale</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_colorscale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_rgb">
@@ -360,47 +323,9 @@ conjunction with the width argument.</dd>
 </blockquote>
 </dd></dl>
 
-</div>
-<div class="section" id="coordinates">
-<h2>Coordinates<a class="headerlink" href="#coordinates" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="aplpy.FITSFigure.world2pixel">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">world2pixel</tt><big>(</big><em>xw</em>, <em>yw</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.world2pixel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert world to pixel coordinates</p>
-<p>Required arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>xw</em>: [ scalar | list | numpy array ]</dt>
-<dd>x world coordinate</dd>
-<dt><em>yw</em>: [ scalar | list | numpy array ]</dt>
-<dd>y world coordinate</dd>
-</dl>
-</blockquote>
-<p>Returns the pixel coordinates as a tuple of scalars, lists, or numpy arrays depending on the input</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.pixel2world">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">pixel2world</tt><big>(</big><em>xp</em>, <em>yp</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.pixel2world" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert pixel to world coordinates</p>
-<p>Required arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>xp</em>: [ scalar | list | numpy array ]</dt>
-<dd>x pixel coordinate</dd>
-<dt><em>yp</em>: [ scalar | list | numpy array ]</dt>
-<dd>y pixel coordinate</dd>
-</dl>
-</blockquote>
-<p>Returns the world coordinates as a tuple of scalars, lists, or numpy arrays depending on the input</p>
-</dd></dl>
-
-</div>
-<div class="section" id="contours">
-<h2>Contours<a class="headerlink" href="#contours" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_contour">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_contour</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>layer=None</em>, <em>levels=5</em>, <em>filled=False</em>, <em>cmap=None</em>, <em>colors=None</em>, <em>returnlevels=False</em>, <em>convention=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_contour" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_contour</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>layer=None</em>, <em>levels=5</em>, <em>filled=False</em>, <em>cmap=None</em>, <em>colors=None</em>, <em>returnlevels=False</em>, <em>convention=None</em>, <em>slices=</em><span class="optional">[</span><span class="optional">]</span>, <em>smooth=None</em>, <em>kernel='gauss'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_contour" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlay contours on the current plot</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -440,12 +365,108 @@ tuple element.</dd>
 in multiple ways. For example, for files with a -CAR
 projection and CRVAL2=0, this can be set to &#8216;wells&#8217; or
 &#8216;calabretta&#8217; to choose the appropriate convention.</dd>
+<dt><em>slices</em>: [ tuple or list ]</dt>
+<dd>If a FITS file with more than two dimensions is specified,
+then these are the slices to extract. If all extra dimensions
+only have size 1, then this is not required.</dd>
+<dt><em>smooth</em>: [ integer | tuple ]</dt>
+<dd>Default smoothing scale is 3 pixels across. User can define
+whether they want an NxN kernel (integer), or NxM kernel
+(tuple). This argument corresponds to the &#8216;gauss&#8217; and &#8216;box&#8217;
+smoothing kernels.</dd>
+<dt><em>kernel</em>: [ &#8216;gauss&#8217; | &#8216;box&#8217; | numpy.array]</dt>
+<dd>Default kernel used for smoothing is &#8216;gauss&#8217;. The user can
+specify if they would prefer &#8216;gauss&#8217;, &#8216;box&#8217;, or a custom
+kernel. All kernels are normalized to ensure flux retention.</dd>
 </dl>
 <p>Additional keyword arguments (such as alpha, linewidths, or
 linestyles) will be passed on directly to matplotlib&#8217;s contour or
 contourf methods. For more information on these additional
 arguments, see the <em>Optional keyword arguments</em> sections in the
 documentation for <a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.contour">contour</a> and <a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.contourf">contourf</a>.</p>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.save">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">save</tt><big>(</big><em>filename</em>, <em>dpi=None</em>, <em>transparent=False</em>, <em>adjust_bbox=True</em>, <em>max_dpi=300</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the current figure to a file</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>filename</em>: [ string ]</dt>
+<dd>The name of the file to save the plot to. This can be
+for example a PS, EPS, PDF, PNG, JPEG, or SVG file.</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>dpi</em>: [ float ]</dt>
+<dd>The output resolution, in dots per inch. If the output file
+is a vector graphics format (such as PS, EPS, PDF or SVG) only
+the image itself will be rasterized. If the output is a PS or
+EPS file and no dpi is specified, the dpi is automatically
+calculated to match the resolution of the image. If this value is
+larger than max_dpi, then dpi is set to max_dpi.</dd>
+<dt><em>transparent</em>: [ True | False ]</dt>
+<dd>Whether to preserve transparency</dd>
+<dt><em>adjust_bbox</em>: [ True | False ]</dt>
+<dd>Auto-adjust the bounding box for the output</dd>
+<dt><em>max_dpi</em>: [ float ]</dt>
+<dd>The maximum resolution to output images at. If no maximum is
+wanted, enter None or 0.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+</div>
+<div class="section" id="labels">
+<h2>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.add_label">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">add_label</tt><big>(</big><em>x</em>, <em>y</em>, <em>text</em>, <em>relative=False</em>, <em>color='black'</em>, <em>family=None</em>, <em>style=None</em>, <em>variant=None</em>, <em>stretch=None</em>, <em>weight=None</em>, <em>size=None</em>, <em>fontproperties=None</em>, <em>horizontalalignment='center'</em>, <em>verticalalignment='center'</em>, <em>layer=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.add_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a text label</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>x, y</em>: [ float ]</dt>
+<dd>Coordinates of the text label</dd>
+<dt><em>text</em>: [ string ]</dt>
+<dd>The label</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>relative</em>: [ True | False ]</dt>
+<dd>Whether the coordinates are to be interpreted as world
+coordinates (e.g. RA/Dec or longitude/latitude), or
+coordinates relative to the axes (where 0.0 is left or bottom
+and 1.0 is right or top).</dd>
+<dt><em>family</em>:</dt>
+<dd>The family of the font to use. This can either be a generic font
+family name, either &#8216;serif&#8217;, &#8216;sans-serif&#8217;, &#8216;cursive&#8217;, &#8216;fantasy&#8217;, or
+&#8216;monospace&#8217;, or a list of font names in decreasing order of priority.</dd>
+<dt><em>style</em>:</dt>
+<dd>The font style. This can be &#8216;normal&#8217;, &#8216;italic&#8217; or &#8216;oblique&#8217;.</dd>
+<dt><em>variant</em>:</dt>
+<dd>The font variant. This can be &#8216;normal&#8217; or &#8216;small-caps&#8217;</dd>
+<dt><em>stretch</em>:</dt>
+<dd>The stretching (spacing between letters) for the font. This can either
+be a numeric value in the range 0-1000 or one of &#8216;ultra-condensed&#8217;,
+&#8216;extra-condensed&#8217;, &#8216;condensed&#8217;, &#8216;semi-condensed&#8217;, &#8216;normal&#8217;,
+&#8216;semi-expanded&#8217;, &#8216;expanded&#8217;, &#8216;extra-expanded&#8217; or &#8216;ultra-expanded&#8217;.</dd>
+<dt><em>weight</em>:</dt>
+<dd>The weight (or boldness) of the font. This can either be a numeric
+value in the range 0-1000 or one of &#8216;ultralight&#8217;, &#8216;light&#8217;, &#8216;normal&#8217;,
+&#8216;regular&#8217;, &#8216;book&#8217;, &#8216;medium&#8217;, &#8216;roman&#8217;, &#8216;semibold&#8217;, &#8216;demibold&#8217;, &#8216;demi&#8217;,
+&#8216;bold&#8217;, &#8216;heavy&#8217;, &#8216;extra bold&#8217;, &#8216;black&#8217;.</dd>
+<dt><em>size</em>:</dt>
+<dd>The size of the font. This can either be a numeric value (e.g.
+12), giving the size in points, or one of &#8216;xx-small&#8217;, &#8216;x-small&#8217;,
+&#8216;small&#8217;, &#8216;medium&#8217;, &#8216;large&#8217;, &#8216;x-large&#8217;, or &#8216;xx-large&#8217;.</dd>
+</dl>
 </blockquote>
 </dd></dl>
 
@@ -483,7 +504,7 @@ see the <em>Optional keyword arguments</em> sections in the documentation for
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_circles">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_circles</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>r</em>, <em>layer=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_circles" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_circles</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>radius</em>, <em>layer=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_circles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlay circles on the current plot.</p>
 <p>Required arguments:</p>
 <blockquote>
@@ -492,7 +513,7 @@ see the <em>Optional keyword arguments</em> sections in the documentation for
 <dd>The x postions of the circles (in world coordinates)</dd>
 <dt><em>yw</em>: [ list | numpy.ndarray ]</dt>
 <dd>The y positions of the circles (in world coordinates)</dd>
-<dt><em>r</em>: [integer | float | list | numpy.ndarray ]</dt>
+<dt><em>radius</em>: [integer | float | list | numpy.ndarray ]</dt>
 <dd>The radii of the circles in degrees</dd>
 </dl>
 </blockquote>
@@ -506,9 +527,9 @@ replacing existing layers.</dd>
 </dl>
 </blockquote>
 <p>Additional keyword arguments (such as facecolor, edgecolor, alpha,
-or linewidth) can be used to control the appearance of the
-circles, which are instances of the matplotlib Circle class. For
-more information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Circle">Circle</a>.</p>
+or linewidth) can be used to control the appearance of the circles,
+which are instances of the matplotlib Circle class. For more
+information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Circle">Circle</a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -541,9 +562,9 @@ replacing existing layers.</dd>
 </dl>
 </blockquote>
 <p>Additional keyword arguments (such as facecolor, edgecolor, alpha,
-or linewidth) can be used to control the appearance of the
-ellipses, which are instances of the matplotlib Ellipse class. For
-more information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Ellipse">Ellipse</a>.</p>
+or linewidth) can be used to control the appearance of the ellipses,
+which are instances of the matplotlib Ellipse class. For more
+information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Ellipse">Ellipse</a>.</p>
 </dd></dl>
 
 <dl class="method">
@@ -579,347 +600,13 @@ For more information on available arguments, see <a class="reference external" h
 </dd></dl>
 
 </div>
-<div class="section" id="frame">
-<h2>Frame<a class="headerlink" href="#frame" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_frame_color">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_frame_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_frame_color" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set color of the frame</p>
-<p>Required arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>color</em>:</dt>
-<dd>The color to use for the frame.</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-</div>
-<div class="section" id="ticks">
-<h2>Ticks<a class="headerlink" href="#ticks" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_tick_xspacing">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_xspacing</tt><big>(</big><em>xspacing</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_xspacing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the x-axis tick spacing</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>xspacing</em>: [ float | &#8216;auto&#8217; ]</dt>
-<dd>The spacing of the ticks on the x-axis, in degrees. To set
-the tick spacing to be automatically determined, set this to &#8216;auto&#8217;</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_tick_yspacing">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_yspacing</tt><big>(</big><em>yspacing</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_yspacing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the y-axis tick spacing</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>yspacing</em>: [ float | &#8216;auto&#8217; ]</dt>
-<dd>The spacing of the ticks on the y-axis, in degrees. To set
-the tick spacing to be automatically determined, set this to &#8216;auto&#8217;</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_tick_color">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_color" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the tick color</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>color</em>: [ string ]</dt>
-<dd>The color of the ticks</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_tick_size">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_size</tt><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the tick size</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>size</em>: [ float ]</dt>
-<dd>The size of the ticks (in points)</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-</div>
-<div class="section" id="tick-labels">
-<h2>Tick labels<a class="headerlink" href="#tick-labels" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="aplpy.FITSFigure.show_tick_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_tick_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_tick_labels" title="Permalink to this definition">¶</a></dt>
-<dd>Show the tick labels</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.hide_tick_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_tick_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_tick_labels" title="Permalink to this definition">¶</a></dt>
-<dd>Hide the tick labels</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.show_xtick_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_xtick_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_xtick_labels" title="Permalink to this definition">¶</a></dt>
-<dd>Show the x-axis tick labels</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.hide_xtick_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_xtick_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_xtick_labels" title="Permalink to this definition">¶</a></dt>
-<dd>Hide the x-axis tick labels</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.show_ytick_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_ytick_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_ytick_labels" title="Permalink to this definition">¶</a></dt>
-<dd>Show the y-axis tick labels</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.hide_ytick_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_ytick_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_ytick_labels" title="Permalink to this definition">¶</a></dt>
-<dd>Hide the y-axis tick labels</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_tick_labels_format">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_format</tt><big>(</big><em>xformat=None</em>, <em>yformat=None</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_format" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the format of the tick labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<p><em>xformat</em>: [ string ]</p>
-<p><em>yformat</em>: [ string ]</p>
-<blockquote>
-<p>The x and y formats for the tick labels. These can be:</p>
-<blockquote>
-<ul class="simple">
-<li><tt class="docutils literal"><span class="pre">ddd.ddddd</span></tt> - decimal degrees, where the number of decimal places can be varied</li>
-<li><tt class="docutils literal"><span class="pre">hh</span></tt> or <tt class="docutils literal"><span class="pre">dd</span></tt> - hours (or degrees)</li>
-<li><tt class="docutils literal"><span class="pre">hh:mm</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm</span></tt> - hours and minutes (or degrees and arcminutes)</li>
-<li><tt class="docutils literal"><span class="pre">hh:mm:ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds)</li>
-<li><tt class="docutils literal"><span class="pre">hh:mm:ss.ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss.ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds), where the number of decimal places can be varied.</li>
-</ul>
-</blockquote>
-<p>If one of these arguments is not specified, the format for that axis
-is left unchanged.</p>
-</blockquote>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_tick_labels_style">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_style</tt><big>(</big><em>style</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_style" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the format of the x-axis tick labels</p>
-<p>Required Arguments:</p>
-<blockquote>
-<p><em>style</em>: [ &#8216;colons&#8217; | &#8216;plain&#8217; | &#8216;latex&#8217; ]</p>
-<blockquote>
-<p>How to style the tick labels:</p>
-<p>&#8216;colons&#8217; uses colons as separators, for example
-31:41:59.26 +27:18:28.1</p>
-<p>&#8216;plain&#8217; uses plain letters as separators, for example
-31:41:59.26 +27:18:28.1</p>
-<p>&#8216;latex&#8217; uses superscripts, and typesets the labels
-with LaTeX. To decide whether to use the matplotlib
-internal LaTeX engine or a real LaTeX installation, use
-the set_labels_latex() method.</p>
-</blockquote>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_tick_labels_font">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_tick_labels_font</tt><big>(</big><em>size=None</em>, <em>weight=None</em>, <em>family=None</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_tick_labels_font" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the size of the tick labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<p>Default values for size/weight/family are set by matplotlib
-or previously set values if set_tick_labels_font has
-already been called. Global default values can be set by
-editing the matplotlibrc file.</p>
-<dl class="docutils">
-<dt><em>size</em>: [ size in points | xx-small | x-small | small |</dt>
-<dd><blockquote class="first">
-medium | large | x-large | xx-large ]</blockquote>
-<p class="last">The size of the numeric tick labels.</p>
-</dd>
-<dt><em>weight</em>: [ a numeric value in range 0-1000 | ultralight |</dt>
-<dd><blockquote class="first">
-light | normal | regular | book | medium |
-roman | semibold | demibold | demi | bold |
-heavy | extra bold | black ]</blockquote>
-<p class="last">The weight of the numeric tick labels.</p>
-</dd>
-</dl>
-<p><em>family</em>: [ serif | sans-serif | cursive | fantasy | monospace ]</p>
-<blockquote>
-The font family of the numeric tick labels.</blockquote>
-</blockquote>
-</dd></dl>
-
-</div>
-<div class="section" id="axis-labels">
-<h2>Axis labels<a class="headerlink" href="#axis-labels" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="aplpy.FITSFigure.show_axis_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_axis_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_axis_labels" title="Permalink to this definition">¶</a></dt>
-<dd>Show the axis labels</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.hide_axis_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_axis_labels</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_axis_labels" title="Permalink to this definition">¶</a></dt>
-<dd>Hide the axis labels</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.show_xaxis_label">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_xaxis_label</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_xaxis_label" title="Permalink to this definition">¶</a></dt>
-<dd>Show the x-axis labels</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.hide_xaxis_label">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_xaxis_label</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_xaxis_label" title="Permalink to this definition">¶</a></dt>
-<dd>Hide the x-axis labels</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.show_yaxis_label">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_yaxis_label</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_yaxis_label" title="Permalink to this definition">¶</a></dt>
-<dd>Show the y-axis labels</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.hide_yaxis_label">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_yaxis_label</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_yaxis_label" title="Permalink to this definition">¶</a></dt>
-<dd>Hide the y-axis labels</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_axis_labels">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels</tt><big>(</big><em>xlabel='default'</em>, <em>ylabel='default'</em>, <em>xpad=0</em>, <em>ypad=0</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the axes labels</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>xlabel</em>: [ string ]</dt>
-<dd>The x-axis label. The default is chosen based on the WCS coordinate system.</dd>
-<dt><em>ylabel</em>: [ string ]</dt>
-<dd>The y-axis label. The default is chosen based on the WCS coordinate system.</dd>
-<dt><em>xpad</em>: [ integer ]</dt>
-<dd>Correction to the x label vertical position relative to default position, in points</dd>
-<dt><em>ypad</em>: [ integer ]</dt>
-<dd>Correction to the y label horizontal position relative to default position, in points</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_axis_labels_font">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_axis_labels_font</tt><big>(</big><em>size=None</em>, <em>weight=None</em>, <em>family=None</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_axis_labels_font" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the size of the axis labels</p>
-<p>Default values for size/weight/family are set by matplotlib
-or previously set values if set_axis_labels_font has
-already been called. Global default values can be set by
-editing the matplotlibrc file.</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>size</em>: [ size in points | xx-small | x-small | small |</dt>
-<dd><blockquote class="first">
-medium | large | x-large | xx-large ]</blockquote>
-<p class="last">The size of the axis labels</p>
-</dd>
-<dt><em>weight</em>: [ a numeric value in range 0-1000 | ultralight |</dt>
-<dd><blockquote class="first">
-light | normal | regular | book | medium |
-roman | semibold | demibold | demi | bold |
-heavy | extra bold | black ]</blockquote>
-<p class="last">The weight of the axis labels</p>
-</dd>
-</dl>
-<p><em>family</em>: [ serif | sans-serif | cursive | fantasy | monospace ]</p>
-<blockquote>
-The font family of the axis labels.</blockquote>
-</blockquote>
-</dd></dl>
-
-</div>
-<div class="section" id="coordinate-grid">
-<h2>Coordinate Grid<a class="headerlink" href="#coordinate-grid" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="aplpy.FITSFigure.show_grid">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_grid</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_grid" title="Permalink to this definition">¶</a></dt>
-<dd>Overlay the coordinate grid</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.hide_grid">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_grid</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_grid" title="Permalink to this definition">¶</a></dt>
-<dd>Hide the coordinate grid</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_grid_xspacing">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_xspacing</tt><big>(</big><em>xspacing</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_xspacing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the grid line spacing in the longitudinal direction</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>xspacing</em>: [ float | &#8216;tick&#8217; ]</dt>
-<dd>The spacing in the longitudinal direction, in degrees.
-To set the spacing to be the same as the ticks, set this
-to &#8216;tick&#8217;</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_grid_yspacing">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_yspacing</tt><big>(</big><em>yspacing</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_yspacing" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the grid line spacing in the latitudinal direction</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>yspacing</em>: [ float | &#8216;tick&#8217; ]</dt>
-<dd>The spacing in the latitudinal direction, in degrees.
-To set the spacing to be the same as the ticks, set this
-to &#8216;tick&#8217;</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_grid_color">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_color" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the color of the grid lines</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>color</em>: [ string ]</dt>
-<dd>The color of the grid lines</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_grid_alpha">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_grid_alpha</tt><big>(</big><em>alpha</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_grid_alpha" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the alpha (transparency) of the grid lines</p>
-<p>Required Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>alpha</em>: [ float ]</dt>
-<dd>The alpha value of the grid. This should be a floating
-point value between 0 and 1, where 0 is completely
-transparent, and 1 is completely opaque.</dd>
-</dl>
-</blockquote>
-</dd></dl>
-
-</div>
 <div class="section" id="layers">
 <h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="aplpy.FITSFigure.list_layers">
 <tt class="descclassname">FITSFigure.</tt><tt class="descname">list_layers</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.list_layers" title="Permalink to this definition">¶</a></dt>
-<dd>Print a list of layers to standard output</dd></dl>
+<dd><p>Print a list of layers to standard output</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.remove_layer">
@@ -965,7 +652,7 @@ it can be shown again using show_layer.</p>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.get_layer">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">get_layer</tt><big>(</big><em>layer</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.get_layer" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">get_layer</tt><big>(</big><em>layer</em>, <em>raise_exception=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.get_layer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a layer object</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -977,11 +664,555 @@ it can be shown again using show_layer.</p>
 </dd></dl>
 
 </div>
+<div class="section" id="coordinates">
+<h2>Coordinates<a class="headerlink" href="#coordinates" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.world2pixel">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">world2pixel</tt><big>(</big><em>xw</em>, <em>yw</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.world2pixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert world to pixel coordinates</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>xw</em>: [ scalar | list | numpy array ]</dt>
+<dd>x world coordinate</dd>
+<dt><em>yw</em>: [ scalar | list | numpy array ]</dt>
+<dd>y world coordinate</dd>
+</dl>
+</blockquote>
+<p>Returns the pixel coordinates as a tuple of scalars, lists, or numpy arrays depending on the input</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.pixel2world">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">pixel2world</tt><big>(</big><em>xp</em>, <em>yp</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.pixel2world" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert pixel to world coordinates</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>xp</em>: [ scalar | list | numpy array ]</dt>
+<dd>x pixel coordinate</dd>
+<dt><em>yp</em>: [ scalar | list | numpy array ]</dt>
+<dd>y pixel coordinate</dd>
+</dl>
+</blockquote>
+<p>Returns the world coordinates as a tuple of scalars, lists, or numpy arrays depending on the input</p>
+</dd></dl>
+
+<span class="target" id="module-aplpy.frame"></span></div>
+<div class="section" id="frame">
+<h2>Frame<a class="headerlink" href="#frame" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="aplpy.frame.Frame">
+<em class="property">class </em><tt class="descclassname">aplpy.frame.</tt><tt class="descname">Frame</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#aplpy.frame.Frame" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="aplpy.frame.Frame.set_color">
+<tt class="descname">set_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.frame.Frame.set_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set color of the frame</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>color</em>:</dt>
+<dd>The color to use for the frame.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.frame.Frame.set_linewidth">
+<tt class="descname">set_linewidth</tt><big>(</big><em>linewidth</em><big>)</big><a class="headerlink" href="#aplpy.frame.Frame.set_linewidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set line width of the frame</p>
+<p>Required arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>linewidth</em>:</dt>
+<dd>The linewidth to use for the frame.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aplpy"></span></div>
+<div class="section" id="colorbar">
+<h2>Colorbar<a class="headerlink" href="#colorbar" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.add_colorbar">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">add_colorbar</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.add_colorbar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a colorbar to the current figure</p>
+<p>Once this method has been run, a colorbar attribute becomes
+availble, and can be used to control the aspect of the colorbar:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">aplpy</span><span class="o">.</span><span class="n">FITSFigure</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">add_colorbar</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">set_width</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">set_location</span><span class="p">(</span><span class="s">&#39;top&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.remove_colorbar">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">remove_colorbar</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.remove_colorbar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the colorbar from the current figure</p>
+</dd></dl>
+
+<span class="target" id="module-aplpy.colorbar"></span><dl class="class">
+<dt id="aplpy.colorbar.Colorbar">
+<em class="property">class </em><tt class="descclassname">aplpy.colorbar.</tt><tt class="descname">Colorbar</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="aplpy.colorbar.Colorbar.set_font">
+<tt class="descname">set_font</tt><big>(</big><em>family=None</em>, <em>style=None</em>, <em>variant=None</em>, <em>stretch=None</em>, <em>weight=None</em>, <em>size=None</em>, <em>fontproperties=None</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the font of the tick labels</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>family</em>:</dt>
+<dd>The family of the font to use. This can either be a generic font
+family name, either &#8216;serif&#8217;, &#8216;sans-serif&#8217;, &#8216;cursive&#8217;, &#8216;fantasy&#8217;, or
+&#8216;monospace&#8217;, or a list of font names in decreasing order of priority.</dd>
+<dt><em>style</em>:</dt>
+<dd>The font style. This can be &#8216;normal&#8217;, &#8216;italic&#8217; or &#8216;oblique&#8217;.</dd>
+<dt><em>variant</em>:</dt>
+<dd>The font variant. This can be &#8216;normal&#8217; or &#8216;small-caps&#8217;</dd>
+<dt><em>stretch</em>:</dt>
+<dd>The stretching (spacing between letters) for the font. This can either
+be a numeric value in the range 0-1000 or one of &#8216;ultra-condensed&#8217;,
+&#8216;extra-condensed&#8217;, &#8216;condensed&#8217;, &#8216;semi-condensed&#8217;, &#8216;normal&#8217;,
+&#8216;semi-expanded&#8217;, &#8216;expanded&#8217;, &#8216;extra-expanded&#8217; or &#8216;ultra-expanded&#8217;.</dd>
+<dt><em>weight</em>:</dt>
+<dd>The weight (or boldness) of the font. This can either be a numeric
+value in the range 0-1000 or one of &#8216;ultralight&#8217;, &#8216;light&#8217;, &#8216;normal&#8217;,
+&#8216;regular&#8217;, &#8216;book&#8217;, &#8216;medium&#8217;, &#8216;roman&#8217;, &#8216;semibold&#8217;, &#8216;demibold&#8217;, &#8216;demi&#8217;,
+&#8216;bold&#8217;, &#8216;heavy&#8217;, &#8216;extra bold&#8217;, &#8216;black&#8217;.</dd>
+<dt><em>size</em>:</dt>
+<dd>The size of the font. This can either be a numeric value (e.g.
+12), giving the size in points, or one of &#8216;xx-small&#8217;, &#8216;x-small&#8217;,
+&#8216;small&#8217;, &#8216;medium&#8217;, &#8216;large&#8217;, &#8216;x-large&#8217;, or &#8216;xx-large&#8217;.</dd>
+</dl>
+</blockquote>
+<p>Default values are set by matplotlib or previously set values if
+set_font has already been called. Global default values can be set by
+editing the matplotlibrc file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.colorbar.Colorbar.set_frame_color">
+<tt class="descname">set_frame_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_frame_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the color of the colorbar frame, in points</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.colorbar.Colorbar.set_frame_linewidth">
+<tt class="descname">set_frame_linewidth</tt><big>(</big><em>linewidth</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_frame_linewidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the linewidth of the colorbar frame, in points</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.colorbar.Colorbar.set_location">
+<tt class="descname">set_location</tt><big>(</big><em>location</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the location of the colorbar. Should be one of &#8216;left&#8217;, &#8216;right&#8217;, &#8216;top&#8217;, &#8216;bottom&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.colorbar.Colorbar.set_pad">
+<tt class="descname">set_pad</tt><big>(</big><em>pad</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_pad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the spacing between the colorbar and the image relative to the canvas size.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.colorbar.Colorbar.set_width">
+<tt class="descname">set_width</tt><big>(</big><em>width</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the width of the colorbar relative to the canvas size.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.colorbar.Colorbar.show">
+<tt class="descname">show</tt><big>(</big><em>location='right'</em>, <em>width=0.20000000000000001</em>, <em>pad=0.050000000000000003</em>, <em>ticks=None</em>, <em>labels=True</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a colorbar on the side of the image.</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>location</em>: [ string ]</dt>
+<dd>Where to place the colorbar. Should be one of &#8216;left&#8217;, &#8216;right&#8217;, &#8216;top&#8217;, &#8216;bottom&#8217;.</dd>
+<dt><em>width</em>: [ float ]</dt>
+<dd>The width of the colorbar relative to the canvas size.</dd>
+<dt><em>pad</em>: [ float ]</dt>
+<dd>The spacing between the colorbar and the image relative to the canvas size.</dd>
+<dt><em>ticks</em>: [ None or list ]</dt>
+<dd>The position of the ticks on the colorbar.</dd>
+<dt><em>labels</em>: [ True or False ]</dt>
+<dd>Whether to show numerical labels.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aplpy"></span></div>
+<div class="section" id="coordinate-grid">
+<h2>Coordinate Grid<a class="headerlink" href="#coordinate-grid" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.add_grid">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">add_grid</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.add_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a coordinate to the current figure</p>
+<p>Once this method has been run, a grid attribute becomes availble,
+and can be used to control the aspect of the grid:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">aplpy</span><span class="o">.</span><span class="n">FITSFigure</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">add_grid</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;white&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.remove_grid">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">remove_grid</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.remove_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the grid from the current figure</p>
+</dd></dl>
+
+<span class="target" id="module-aplpy.grid"></span><dl class="class">
+<dt id="aplpy.grid.Grid">
+<em class="property">class </em><tt class="descclassname">aplpy.grid.</tt><tt class="descname">Grid</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#aplpy.grid.Grid" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="aplpy.grid.Grid.set_alpha">
+<tt class="descname">set_alpha</tt><big>(</big><em>alpha</em><big>)</big><a class="headerlink" href="#aplpy.grid.Grid.set_alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the alpha (transparency) of the grid lines</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>alpha</em>: [ float ]</dt>
+<dd>The alpha value of the grid. This should be a floating
+point value between 0 and 1, where 0 is completely
+transparent, and 1 is completely opaque.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.grid.Grid.set_color">
+<tt class="descname">set_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.grid.Grid.set_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the color of the grid lines</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>color</em>: [ string ]</dt>
+<dd>The color of the grid lines</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.grid.Grid.set_xspacing">
+<tt class="descname">set_xspacing</tt><big>(</big><em>xspacing</em><big>)</big><a class="headerlink" href="#aplpy.grid.Grid.set_xspacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the grid line spacing in the longitudinal direction</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>xspacing</em>: [ float | &#8216;tick&#8217; ]</dt>
+<dd>The spacing in the longitudinal direction, in degrees.
+To set the spacing to be the same as the ticks, set this
+to &#8216;tick&#8217;</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.grid.Grid.set_yspacing">
+<tt class="descname">set_yspacing</tt><big>(</big><em>yspacing</em><big>)</big><a class="headerlink" href="#aplpy.grid.Grid.set_yspacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the grid line spacing in the latitudinal direction</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>yspacing</em>: [ float | &#8216;tick&#8217; ]</dt>
+<dd>The spacing in the latitudinal direction, in degrees.
+To set the spacing to be the same as the ticks, set this
+to &#8216;tick&#8217;</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aplpy"></span></div>
+<div class="section" id="scalebar">
+<h2>Scalebar<a class="headerlink" href="#scalebar" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.add_scalebar">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">add_scalebar</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.add_scalebar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a scalebar to the current figure</p>
+<p>Once this method has been run, a scalebar attribute becomes
+availble, and can be used to control the aspect of the scalebar:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">aplpy</span><span class="o">.</span><span class="n">FITSFigure</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">add_scalebar</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_length</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s">&#39;100 AU&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.remove_scalebar">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">remove_scalebar</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.remove_scalebar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the scalebar from the current figure</p>
+</dd></dl>
+
+<span class="target" id="module-aplpy.overlays"></span><dl class="class">
+<dt id="aplpy.overlays.ScaleBar">
+<em class="property">class </em><tt class="descclassname">aplpy.overlays.</tt><tt class="descname">ScaleBar</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="aplpy.overlays.ScaleBar.hide">
+<tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the scalebar.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.ScaleBar.set">
+<tt class="descname">set</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the scalebar and scalebar properties. All arguments are passed
+to the matplotlib Rectangle and Text classes. See the matplotlib
+documentation for more details. In cases where the same argument
+exists for the two objects, the argument is passed to both the Text
+and Rectangle instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.ScaleBar.set_alpha">
+<tt class="descname">set_alpha</tt><big>(</big><em>alpha</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.set_alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the alpha value (transparency). This should be a floating point
+value between 0 and 1.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.ScaleBar.set_color">
+<tt class="descname">set_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.set_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the label and scalebar color.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.ScaleBar.set_corner">
+<tt class="descname">set_corner</tt><big>(</big><em>corner</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.set_corner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set where to place the scalebar. Acceptable values are &#8216;left&#8217;,&#8217;right&#8217;,
+&#8216;top&#8217;, &#8216;bottom&#8217;, &#8216;top left&#8217;, &#8216;top right&#8217;, &#8216;bottom left&#8217; (default), and
+&#8216;bottom right&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.ScaleBar.set_font">
+<tt class="descname">set_font</tt><big>(</big><em>family=None</em>, <em>style=None</em>, <em>variant=None</em>, <em>stretch=None</em>, <em>weight=None</em>, <em>size=None</em>, <em>fontproperties=None</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.set_font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the font of the tick labels</p>
+<p>Optional Keyword Arguments:</p>
+<p>common: family, style, variant, stretch, weight, size, fontproperties</p>
+<p>Default values are set by matplotlib or previously set values if
+set_font has already been called. Global default values can be set by
+editing the matplotlibrc file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.ScaleBar.set_frame">
+<tt class="descname">set_frame</tt><big>(</big><em>frame</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.set_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether to display a frame around the scalebar.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.ScaleBar.set_label">
+<tt class="descname">set_label</tt><big>(</big><em>label</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.set_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the label of the scale bar.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.ScaleBar.set_length">
+<tt class="descname">set_length</tt><big>(</big><em>length</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.set_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the length of the scale bar, in degrees.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.ScaleBar.set_linestyle">
+<tt class="descname">set_linestyle</tt><big>(</big><em>linestyle</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.set_linestyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the linestyle of the scalebar. Should be one of &#8216;solid&#8217;, &#8216;dashed&#8217;,
+&#8216;dashdot&#8217;, or &#8216;dotted&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.ScaleBar.set_linewidth">
+<tt class="descname">set_linewidth</tt><big>(</big><em>linewidth</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.set_linewidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the linewidth of the scalebar, in points.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.ScaleBar.show">
+<tt class="descname">show</tt><big>(</big><em>length</em>, <em>label=None</em>, <em>corner='bottom right'</em>, <em>frame=False</em>, <em>borderpad=0.40000000000000002</em>, <em>pad=0.5</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlay a scale bar on the image.</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>length</em>:[ float ]</dt>
+<dd>The length of the scalebar, in degrees</dd>
+</dl>
+</blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>label</em>: [ string ]</dt>
+<dd>Label to place below the scalebar</dd>
+<dt><em>corner</em>: [ integer ]</dt>
+<dd>Where to place the scalebar. Acceptable values are:, &#8216;left&#8217;,
+&#8216;right&#8217;, &#8216;top&#8217;, &#8216;bottom&#8217;, &#8216;top left&#8217;, &#8216;top right&#8217;, &#8216;bottom
+left&#8217; (default), &#8216;bottom right&#8217;</dd>
+<dt><em>frame</em>: [ True | False ]</dt>
+<dd>Whether to display a frame behind the scalebar (default is False)</dd>
+</dl>
+</blockquote>
+<p>Advanced:</p>
+<blockquote>
+Additional arguments are passed to the matplotlib Rectangle and
+Text classes. See the matplotlib documentation for more details.
+In cases where the same argument exists for the two objects, the
+argument is passed to both the Text and Rectangle instance.</blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aplpy"></span></div>
 <div class="section" id="beam">
 <h2>Beam<a class="headerlink" href="#beam" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
-<dt id="aplpy.FITSFigure.show_beam">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_beam</tt><big>(</big><em>major='BMAJ'</em>, <em>minor='BMIN'</em>, <em>angle='BPA'</em>, <em>corner=3</em>, <em>frame=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_beam" title="Permalink to this definition">¶</a></dt>
+<dt id="aplpy.FITSFigure.add_beam">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">add_beam</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.add_beam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a beam to the current figure</p>
+<p>Once this method has been run, a beam attribute becomes availble,
+and can be used to control the aspect of the beam:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">aplpy</span><span class="o">.</span><span class="n">FITSFigure</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">add_beam</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;white&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_hatch</span><span class="p">(</span><span class="s">&#39;+&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.remove_beam">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">remove_beam</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.remove_beam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the beam from the current figure</p>
+</dd></dl>
+
+<span class="target" id="module-aplpy.overlays"></span><dl class="class">
+<dt id="aplpy.overlays.Beam">
+<em class="property">class </em><tt class="descclassname">aplpy.overlays.</tt><tt class="descname">Beam</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="aplpy.overlays.Beam.hide">
+<tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the beam</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set">
+<tt class="descname">set</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modify the beam properties. All arguments are passed to the matplotlib
+Ellipse classe. See the matplotlib documentation for more details.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_alpha">
+<tt class="descname">set_alpha</tt><big>(</big><em>alpha</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the alpha value (transparency). This should be a floating point
+value between 0 and 1.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_angle">
+<tt class="descname">set_angle</tt><big>(</big><em>angle</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the position angle of the beam on the sky in degrees.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_borderpad">
+<tt class="descname">set_borderpad</tt><big>(</big><em>borderpad</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_borderpad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the amount of padding within the beam object, relative to the
+canvas size.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_color">
+<tt class="descname">set_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the beam color.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_corner">
+<tt class="descname">set_corner</tt><big>(</big><em>corner</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_corner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the beam location. Acceptable values are &#8216;left&#8217;,&#8217;right&#8217;, &#8216;top&#8217;,
+&#8216;bottom&#8217;, &#8216;top left&#8217;, &#8216;top right&#8217;, &#8216;bottom left&#8217; (default), and
+&#8216;bottom right&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_edgecolor">
+<tt class="descname">set_edgecolor</tt><big>(</big><em>edgecolor</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_edgecolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the color for the edge of the beam.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_facecolor">
+<tt class="descname">set_facecolor</tt><big>(</big><em>facecolor</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_facecolor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the color for the interior of the beam.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_frame">
+<tt class="descname">set_frame</tt><big>(</big><em>frame</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether to display a frame around the beam.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_hatch">
+<tt class="descname">set_hatch</tt><big>(</big><em>hatch</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_hatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the hatch pattern. This should be one of &#8216;/&#8217;, &#8216;&#8217;, &#8216;|&#8217;, &#8216;-&#8216;, &#8216;+&#8217;,
+&#8216;x&#8217;, &#8216;o&#8217;, &#8216;O&#8217;, &#8216;.&#8217;, or &#8216;*&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_linestyle">
+<tt class="descname">set_linestyle</tt><big>(</big><em>linestyle</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_linestyle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the line style for the edge of the beam. This should be one of
+&#8216;solid&#8217;, &#8216;dashed&#8217;, &#8216;dashdot&#8217;, or &#8216;dotted&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_linewidth">
+<tt class="descname">set_linewidth</tt><big>(</big><em>linewidth</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_linewidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the line width for the edge of the beam, in points.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_major">
+<tt class="descname">set_major</tt><big>(</big><em>major</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_major" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the major axis of the beam, in degrees.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_minor">
+<tt class="descname">set_minor</tt><big>(</big><em>minor</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_minor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the minor axis of the beam, in degrees.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.set_pad">
+<tt class="descname">set_pad</tt><big>(</big><em>pad</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_pad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the amount of padding between the beam object and the image
+corner/edge, relative to the canvas size.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.overlays.Beam.show">
+<tt class="descname">show</tt><big>(</big><em>major='BMAJ'</em>, <em>minor='BMIN'</em>, <em>angle='BPA'</em>, <em>corner='bottom left'</em>, <em>frame=False</em>, <em>borderpad=0.40000000000000002</em>, <em>pad=0.5</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.show" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the beam shape and size for the primary image</p>
 <p>By default, this method will search for the BMAJ, BMIN, and BPA
 keywords in the FITS header to set the major and minor axes and the
@@ -995,106 +1226,342 @@ position angle on the sky.</p>
 <dd>Minor axis of the beam in degrees (overrides BMIN if present)</dd>
 <dt><em>angle</em>: [ float ]</dt>
 <dd>Position angle of the beam on the sky in degrees (overrides
-BPA if present)</dd>
+BPA if present) in the anticlockwise direction.</dd>
 <dt><em>corner</em>: [ integer ]</dt>
-<dd>Where to place the beam. Acceptable values are:
-1: top right
-2: top left
-3: bottom left (default)
-4: bottom right
-5: center right
-6: center left
-7: center right (same as 5)
-8: bottom center
-9: top center</dd>
+<dd>The beam location. Acceptable values are &#8216;left&#8217;,&#8217;right&#8217;,
+&#8216;top&#8217;, &#8216;bottom&#8217;, &#8216;top left&#8217;, &#8216;top right&#8217;, &#8216;bottom left&#8217;
+(default), and &#8216;bottom right&#8217;.</dd>
 <dt><em>frame</em>: [ True | False ]</dt>
 <dd>Whether to display a frame behind the beam (default is False)</dd>
 </dl>
-<p>Additional keyword arguments can be used to control the appearance
-of the beam, which is an instance of the matplotlib Ellipse class.
-For more information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Ellipse">Ellipse</a>.</p>
 </blockquote>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.hide_beam">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_beam</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_beam" title="Permalink to this definition">¶</a></dt>
-<dd>Hide the beam</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_beam_properties">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_beam_properties</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_beam_properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>Modify the beam properties</p>
-<p>All arguments are passed to the beam, which is an instance of the
-matplotlib Ellipse class. For more information on available arguments,
-see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Ellipse">Ellipse</a>.</p>
-</dd></dl>
-
-</div>
-<div class="section" id="scalebar">
-<h2>Scalebar<a class="headerlink" href="#scalebar" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="aplpy.FITSFigure.show_scalebar">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_scalebar</tt><big>(</big><em>length</em>, <em>label=None</em>, <em>corner=4</em>, <em>frame=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_scalebar" title="Permalink to this definition">¶</a></dt>
-<dd><p>Display a scalebar</p>
-<p>Required Arguments:</p>
+<p>Advanced:</p>
 <blockquote>
-<dl class="docutils">
-<dt><em>length</em>:[ float ]</dt>
-<dd>The length of the scalebar, in degrees</dd>
-</dl>
-</blockquote>
+Additional arguments are passed to the matplotlib Ellipse classe.
+See the matplotlib documentation for more details.</blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aplpy.axis_labels"></span></div>
+<div class="section" id="axis-labels">
+<h2>Axis labels<a class="headerlink" href="#axis-labels" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="aplpy.axis_labels.AxisLabels">
+<em class="property">class </em><tt class="descclassname">aplpy.axis_labels.</tt><tt class="descname">AxisLabels</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.hide">
+<tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the x- and y-axis labels</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.hide_x">
+<tt class="descname">hide_x</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.hide_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the x-axis label</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.hide_y">
+<tt class="descname">hide_y</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.hide_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the y-axis label</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.set_font">
+<tt class="descname">set_font</tt><big>(</big><em>family=None</em>, <em>style=None</em>, <em>variant=None</em>, <em>stretch=None</em>, <em>weight=None</em>, <em>size=None</em>, <em>fontproperties=None</em><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.set_font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the font of the axis labels</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
 <dl class="docutils">
-<dt><em>label</em>: [ string ]</dt>
-<dd>Label to place above the scalebar</dd>
-<dt><em>corner</em>: [ integer ]</dt>
-<dd>Where to place the scalebar. Acceptable values are:
-1: top right
-2: top left
-3: bottom left (default)
-4: bottom right
-5: center right
-6: center left
-7: center right (same as 5)
-8: bottom center
-9: top center</dd>
-<dt><em>frame</em>: [ True | False ]</dt>
-<dd>Whether to display a frame behind the scalebar (default is False)</dd>
+<dt><em>family</em>:</dt>
+<dd>The family of the font to use. This can either be a generic font
+family name, either &#8216;serif&#8217;, &#8216;sans-serif&#8217;, &#8216;cursive&#8217;, &#8216;fantasy&#8217;, or
+&#8216;monospace&#8217;, or a list of font names in decreasing order of priority.</dd>
+<dt><em>style</em>:</dt>
+<dd>The font style. This can be &#8216;normal&#8217;, &#8216;italic&#8217; or &#8216;oblique&#8217;.</dd>
+<dt><em>variant</em>:</dt>
+<dd>The font variant. This can be &#8216;normal&#8217; or &#8216;small-caps&#8217;</dd>
+<dt><em>stretch</em>:</dt>
+<dd>The stretching (spacing between letters) for the font. This can either
+be a numeric value in the range 0-1000 or one of &#8216;ultra-condensed&#8217;,
+&#8216;extra-condensed&#8217;, &#8216;condensed&#8217;, &#8216;semi-condensed&#8217;, &#8216;normal&#8217;,
+&#8216;semi-expanded&#8217;, &#8216;expanded&#8217;, &#8216;extra-expanded&#8217; or &#8216;ultra-expanded&#8217;.</dd>
+<dt><em>weight</em>:</dt>
+<dd>The weight (or boldness) of the font. This can either be a numeric
+value in the range 0-1000 or one of &#8216;ultralight&#8217;, &#8216;light&#8217;, &#8216;normal&#8217;,
+&#8216;regular&#8217;, &#8216;book&#8217;, &#8216;medium&#8217;, &#8216;roman&#8217;, &#8216;semibold&#8217;, &#8216;demibold&#8217;, &#8216;demi&#8217;,
+&#8216;bold&#8217;, &#8216;heavy&#8217;, &#8216;extra bold&#8217;, &#8216;black&#8217;.</dd>
+<dt><em>size</em>:</dt>
+<dd>The size of the font. This can either be a numeric value (e.g.
+12), giving the size in points, or one of &#8216;xx-small&#8217;, &#8216;x-small&#8217;,
+&#8216;small&#8217;, &#8216;medium&#8217;, &#8216;large&#8217;, &#8216;x-large&#8217;, or &#8216;xx-large&#8217;.</dd>
 </dl>
-<p>Additional keyword arguments can be used to control the appearance
-of the scalebar, which is made up of an instance of the matplotlib
-Rectangle class and a an instance of the Text class. For more
-information on available arguments, see</p>
-<p><a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Rectangle">Rectangle</a></p>
-<p>and</p>
-<p><cite>Text &lt;http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.text.Text&gt;`_</cite>.</p>
-<p>In cases where the same argument exists for the two objects, the
-argument is passed to both the Text and Rectangle instance</p>
+</blockquote>
+<p>Default values are set by matplotlib or previously set values if
+set_font has already been called. Global default values can be set by
+editing the matplotlibrc file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.set_xpad">
+<tt class="descname">set_xpad</tt><big>(</big><em>pad</em><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.set_xpad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the x-axis label displacement, in points</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.set_xtext">
+<tt class="descname">set_xtext</tt><big>(</big><em>label</em><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.set_xtext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the x-axis label text</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.set_ypad">
+<tt class="descname">set_ypad</tt><big>(</big><em>pad</em><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.set_ypad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the x-axis label displacement, in points</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.set_ytext">
+<tt class="descname">set_ytext</tt><big>(</big><em>label</em><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.set_ytext" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the y-axis label text</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.show">
+<tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the x- and y-axis labels</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.show_x">
+<tt class="descname">show_x</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.show_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the x-axis label</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.show_y">
+<tt class="descname">show_y</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.show_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the y-axis label</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aplpy.labels"></span></div>
+<div class="section" id="tick-labels">
+<h2>Tick labels<a class="headerlink" href="#tick-labels" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="aplpy.labels.TickLabels">
+<em class="property">class </em><tt class="descclassname">aplpy.labels.</tt><tt class="descname">TickLabels</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="aplpy.labels.TickLabels.hide">
+<tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the x- and y-axis tick labels</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.labels.TickLabels.hide_x">
+<tt class="descname">hide_x</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.hide_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the x-axis tick labels</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.labels.TickLabels.hide_y">
+<tt class="descname">hide_y</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.hide_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the y-axis tick labels</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.labels.TickLabels.set_font">
+<tt class="descname">set_font</tt><big>(</big><em>family=None</em>, <em>style=None</em>, <em>variant=None</em>, <em>stretch=None</em>, <em>weight=None</em>, <em>size=None</em>, <em>fontproperties=None</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the font of the tick labels</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>family</em>:</dt>
+<dd>The family of the font to use. This can either be a generic font
+family name, either &#8216;serif&#8217;, &#8216;sans-serif&#8217;, &#8216;cursive&#8217;, &#8216;fantasy&#8217;, or
+&#8216;monospace&#8217;, or a list of font names in decreasing order of priority.</dd>
+<dt><em>style</em>:</dt>
+<dd>The font style. This can be &#8216;normal&#8217;, &#8216;italic&#8217; or &#8216;oblique&#8217;.</dd>
+<dt><em>variant</em>:</dt>
+<dd>The font variant. This can be &#8216;normal&#8217; or &#8216;small-caps&#8217;</dd>
+<dt><em>stretch</em>:</dt>
+<dd>The stretching (spacing between letters) for the font. This can either
+be a numeric value in the range 0-1000 or one of &#8216;ultra-condensed&#8217;,
+&#8216;extra-condensed&#8217;, &#8216;condensed&#8217;, &#8216;semi-condensed&#8217;, &#8216;normal&#8217;,
+&#8216;semi-expanded&#8217;, &#8216;expanded&#8217;, &#8216;extra-expanded&#8217; or &#8216;ultra-expanded&#8217;.</dd>
+<dt><em>weight</em>:</dt>
+<dd>The weight (or boldness) of the font. This can either be a numeric
+value in the range 0-1000 or one of &#8216;ultralight&#8217;, &#8216;light&#8217;, &#8216;normal&#8217;,
+&#8216;regular&#8217;, &#8216;book&#8217;, &#8216;medium&#8217;, &#8216;roman&#8217;, &#8216;semibold&#8217;, &#8216;demibold&#8217;, &#8216;demi&#8217;,
+&#8216;bold&#8217;, &#8216;heavy&#8217;, &#8216;extra bold&#8217;, &#8216;black&#8217;.</dd>
+<dt><em>size</em>:</dt>
+<dd>The size of the font. This can either be a numeric value (e.g.
+12), giving the size in points, or one of &#8216;xx-small&#8217;, &#8216;x-small&#8217;,
+&#8216;small&#8217;, &#8216;medium&#8217;, &#8216;large&#8217;, &#8216;x-large&#8217;, or &#8216;xx-large&#8217;.</dd>
+</dl>
+</blockquote>
+<p>Default values are set by matplotlib or previously set values if
+set_font has already been called. Global default values can be set by
+editing the matplotlibrc file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.labels.TickLabels.set_style">
+<tt class="descname">set_style</tt><big>(</big><em>style</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the format of the x-axis tick labels. This can be &#8216;colons&#8217; or &#8216;plain&#8217;:</p>
+<blockquote>
+<ul class="simple">
+<li>&#8216;colons&#8217; uses colons as separators, for example 31:41:59.26 +27:18:28.1</li>
+<li>&#8216;plain&#8217; uses letters and symbols as separators, for example 31h41m59.26s +27º18&#8216;28.1&#8221;</li>
+</ul>
 </blockquote>
 </dd></dl>
 
 <dl class="method">
-<dt id="aplpy.FITSFigure.hide_scalebar">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">hide_scalebar</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.hide_scalebar" title="Permalink to this definition">¶</a></dt>
-<dd>Hide the scalebar</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.FITSFigure.set_scalebar_properties">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_scalebar_properties</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_scalebar_properties" title="Permalink to this definition">¶</a></dt>
-<dd><p>Modify the scalebar properties</p>
-<p>All arguments are passed to the scalebar, which is made up of an
-instance of the matplotlib Rectangle class and a an instance of the
-Text class. For more information on available arguments, see</p>
-<p><a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Rectangle">Rectangle</a></p>
-<p>and</p>
-<p><cite>Text &lt;http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.text.Text&gt;`_</cite>.</p>
-<p>In cases where the same argument exists for the two objects, the
-argument is passed to both the Text and Rectangle instance</p>
+<dt id="aplpy.labels.TickLabels.set_xformat">
+<tt class="descname">set_xformat</tt><big>(</big><em>format</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_xformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the format of the x-axis tick labels:</p>
+<blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ddd.ddddd</span></tt> - decimal degrees, where the number of decimal places can be varied</li>
+<li><tt class="docutils literal"><span class="pre">hh</span></tt> or <tt class="docutils literal"><span class="pre">dd</span></tt> - hours (or degrees)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm</span></tt> - hours and minutes (or degrees and arcminutes)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm:ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm:ss.ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss.ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds), where the number of decimal places can be varied.</li>
+</ul>
+</blockquote>
+<p>If one of these arguments is not specified, the format for that axis is left unchanged.</p>
 </dd></dl>
 
-</div>
+<dl class="method">
+<dt id="aplpy.labels.TickLabels.set_yformat">
+<tt class="descname">set_yformat</tt><big>(</big><em>format</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_yformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the format of the y-axis tick labels:</p>
+<blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ddd.ddddd</span></tt> - decimal degrees, where the number of decimal places can be varied</li>
+<li><tt class="docutils literal"><span class="pre">hh</span></tt> or <tt class="docutils literal"><span class="pre">dd</span></tt> - hours (or degrees)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm</span></tt> - hours and minutes (or degrees and arcminutes)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm:ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm:ss.ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss.ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds), where the number of decimal places can be varied.</li>
+</ul>
+</blockquote>
+<p>If one of these arguments is not specified, the format for that axis is left unchanged.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.labels.TickLabels.show">
+<tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the x- and y-axis tick labels</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.labels.TickLabels.show_x">
+<tt class="descname">show_x</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.show_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the x-axis tick labels</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.labels.TickLabels.show_y">
+<tt class="descname">show_y</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.show_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the y-axis tick labels</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aplpy.ticks"></span></div>
+<div class="section" id="ticks">
+<h2>Ticks<a class="headerlink" href="#ticks" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="aplpy.ticks.Ticks">
+<em class="property">class </em><tt class="descclassname">aplpy.ticks.</tt><tt class="descname">Ticks</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="aplpy.ticks.Ticks.set_color">
+<tt class="descname">set_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.set_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the color of the ticks</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.ticks.Ticks.set_length">
+<tt class="descname">set_length</tt><big>(</big><em>length</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.set_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the length of the ticks (in points)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.ticks.Ticks.set_linewidth">
+<tt class="descname">set_linewidth</tt><big>(</big><em>linewidth</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.set_linewidth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the linewidth of the ticks (in points)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.ticks.Ticks.set_xspacing">
+<tt class="descname">set_xspacing</tt><big>(</big><em>spacing</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.set_xspacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the x-axis tick spacing, in degrees. To set the tick spacing to be
+automatically determined, set this to &#8216;auto&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.ticks.Ticks.set_yspacing">
+<tt class="descname">set_yspacing</tt><big>(</big><em>spacing</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.set_yspacing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the y-axis tick spacing, in degrees. To set the tick spacing to be
+automatically determined, set this to &#8216;auto&#8217;.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-aplpy"></span></div>
+<div class="section" id="advanced">
+<h2>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_auto_refresh">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_auto_refresh</tt><big>(</big><em>refresh</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_auto_refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether the display should refresh after each method call</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>refresh</em>: [ True | False ]</dt>
+<dd>Whether to refresh the display every time a FITSFigure
+method is called. The default is True. If set to false,
+the display can be refreshed manually using the refresh()
+method</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.refresh">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">refresh</tt><big>(</big><em>force=True</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh the display</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>force</em>: [ True | False ]</dt>
+<dd>If set to False, refresh() will only have an effect if
+auto refresh is on. If set to True, the display will be
+refreshed whatever the auto refresh setting is set to.
+The default is True.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.set_system_latex">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">set_system_latex</tt><big>(</big><em>usetex</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.set_system_latex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether to use a real LaTeX installation or the built-in matplotlib LaTeX</p>
+<p>Required Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>usetex</em>: [ True | False ]</dt>
+<dd>Whether to use a real LaTex installation (True) or the built-in
+matplotlib LaTeX (False). Note that if the former is chosen, an
+installation of LaTex is required.</dd>
+</dl>
+</blockquote>
+</dd></dl>
+
+<span class="target" id="module-aplpy"></span></div>
 <div class="section" id="rgb-images">
 <h2>RGB Images<a class="headerlink" href="#rgb-images" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -1141,7 +1608,7 @@ the Python Imaging Library can be used.</dd>
 <blockquote>
 Minimum pixel value to use for the red, green, and blue channels.
 If set to None for a given channel, the minimum pixel value for
-that channel is determined using the corresponding <a href="#id5"><span class="problematic" id="id6">pmin_</span></a>? argument
+that channel is determined using the corresponding pmin_x argument
 (default).</blockquote>
 <p><em>vmax_r</em>: [ None | float ]</p>
 <p><em>vmax_g</em>: [ None | float ]</p>
@@ -1149,7 +1616,7 @@ that channel is determined using the corresponding <a href="#id5"><span class="p
 <blockquote>
 Maximum pixel value to use for the red, green, and blue channels.
 If set to None for a given channel, the maximum pixel value for
-that channel is determined using the corresponding <a href="#id7"><span class="problematic" id="id8">pmax_</span></a>? argument
+that channel is determined using the corresponding pmax_x argument
 (default).</blockquote>
 <p><em>pmin_r</em>: [ float ]</p>
 <p><em>pmin_g</em>: [ float ]</p>
@@ -1157,14 +1624,14 @@ that channel is determined using the corresponding <a href="#id7"><span class="p
 <blockquote>
 Percentile values used to determine for a given channel the
 minimum pixel value to use for that channel if the corresponding
-<a href="#id9"><span class="problematic" id="id10">vmin_</span></a>? is set to None. The default is 0.25% for all channels.</blockquote>
+vmin_x is set to None. The default is 0.25% for all channels.</blockquote>
 <p><em>pmax_r</em>: [ float ]</p>
 <p><em>pmax_g</em>: [ float ]</p>
 <p><em>pmax_b</em>: [ float ]</p>
 <blockquote>
 Percentile values used to determine for a given channel the
 maximum pixel value to use for that channel if the corresponding
-<a href="#id11"><span class="problematic" id="id12">vmax_</span></a>? is set to None. The default is 99.75% for all channels.</blockquote>
+vmax_x is set to None. The default is 99.75% for all channels.</blockquote>
 <p><em>stretch_r</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</p>
 <p><em>stretch_g</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</p>
 <p><em>stretch_b</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</p>
@@ -1180,7 +1647,7 @@ set to None, this is set to a sensible value.</blockquote>
 <p><em>exponent_g</em>: [ float ]</p>
 <p><em>exponent_b</em>: [ float ]</p>
 <blockquote>
-If <a href="#id13"><span class="problematic" id="id14">stretch_</span></a>? is set to &#8216;power&#8217;, this is the exponent to use.</blockquote>
+If stretch_x is set to &#8216;power&#8217;, this is the exponent to use.</blockquote>
 </blockquote>
 </dd></dl>
 
@@ -1200,17 +1667,17 @@ If <a href="#id13"><span class="problematic" id="id14">stretch_</span></a>? is s
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="modindex.html" title="Global Module Index"
+          <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
           <a href="howto_subplot.html" title="Creating subplots"
              >previous</a> |</li>
-        <li><a href="index.html">APLpy v0.9.4 documentation</a> &raquo;</li> 
+        <li><a href="index.html">APLpy v0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-      &copy; Copyright 2009, Eli Bressert and Thomas Robitaille.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.2.
+        &copy; Copyright 2010, Eli Bressert and Thomas Robitaille.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

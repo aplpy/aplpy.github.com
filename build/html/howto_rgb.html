@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -5,21 +7,22 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Making RGB images &mdash; APLpy v0.9.4 documentation</title>
+    <title>Making RGB images &mdash; APLpy v0.9.5 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9.4',
-        COLLAPSE_MODINDEX: false,
+        VERSION:     '0.9.5',
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="APLpy v0.9.4 documentation" href="index.html" />
+    <link rel="top" title="APLpy v0.9.5 documentation" href="index.html" />
     <link rel="up" title="HOWTOs" href="howtos.html" />
     <link rel="next" title="Creating subplots" href="howto_subplot.html" />
     <link rel="prev" title="Installing Montage" href="howto_montage.html" /> 
@@ -32,15 +35,15 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="modindex.html" title="Global Module Index"
-             accesskey="M">modules</a> |</li>
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="howto_subplot.html" title="Creating subplots"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="howto_montage.html" title="Installing Montage"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">APLpy v0.9.4 documentation</a> &raquo;</li>
+        <li><a href="index.html">APLpy v0.9.5 documentation</a> &raquo;</li>
           <li><a href="howtos.html" accesskey="U">HOWTOs</a> &raquo;</li> 
       </ul>
     </div>
@@ -49,39 +52,39 @@
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/aplpy_web_py_blue.png" alt="Logo"/>
             </a></p>
-            <h3><a href="index.html">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href="">Making RGB images</a><ul>
-<li><a class="reference external" href="#reprojecting-three-images-to-the-same-projection">Reprojecting three images to the same projection</a></li>
-<li><a class="reference external" href="#producing-an-rgb-image-from-images-in-a-common-projection">Producing an RGB image from images in a common projection</a></li>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Making RGB images</a><ul>
+<li><a class="reference internal" href="#reprojecting-three-images-to-the-same-projection">Reprojecting three images to the same projection</a></li>
+<li><a class="reference internal" href="#producing-an-rgb-image-from-images-in-a-common-projection">Producing an RGB image from images in a common projection</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Previous topic</h4>
-            <p class="topless"><a href="howto_montage.html"
-                                  title="previous chapter">Installing Montage</a></p>
-            <h4>Next topic</h4>
-            <p class="topless"><a href="howto_subplot.html"
-                                  title="next chapter">Creating subplots</a></p>
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="_sources/howto_rgb.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="howto_montage.html"
+                        title="previous chapter">Installing Montage</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="howto_subplot.html"
+                        title="next chapter">Creating subplots</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/howto_rgb.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
 
@@ -154,7 +157,7 @@ mixed, such as in the following example:</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="modindex.html" title="Global Module Index"
+          <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
           <a href="howto_subplot.html" title="Creating subplots"
@@ -162,13 +165,13 @@ mixed, such as in the following example:</p>
         <li class="right" >
           <a href="howto_montage.html" title="Installing Montage"
              >previous</a> |</li>
-        <li><a href="index.html">APLpy v0.9.4 documentation</a> &raquo;</li>
+        <li><a href="index.html">APLpy v0.9.5 documentation</a> &raquo;</li>
           <li><a href="howtos.html" >HOWTOs</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-      &copy; Copyright 2009, Eli Bressert and Thomas Robitaille.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.2.
+        &copy; Copyright 2010, Eli Bressert and Thomas Robitaille.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
     </div>
   </body>
 </html>

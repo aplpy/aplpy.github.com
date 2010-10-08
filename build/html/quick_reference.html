@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Quick reference Guide &mdash; APLpy v0.9.5 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.9.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="APLpy v0.9.5 documentation" href="index.html" />
+    <link rel="next" title="HOWTOs" href="howtos.html" />
+    <link rel="prev" title="Quickstart Guide" href="quickstart.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="howtos.html" title="HOWTOs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quickstart.html" title="Quickstart Guide"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">APLpy v0.9.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/aplpy_web_py_blue.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Quick reference Guide</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#labels">Labels</a></li>
+<li><a class="reference internal" href="#shapes">Shapes</a></li>
+<li><a class="reference internal" href="#layers">Layers</a></li>
+<li><a class="reference internal" href="#coordinates">Coordinates</a></li>
+<li><a class="reference internal" href="#frame">Frame</a></li>
+<li><a class="reference internal" href="#colorbar">Colorbar</a></li>
+<li><a class="reference internal" href="#coordinate-grid">Coordinate Grid</a></li>
+<li><a class="reference internal" href="#scalebar">Scalebar</a></li>
+<li><a class="reference internal" href="#beam">Beam</a></li>
+<li><a class="reference internal" href="#axis-labels">Axis labels</a></li>
+<li><a class="reference internal" href="#tick-labels">Tick labels</a></li>
+<li><a class="reference internal" href="#ticks">Ticks</a></li>
+<li><a class="reference internal" href="#advanced">Advanced</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="quickstart.html"
+                        title="previous chapter">Quickstart Guide</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="howtos.html"
+                        title="next chapter">HOWTOs</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/quick_reference.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="quick-reference-guide">
+<h1>Quick reference Guide<a class="headerlink" href="#quick-reference-guide" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Rather than showing the generic call signature for the methods on
+this page, these are given in the form of example values. In
+addition, not all of the optional keywords are mentioned here.
+For more information on a specific command and all the options
+available, type <tt class="docutils literal"><span class="pre">help</span></tt> followed by the method name, e.g. <tt class="docutils literal"><span class="pre">help</span>
+<span class="pre">fig.show_grayscale</span></tt>. When multiple optional arguments are given,
+this does not mean that all of them have to be specified, but
+just shows all the options available.</p>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>To import APLpy:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">aplpy</span>
+</pre></div>
+</div>
+<p>To create a figure of a FITS file:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span> <span class="o">=</span> <span class="n">aplpy</span><span class="o">.</span><span class="n">FITSFigure</span><span class="p">(</span><span class="s">&#39;myimage.fits&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here and in the remainder of this reference guide, we use the variable name
+<tt class="docutils literal"><span class="pre">fig</span></tt> for the figure object, but any name can be used.</p>
+<p>A grayscale or colorscale representation of the FITS image can be shown and
+hidden using the following methods:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">show_grayscale</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">hide_grayscale</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show_colorscale</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">hide_colorscale</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To show a three-color image, use the following method, specifying the
+filename of the color image:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">show_rgb</span><span class="p">(</span><span class="s">&#39;m17.jpeg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The figure can be interactively explored by zooming and panning. To
+recenter on a specific region programmatically, use the following method,
+specifying either a radius:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">recenter</span><span class="p">(</span><span class="mf">33.23</span><span class="p">,</span> <span class="mf">55.33</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span> <span class="c"># degrees</span>
+</pre></div>
+</div>
+<p>or a separate width and height:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">recenter</span><span class="p">(</span><span class="mf">33.23</span><span class="p">,</span> <span class="mf">55.33</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span> <span class="c"># degrees</span>
+</pre></div>
+</div>
+<p>To overlay contours, use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">show_contour</span><span class="p">(</span><span class="s">&#39;co_data.fits&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To save the current figure, use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;myplot.eps&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Other formats such as PDF, PNG, etc. can be used.</p>
+</div>
+<div class="section" id="labels">
+<h2>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h2>
+<p>Labels can be added either in world coordinates:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="mf">34.455</span><span class="p">,</span> <span class="mf">54.112</span><span class="p">,</span> <span class="s">&#39;My favorite star&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or relative to the axes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="s">&#39;(a)&#39;</span><span class="p">,</span> <span class="n">relative</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="shapes">
+<h2>Shapes<a class="headerlink" href="#shapes" title="Permalink to this headline">¶</a></h2>
+<p>To overlay different shapes, the following methods are available:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">show_markers</span><span class="p">(</span><span class="n">x_world</span><span class="p">,</span> <span class="n">y_world</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show_circles</span><span class="p">(</span><span class="n">x_world</span><span class="p">,</span> <span class="n">y_world</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show_ellipses</span><span class="p">(</span><span class="n">x_world</span><span class="p">,</span> <span class="n">y_world</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show_rectangles</span><span class="p">(</span><span class="n">x_world</span><span class="p">,</span> <span class="n">y_world</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <tt class="docutils literal"><span class="pre">x_world</span></tt>, <tt class="docutils literal"><span class="pre">y_world</span></tt>, <tt class="docutils literal"><span class="pre">radius</span></tt>, <tt class="docutils literal"><span class="pre">width</span></tt>, and <tt class="docutils literal"><span class="pre">height</span></tt>
+should be 1D arrays specified in degrees.</p>
+<p>DS9 region files can be overlaid with:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">show_regions</span><span class="p">(</span><span class="s">&#39;myregions.reg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="layers">
+<h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
+<p>Markers, shapes, regions and text labels are stored in layers. These layers can be listed using:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">list_layers</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Layers can behidden and shown with the following methods:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">hide_layer</span><span class="p">(</span><span class="s">&#39;regions&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show_layer</span><span class="p">(</span><span class="s">&#39;regions&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Any layer can be retrieved using:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">layer</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s">&#39;circles&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, layers can be removed using:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">remove_layer</span><span class="p">(</span><span class="s">&#39;rectangles&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="coordinates">
+<h2>Coordinates<a class="headerlink" href="#coordinates" title="Permalink to this headline">¶</a></h2>
+<p>Two methods are provided to help transform coordinates between world and pixel coordinates. These accept either scalars or arrays:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">x_pix</span><span class="p">,</span> <span class="n">y_pix</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">world2pixel</span><span class="p">(</span><span class="mf">45.3332</span><span class="p">,</span> <span class="mf">22.1932</span><span class="p">)</span>
+<span class="n">x_world</span><span class="p">,</span> <span class="n">y_world</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">pixel2world</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="frame">
+<h2>Frame<a class="headerlink" href="#frame" title="Permalink to this headline">¶</a></h2>
+<p>To set the look of the frame around the figure, use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">set_linewidth</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c"># points</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;black&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="colorbar">
+<h2>Colorbar<a class="headerlink" href="#colorbar" title="Permalink to this headline">¶</a></h2>
+<p>A grid can be added and removed using the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">add_colorbar</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">remove_colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Once <tt class="docutils literal"><span class="pre">add_colorbar()</span></tt> has been called, the <tt class="docutils literal"><span class="pre">fig.colorbar</span></tt> object is created and the following methods are then available:</p>
+<ul>
+<li><p class="first">Show and hide the colorbar:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set where to place the colorbar:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">set_location</span><span class="p">(</span><span class="s">&#39;right&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the width of the colorbar:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">set_width</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c"># arbitrary units, default is 0.2</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the amount of padding between the colorbar and the parent axes:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">set_pad</span><span class="p">(</span><span class="mf">0.03</span><span class="p">)</span> <span class="c"># arbitrary units, default is 0.05</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the font properties of the labels:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="s">&#39;medium&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s">&#39;medium&#39;</span><span class="p">,</span> \
+                      <span class="n">stretch</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&#39;sans-serif&#39;</span><span class="p">,</span> \
+                      <span class="n">style</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="coordinate-grid">
+<h2>Coordinate Grid<a class="headerlink" href="#coordinate-grid" title="Permalink to this headline">¶</a></h2>
+<p>A coordinate grid can be added and removed using the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">add_grid</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">remove_grid</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Once <tt class="docutils literal"><span class="pre">add_grid()</span></tt> has been called, the <tt class="docutils literal"><span class="pre">fig.grid</span></tt> object is created and the following methods are then available:</p>
+<ul>
+<li><p class="first">Show and hide the grid:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the x and y spacing for the grid:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">set_xspacing</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span> <span class="c"># degrees</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">set_yspacing</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span> <span class="c"># degrees</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the color of the grid lines:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;white&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the transparency level of the grid lines:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the line style and width for the grid lines:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">set_linestyle</span><span class="p">(</span><span class="s">&#39;solid&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">set_linewidth</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="scalebar">
+<h2>Scalebar<a class="headerlink" href="#scalebar" title="Permalink to this headline">¶</a></h2>
+<p>A scalebar can be added and removed using the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">add_scalebar</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c"># length in degrees</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">remove_scalebar</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Once <tt class="docutils literal"><span class="pre">add_scalebar()</span></tt> has been called, the <tt class="docutils literal"><span class="pre">fig.scalebar</span></tt> object is created and the following methods are then available:</p>
+<ul>
+<li><p class="first">Show and hide the scalebar:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span> <span class="c"># length in degrees</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the length of the scalebar:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_length</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span> <span class="c"># degrees</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the label of the scalebar:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s">&#39;5 pc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the corner that the beam is shown in:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_corner</span><span class="p">(</span><span class="s">&#39;top-right&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set whether or not to show a frame around the beam:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_frame</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the transparency level of the scalebar and label:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the color of the scalebar and label:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;white&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the font properties of the label:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="s">&#39;medium&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s">&#39;medium&#39;</span><span class="p">,</span> \
+                      <span class="n">stretch</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&#39;sans-serif&#39;</span><span class="p">,</span> \
+                      <span class="n">style</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the line style and width for the scalebar:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_linestyle</span><span class="p">(</span><span class="s">&#39;solid&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_linewidth</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c"># points</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set multiple properties at once:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s">&#39;solid&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="beam">
+<h2>Beam<a class="headerlink" href="#beam" title="Permalink to this headline">¶</a></h2>
+<p>A beam can be added and removed using the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">add_beam</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">remove_beam</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Once <tt class="docutils literal"><span class="pre">add_beam()</span></tt> has been called, the <tt class="docutils literal"><span class="pre">fig.beam</span></tt> object is created and the following methods are then available:</p>
+<ul>
+<li><p class="first">Show and hide the beam:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the major and major axes, and the position angle:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_major</span><span class="p">(</span><span class="mf">0.03</span><span class="p">)</span> <span class="c"># degrees</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_minor</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span> <span class="c"># degrees</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_angle</span><span class="p">(</span><span class="mf">45.</span><span class="p">)</span> <span class="c"># degrees</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the corner that the beam is shown in:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_corner</span><span class="p">(</span><span class="s">&#39;top-left&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set whether or not to show a frame around the beam:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_frame</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the transparency level of the beam:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the color of the whole beam, or the edge and face color individually:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_edgecolor</span><span class="p">(</span><span class="s">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s">&#39;green&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the line style and width for the edge of the beam:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_linestyle</span><span class="p">(</span><span class="s">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_linewidth</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c"># points</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the hatch style of the beam:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_hatch</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set multiple properties at once:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">&#39;dashed&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="axis-labels">
+<h2>Axis labels<a class="headerlink" href="#axis-labels" title="Permalink to this headline">¶</a></h2>
+<p>The methods to control the x- and y- axis labels are the following</p>
+<ul>
+<li><p class="first">Show/hide both axis labels:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Show/hide the x-axis label:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">show_x</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">hide_x</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Show/hide the y-axis label:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">show_y</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">hide_y</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the text for the x- and y-axis labels:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">set_xtext</span><span class="p">(</span><span class="s">&#39;Right Ascension (J2000)&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">set_ytext</span><span class="p">(</span><span class="s">&#39;Declination (J2000)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the displacement of the x- and y-axis labels from the x- and y-axis respectively:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">set_xpad</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">set_ypad</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the font properties of the labels:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="s">&#39;medium&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s">&#39;medium&#39;</span><span class="p">,</span> \
+                         <span class="n">stretch</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&#39;sans-serif&#39;</span><span class="p">,</span> \
+                         <span class="n">style</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="tick-labels">
+<h2>Tick labels<a class="headerlink" href="#tick-labels" title="Permalink to this headline">¶</a></h2>
+<p>The methods to control the numerical labels below each tick are the following</p>
+<ul>
+<li><p class="first">Show/hide all tick labels:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Show/hide the x-axis labels:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">show_x</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">hide_x</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Show/hide the y-axis labels:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">show_y</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">hide_y</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the format for the x-axis labels (e.g hh:mm, hh:mm:ss.s, etc.):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">set_xformat</span><span class="p">(</span><span class="s">&#39;hh:mm:ss.ss&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the format for the y-axis labels (e.g dd:mm, dd:mm:ss.s, etc.):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">set_yformat</span><span class="p">(</span><span class="s">&#39;dd:mm:ss.s&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the style of the labels (&#8216;colons&#8217; or &#8216;plain&#8217;):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s">&#39;colons&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the font properties of the labels:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="s">&#39;medium&#39;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s">&#39;medium&#39;</span><span class="p">,</span> \
+                         <span class="n">stretch</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&#39;sans-serif&#39;</span><span class="p">,</span> \
+                         <span class="n">style</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s">&#39;normal&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="ticks">
+<h2>Ticks<a class="headerlink" href="#ticks" title="Permalink to this headline">¶</a></h2>
+<p>The methods to control properties relating to the tick marks are the following:</p>
+<ul>
+<li><p class="first">Change the tick spacing for the x- and y-axis:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">ticks</span><span class="o">.</span><span class="n">set_xspacing</span><span class="p">(</span><span class="mf">0.04</span><span class="p">)</span> <span class="c"># degrees</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">ticks</span><span class="o">.</span><span class="n">set_yspacing</span><span class="p">(</span><span class="mf">0.03</span><span class="p">)</span> <span class="c"># degrees</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the length of the ticks:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">ticks</span><span class="o">.</span><span class="n">set_length</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c"># points</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change the color of the ticks:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">ticks</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s">&#39;black&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the line width for the ticks:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">ticks</span><span class="o">.</span><span class="n">set_linewidth</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c"># points</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="advanced">
+<h2>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h2>
+<p>To control whether to refresh the display after each command, use the following method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">set_auto_refresh</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To force a refresh, use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To use the system LaTeX instead of the matplotlib LaTeX, use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">set_system_latex</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The color for NaN values can be controlled using the following method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">set_nan_color</span><span class="p">(</span><span class="s">&#39;black&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, to change the look of the plot using pre-set themes, use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s">&#39;publication&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="howtos.html" title="HOWTOs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quickstart.html" title="Quickstart Guide"
+             >previous</a> |</li>
+        <li><a href="index.html">APLpy v0.9.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Eli Bressert and Thomas Robitaille.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+    </div>
+  </body>
+</html>
