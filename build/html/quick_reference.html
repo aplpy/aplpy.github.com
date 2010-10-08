@@ -247,6 +247,7 @@ should be 1D arrays specified in degrees.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">set_location</span><span class="p">(</span><span class="s">&#39;right&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>This can be one of <tt class="docutils literal"><span class="pre">left</span></tt>, <tt class="docutils literal"><span class="pre">right</span></tt>, <tt class="docutils literal"><span class="pre">bottom</span></tt> or <tt class="docutils literal"><span class="pre">top</span></tt>.</p>
 </li>
 <li><p class="first">Set the width of the colorbar:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">set_width</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span> <span class="c"># arbitrary units, default is 0.2</span>
@@ -332,9 +333,11 @@ should be 1D arrays specified in degrees.</p>
 </div>
 </li>
 <li><p class="first">Change the corner that the beam is shown in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_corner</span><span class="p">(</span><span class="s">&#39;top-right&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_corner</span><span class="p">(</span><span class="s">&#39;top right&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>This can be one of <tt class="docutils literal"><span class="pre">top</span> <span class="pre">right</span></tt>, <tt class="docutils literal"><span class="pre">top</span> <span class="pre">left</span></tt>, <tt class="docutils literal"><span class="pre">bottom</span> <span class="pre">right</span></tt>,
+<tt class="docutils literal"><span class="pre">bottom</span> <span class="pre">left</span></tt>, <tt class="docutils literal"><span class="pre">left</span></tt>, <tt class="docutils literal"><span class="pre">right</span></tt>, <tt class="docutils literal"><span class="pre">bottom</span></tt> or <tt class="docutils literal"><span class="pre">top</span></tt>.</p>
 </li>
 <li><p class="first">Set whether or not to show a frame around the beam:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">scalebar</span><span class="o">.</span><span class="n">set_frame</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
@@ -394,9 +397,11 @@ should be 1D arrays specified in degrees.</p>
 </div>
 </li>
 <li><p class="first">Change the corner that the beam is shown in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_corner</span><span class="p">(</span><span class="s">&#39;top-left&#39;</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_corner</span><span class="p">(</span><span class="s">&#39;top left&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>This can be one of <tt class="docutils literal"><span class="pre">top</span> <span class="pre">right</span></tt>, <tt class="docutils literal"><span class="pre">top</span> <span class="pre">left</span></tt>, <tt class="docutils literal"><span class="pre">bottom</span> <span class="pre">right</span></tt>,
+<tt class="docutils literal"><span class="pre">bottom</span> <span class="pre">left</span></tt>, <tt class="docutils literal"><span class="pre">left</span></tt>, <tt class="docutils literal"><span class="pre">right</span></tt>, <tt class="docutils literal"><span class="pre">bottom</span></tt> or <tt class="docutils literal"><span class="pre">top</span></tt>.</p>
 </li>
 <li><p class="first">Set whether or not to show a frame around the beam:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">beam</span><span class="o">.</span><span class="n">set_frame</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>

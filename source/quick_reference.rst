@@ -143,6 +143,8 @@ Once ``add_colorbar()`` has been called, the ``fig.colorbar`` object is created 
 * Set where to place the colorbar::
 
     fig.colorbar.set_location('right')
+    
+  This can be one of ``left``, ``right``, ``bottom`` or ``top``.
 
 * Set the width of the colorbar::
 
@@ -216,7 +218,10 @@ Once ``add_scalebar()`` has been called, the ``fig.scalebar`` object is created 
 
 * Change the corner that the beam is shown in::
 
-    fig.scalebar.set_corner('top-right')
+    fig.scalebar.set_corner('top right')
+    
+  This can be one of ``top right``, ``top left``, ``bottom right``,
+  ``bottom left``, ``left``, ``right``, ``bottom`` or ``top``.
 
 * Set whether or not to show a frame around the beam::
 
@@ -268,7 +273,10 @@ Once ``add_beam()`` has been called, the ``fig.beam`` object is created and the 
 
 * Change the corner that the beam is shown in::
 
-    fig.beam.set_corner('top-left')
+    fig.beam.set_corner('top left')
+    
+  This can be one of ``top right``, ``top left``, ``bottom right``,
+  ``bottom left``, ``left``, ``right``, ``bottom`` or ``top``.
 
 * Set whether or not to show a frame around the beam::
 
