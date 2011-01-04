@@ -117,9 +117,9 @@
 <p>Required arguments:</p>
 <blockquote>
 <dl class="docutils">
-<dt><em>data</em>: [ string | pyfits PrimaryHDU | pyfits ImageHDU ]</dt>
-<dd>Either the filename of the FITS file to open, or a pyfits
-PrimaryHDU or ImageHDU instance.</dd>
+<dt><em>data</em>: [ string | pyfits.PrimaryHDU | pyfits.ImageHDU | pywcs.WCS ]</dt>
+<dd>Either the filename of the FITS file to open, a pyfits
+PrimaryHDU or ImageHDU object, or a pywcs WCS object.</dd>
 </dl>
 </blockquote>
 <p>Optional Keyword Arguments:</p>
@@ -809,6 +809,42 @@ editing the matplotlibrc file.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="aplpy.colorbar.Colorbar.set_label_font">
+<tt class="descname">set_label_font</tt><big>(</big><em>family=None</em>, <em>style=None</em>, <em>variant=None</em>, <em>stretch=None</em>, <em>weight=None</em>, <em>size=None</em>, <em>fontproperties=None</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_label_font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the font of the colobar label</p>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<dl class="docutils">
+<dt><em>family</em>:</dt>
+<dd>The family of the font to use. This can either be a generic font
+family name, either &#8216;serif&#8217;, &#8216;sans-serif&#8217;, &#8216;cursive&#8217;, &#8216;fantasy&#8217;, or
+&#8216;monospace&#8217;, or a list of font names in decreasing order of priority.</dd>
+<dt><em>style</em>:</dt>
+<dd>The font style. This can be &#8216;normal&#8217;, &#8216;italic&#8217; or &#8216;oblique&#8217;.</dd>
+<dt><em>variant</em>:</dt>
+<dd>The font variant. This can be &#8216;normal&#8217; or &#8216;small-caps&#8217;</dd>
+<dt><em>stretch</em>:</dt>
+<dd>The stretching (spacing between letters) for the font. This can either
+be a numeric value in the range 0-1000 or one of &#8216;ultra-condensed&#8217;,
+&#8216;extra-condensed&#8217;, &#8216;condensed&#8217;, &#8216;semi-condensed&#8217;, &#8216;normal&#8217;,
+&#8216;semi-expanded&#8217;, &#8216;expanded&#8217;, &#8216;extra-expanded&#8217; or &#8216;ultra-expanded&#8217;.</dd>
+<dt><em>weight</em>:</dt>
+<dd>The weight (or boldness) of the font. This can either be a numeric
+value in the range 0-1000 or one of &#8216;ultralight&#8217;, &#8216;light&#8217;, &#8216;normal&#8217;,
+&#8216;regular&#8217;, &#8216;book&#8217;, &#8216;medium&#8217;, &#8216;roman&#8217;, &#8216;semibold&#8217;, &#8216;demibold&#8217;, &#8216;demi&#8217;,
+&#8216;bold&#8217;, &#8216;heavy&#8217;, &#8216;extra bold&#8217;, &#8216;black&#8217;.</dd>
+<dt><em>size</em>:</dt>
+<dd>The size of the font. This can either be a numeric value (e.g.
+12), giving the size in points, or one of &#8216;xx-small&#8217;, &#8216;x-small&#8217;,
+&#8216;small&#8217;, &#8216;medium&#8217;, &#8216;large&#8217;, &#8216;x-large&#8217;, or &#8216;xx-large&#8217;.</dd>
+</dl>
+</blockquote>
+<p>Default values are set by matplotlib or previously set values if
+set_font has already been called. Global default values can be set by
+editing the matplotlibrc file.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="aplpy.colorbar.Colorbar.set_location">
 <tt class="descname">set_location</tt><big>(</big><em>location</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_location" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the location of the colorbar. Should be one of &#8216;left&#8217;, &#8216;right&#8217;, &#8216;top&#8217;, &#8216;bottom&#8217;.</p>
@@ -1309,6 +1345,12 @@ editing the matplotlibrc file.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.set_xposition">
+<tt class="descname">set_xposition</tt><big>(</big><em>position</em><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.set_xposition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the position of the x-axis label (&#8216;top&#8217; or &#8216;bottom&#8217;)</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="aplpy.axis_labels.AxisLabels.set_xtext">
 <tt class="descname">set_xtext</tt><big>(</big><em>label</em><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.set_xtext" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the x-axis label text</p>
@@ -1318,6 +1360,12 @@ editing the matplotlibrc file.</p>
 <dt id="aplpy.axis_labels.AxisLabels.set_ypad">
 <tt class="descname">set_ypad</tt><big>(</big><em>pad</em><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.set_ypad" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the x-axis label displacement, in points</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.axis_labels.AxisLabels.set_yposition">
+<tt class="descname">set_yposition</tt><big>(</big><em>position</em><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.set_yposition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the position of the y-axis label (&#8216;left&#8217; or &#8216;right&#8217;)</p>
 </dd></dl>
 
 <dl class="method">
@@ -1435,6 +1483,12 @@ editing the matplotlibrc file.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="aplpy.labels.TickLabels.set_xposition">
+<tt class="descname">set_xposition</tt><big>(</big><em>position</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_xposition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the position of the x-axis tick labels (&#8216;top&#8217; or &#8216;bottom&#8217;)</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="aplpy.labels.TickLabels.set_yformat">
 <tt class="descname">set_yformat</tt><big>(</big><em>format</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_yformat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the format of the y-axis tick labels:</p>
@@ -1448,6 +1502,12 @@ editing the matplotlibrc file.</p>
 </ul>
 </blockquote>
 <p>If one of these arguments is not specified, the format for that axis is left unchanged.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.labels.TickLabels.set_yposition">
+<tt class="descname">set_yposition</tt><big>(</big><em>position</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_yposition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the position of the y-axis tick labels (&#8216;left&#8217; or &#8216;right&#8217;)</p>
 </dd></dl>
 
 <dl class="method">
@@ -1676,7 +1736,7 @@ If stretch_x is set to &#8216;power&#8217;, this is the exponent to use.</blockq
     </div>
     <div class="footer">
         &copy; Copyright 2010, Eli Bressert and Thomas Robitaille.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
     </div>
   </body>
 </html>
