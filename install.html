@@ -1,0 +1,180 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>APLpy Installation</title>
+        <meta name="author" content="Eli Bressert">
+        <link rel= "stylesheet" type="text/css" href= "new_style.css" media="screen"/>
+        <!-- Date: 2009-02-28 -->
+    </head>
+
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7729954-1");
+            pageTracker._trackPageview();
+        } catch(err) {  
+        }
+    </script>
+
+    <body>
+    
+        <!-- The "holder" is used as a container for all the content on the website. 
+        This is how all the elements are positioned center-wise. -->
+        <div id="holder">
+    
+<div id="title"> 
+      <a class="titleLink" href="index.php"> <img src="images/aplpy_web_v0.9.5.png"> </a>
+</div><!-- Side bar placing and links. Refer to style.css under sideBar to see properties. -->
+ <div id="sideBar">
+    <p><a class="sideBar" href="index.php"> Home </a></p>
+    <p><a class="sideBar" target="_blank" href="http://sourceforge.net/apps/gallery/aplpy/"> Gallery </a></p>
+    <p><a class="sideBar" target="_blank" href="http://sourceforge.net/project/showfiles.php?group_id=254216"> Download </a></p>
+    <p><a class="sideBar" href="install.php"> Install </a></p>
+    <!-- <p><a class="sideBar" href="tutorial.php"> Tutorial </a></p> -->
+    <p><a class="sideBar" href="documentation/index.html"> Documentation </a></p>
+    <p><a class="sideBar" href="http://groups.google.com/group/aplpy-users"> Discussion </a></p>
+    <p><a class="sideBar" href="http://sourceforge.net/tracker/?group_id=254216"> Report a bug </a></p>
+    <p><a class="sideBar" target="_blank" href="http://sourceforge.net/projects/aplpy/">Sourceforge</a></p>
+    <br />
+</div>
+
+<div id="content">
+    <h1>Installation Instructions</h1>
+    <p class="mainText">APLpy requires the following packages to function correctly:
+    <ul>
+    <li><a href="http://numpy.scipy.org/">numpy</a></li>
+    <li><a href="http://matplotlib.sourceforge.net/">matplotlib</a></li>
+    <li><a href="http://www.stsci.edu/resources/software_hardware/pyfits/Download">pyfits</a></li>
+    <li><a href="https://trac6.assembla.com/astrolib">pywcs</a></li>
+    </ul>
+    </p>
+    
+    <p class="mainText">In addition, the following optional packages enhance the functionality of APLpy: 
+    <ul>
+    <li><a href="http://sourceforge.net/projects/pyparsing/">pyparsing </a></li>
+    <li><a href="http://leejjoon.github.com/pyregion/">pyregion </a></li>
+    <li><a href="http://www.pythonware.com/products/pil/">PIL</a></li>
+    <li><a href="http://montage.ipac.caltech.edu/">montage</a></li>
+    
+    </ul>
+    </p>
+
+    <h2>Easy Installation</h2>
+
+    <h3>NumPy and Matplotlib</h3>
+
+    <p class="mainText">
+    Numpy and matplotlib provide pre-compiled packages for most platforms.
+    For Mac OS X, you can download .dmg files for Numpy and Matplotlib from
+    <a href="http://new.scipy.org/download.html">here</a> and 
+    <a href="http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-1.0/">here</a>. 
+    On Linux, most package managers will be able to install numpy and matplotlib.
+    </p>
+    
+    <h3>Other Dependencies and <code>APLpy</code></h3>
+    <p class="mainText">
+    The easiest way to install APLpy and its remaining dependencies is through the 
+    <a href="http://gist.github.com/raw/564472/auto_install_aplpy.py">auto-install-aplpy
+    </a> script 
+    (<a href="http://gist.github.com/gists/564472">source</a>). 
+    Using the auto-install script is very quick and easy. Below is an example of 
+    what you would type via the command line to get started.
+
+    <p class="Code">
+        python auto_install_aplpy.py
+    </p>
+
+    <p class="mainText">
+        We recommend this method, but if you prefer to installing everything manually
+        then feel free to do so. 
+    </p>
+    <h2><code>APLpy</code></h2>
+
+    <p class="mainText">
+        If you have <code>easy_install</code>, you can install APLpy by simply typing
+    </p>    
+
+    <p class="Code">
+        easy_install aplpy
+    </p>
+
+    <p class="mainText">
+        Otherwise, you can install APLpy by downloading the latest available tar file from
+        <a href="http://sourceforge.net/project/showfiles.php?group_id=254216">here</a>
+        and follow the standard installation method:
+    </p>
+
+    <p class="Code">  
+        tar xvzf APLpy-0.9.x.tar.gz<br>
+        cd APLpy-0.9.x<br>
+        sudo python setup.py install
+    </p>
+    
+    <h2><code>Montage</code></h2>
+
+    <p class="mainText">
+        Currently, one of the features in APLpy (re-projecting a FITS file to point
+        north) requires Montage to be
+        installed. Montage is a set of tools developed at the Infrared Processing and
+        Analysis Center (IPAC) to re-project and mosaic FITS files. If you do wish to
+        use the <code>north</code> argument when initializing a
+        <code>FITSFigure</code> instance, you will need to install Montage.
+        Installation instructions are available on the <a
+        href="http://montage.ipac.caltech.edu/">Montage</a> website.
+    </p>
+        <div id="crumb">
+If you have any questions or comments contact us <a class="mailto" href="mailto:astropython@gmail.com"> here </a>
+        </div>
+</div>
+
+<!-- Side bar placing and links. Refer to style.css under sideBar to see properties. -->
+ <div id="rightsideBar">
+     
+     <p class="sideBar">            
+        Mailing list:
+     </p>
+            <a href="http://groups.google.com/group/aplpy-announce">Subscribe</a>
+<!--          <FORM Method=POST ACTION="https://lists.sourceforge.net/lists/subscribe/aplpy-announce">
+             <INPUT type="hidden" name="fullname" value="">
+             <INPUT type="hidden" name="pw" value="">
+             <INPUT type="hidden" name="pw-conf" value="">
+             <INPUT type="hidden" name="digest" value="0">
+        <table cellpadding=5 cellspacing=0 border=0 align='center'>
+            <tr><td><INPUT type="Text" name="email" size="15" value="e-mail" color="333333"></td></tr>
+            <tr><td><INPUT type="Submit" name="email-button" value="Subscribe"></td></tr>
+        </table>    -->     
+        
+         <br>
+         <br>
+         
+         <p class="sideBar">            
+            Twitter feed:
+         </p>
+         
+    <a href="https://twitter.com/AstroPython"><img src="images/twitter-gray.png"></a>
+    
+    <br>
+    <br>
+    
+    <!-- <p class="sideBar">            
+           Trac page:
+        </p>
+        
+        <a href="http://apps.sourceforge.net/trac/aplpy/"><img src='images/trac_small.png'></a>
+        
+        <br /> -->
+    <br />
+    
+</div>        
+        </div>
+    </body>
+</html>
+        
