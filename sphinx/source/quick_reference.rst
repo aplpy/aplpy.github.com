@@ -334,6 +334,14 @@ The methods to control the x- and y- axis labels are the following
 
     fig.axis_labels.set_xpad(...)
     fig.axis_labels.set_ypad(...)
+    
+* Set where to place the x-axis label::
+
+    fig.axis_labels.set_xposition('bottom')
+    
+* Set where to place the y-axis label::
+    
+    fig.axis_labels.set_yposition('right')
 
 * Set the font properties of the labels::
 
@@ -368,6 +376,14 @@ The methods to control the numerical labels below each tick are the following
 * Set the format for the y-axis labels (e.g dd:mm, dd:mm:ss.s, etc.)::
 
     fig.tick_labels.set_yformat('dd:mm:ss.s')
+    
+* Set where to place the x-axis tick labels::
+
+    fig.tick_labels.set_xposition('top')
+
+* Set where to place the y-axis tick labels::
+
+    fig.tick_labels.set_yposition('left')
 
 * Set the style of the labels ('colons' or 'plain')::
 
