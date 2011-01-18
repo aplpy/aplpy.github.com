@@ -70,7 +70,7 @@ include('menu.php');
 
     <p class="mainText">
         Otherwise, you can install APLpy by downloading the latest available tar file from
-        <a href="http://sourceforge.net/project/showfiles.php?group_id=254216">here</a>
+        <a href="https://github.com/aplpy/aplpy/archives/master">here</a>
         and follow the standard installation method:
     </p>
 

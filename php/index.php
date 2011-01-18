@@ -54,13 +54,10 @@ include('menu.php');
     
         <p class="mainText">
             Want to get started? Then download the package through 
-            <a href="https://sourceforge.net/project/showfiles.php?group_id=254216">Sourceforge</a>. 
+            <a href="https://github.com/aplpy/aplpy/archives/master">GitHub</a>. 
             Follow the installation instructions in the downloaded folder and you should be 
-            set to use APLpy. Check out the <a href="http://aplpy.sourceforge.net/documentation/quickstart.html">Tutorial</a> page on how 
+            set to use APLpy. Check out the <a href="documentation/quickstart.html">Tutorial</a> page on how 
             to make some beautiful and simple plots. 
-            If you want to see the latest features added
-            to APLpy then read the current 
-            <a href="http://voxel.dl.sourceforge.net/project/aplpy/APLpy/APLpy-0.9.5/Release_notes">release notes</a>.
          </p>
          
          <h3>Reporting problems</h3>
@@ -73,7 +70,7 @@ include('menu.php');
 
          <p class="mainText">   
             If you're gutsy and know what you're 
-            doing with Python you can download the bleeding-edge source code via Subversion.
+            doing with Python you can download the bleeding-edge source code with Git.
         </p>
     
         <p class="Code">
