@@ -116,15 +116,15 @@
 <dd><p>Create a FITSFigure instance</p>
 <p>Required arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>data</em>: [ string | pyfits.PrimaryHDU | pyfits.ImageHDU | pywcs.WCS ]</dt>
 <dd>Either the filename of the FITS file to open, a pyfits
 PrimaryHDU or ImageHDU object, or a pywcs WCS object.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>hdu</em>: [ integer ]</dt>
 <dd>By default, the image in the primary HDU is read in. If a
 different HDU is required, use this argument.</dd>
@@ -161,7 +161,7 @@ only have size 1, then this is not required.</dd>
 plotting method is called. This can also be set using the
 set_auto_refresh method.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Any additional arguments are passed on to matplotlib&#8217;s Figure() class.
 For example, to set the figure size, use the figsize=(xsize, ysize)
 argument (where xsize and ysize are in inches). For more information
@@ -180,7 +180,7 @@ section in the documentation for <a class="reference external" href="http://matp
 <dd><p>Show a grayscale image of the FITS file</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>vmin</em>: [ None | float ]</dt>
 <dd>Minimum pixel value to use for the grayscale. If set to None,
 the minimum pixel value is determined using pmin (default).</dd>
@@ -216,7 +216,7 @@ smoothing kernels.</dd>
 specify if they would prefer &#8216;gauss&#8217;, &#8216;box&#8217;, or a custom
 kernel. All kernels are normalized to ensure flux retention.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -230,7 +230,7 @@ kernel. All kernels are normalized to ensure flux retention.</dd>
 <dd><p>Show a colorscale image of the FITS file</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>vmin</em>: [ None | float ]</dt>
 <dd>Minimum pixel value to use for the colorscale. If set to None,
 the minimum pixel value is determined using pmin (default).</dd>
@@ -264,7 +264,7 @@ smoothing kernels.</dd>
 specify if they would prefer &#8216;gauss&#8217;, &#8216;box&#8217;, or a custom
 kernel. All kernels are normalized to ensure flux retention.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -278,20 +278,20 @@ kernel. All kernels are normalized to ensure flux retention.</dd>
 <dd><p>Show a 3-color image instead of the FITS file data</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>filename</em></dt>
 <dd>The 3-color image should have exactly the same dimensions as the FITS file, and
 will be shown with exactly the same projection.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Optional Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>flip</em>: [ True | False ]</dt>
 <dd>Whether to vertically flip the RGB image in case it is the
 wrong way around.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -300,16 +300,16 @@ wrong way around.</dd>
 <dd><p>Center the image on a given position and with a given radius</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>x</em>: [ float ]</dt>
 <dd>Longitude of the position to center on (degrees)</dd>
 <dt><em>y</em>: [ float ]</dt>
 <dd>Latitude of the position to center on (degrees)</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<p>Either the radius or width/heigh arguments should be specified.</p>
+<div><p>Either the radius or width/heigh arguments should be specified.</p>
 <dl class="docutils">
 <dt><em>radius</em>: [ float ]</dt>
 <dd>Radius of the region to view (degrees). This produces a square plot.</dd>
@@ -320,7 +320,7 @@ conjunction with the height argument.</dd>
 <dd>Height of the region to view (degrees). This should be given in
 conjunction with the width argument.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -329,15 +329,15 @@ conjunction with the width argument.</dd>
 <dd><p>Overlay contours on the current plot</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>data</em>: [ string | pyfits PrimaryHDU | pyfits ImageHDU ]</dt>
 <dd>Either the filename of the FITS file to open, or a pyfits
 PrimaryHDU or ImageHDU instance.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>hdu</em>: [ integer ]</dt>
 <dd>By default, the image in the primary HDU is read in. If a
 different HDU is required, use this argument.</dd>
@@ -384,7 +384,7 @@ linestyles) will be passed on directly to matplotlib&#8217;s contour or
 contourf methods. For more information on these additional
 arguments, see the <em>Optional keyword arguments</em> sections in the
 documentation for <a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.contour">contour</a> and <a class="reference external" href="http://matplotlib.sourceforge.net/api/axes_api.html?#matplotlib.axes.Axes.contourf">contourf</a>.</p>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -393,15 +393,15 @@ documentation for <a class="reference external" href="http://matplotlib.sourcefo
 <dd><p>Save the current figure to a file</p>
 <p>Required arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>filename</em>: [ string ]</dt>
 <dd>The name of the file to save the plot to. This can be
 for example a PS, EPS, PDF, PNG, JPEG, or SVG file.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>dpi</em>: [ float ]</dt>
 <dd>The output resolution, in dots per inch. If the output file
 is a vector graphics format (such as PS, EPS, PDF or SVG) only
@@ -417,7 +417,7 @@ larger than max_dpi, then dpi is set to max_dpi.</dd>
 <dd>The maximum resolution to output images at. If no maximum is
 wanted, enter None or 0.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 </div>
@@ -429,16 +429,16 @@ wanted, enter None or 0.</dd>
 <dd><p>Add a text label</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>x, y</em>: [ float ]</dt>
 <dd>Coordinates of the text label</dd>
 <dt><em>text</em>: [ string ]</dt>
 <dd>The label</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>relative</em>: [ True | False ]</dt>
 <dd>Whether the coordinates are to be interpreted as world
 coordinates (e.g. RA/Dec or longitude/latitude), or
@@ -467,7 +467,7 @@ value in the range 0-1000 or one of &#8216;ultralight&#8217;, &#8216;light&#8217
 12), giving the size in points, or one of &#8216;xx-small&#8217;, &#8216;x-small&#8217;,
 &#8216;small&#8217;, &#8216;medium&#8217;, &#8216;large&#8217;, &#8216;x-large&#8217;, or &#8216;xx-large&#8217;.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 </div>
@@ -479,22 +479,22 @@ value in the range 0-1000 or one of &#8216;ultralight&#8217;, &#8216;light&#8217
 <dd><p>Overlay markers on the current plot.</p>
 <p>Required arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>xw</em>: [ list | numpy.ndarray ]</dt>
 <dd>The x postions of the markers (in world coordinates)</dd>
 <dt><em>yw</em>: [ list | numpy.ndarray ]</dt>
 <dd>The y positions of the markers (in world coordinates)</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the scatter layer. This is useful for giving
 custom names to layers (instead of marker_set_n) and for
 replacing existing layers.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Additional keyword arguments (such as marker, facecolor, edgecolor,
 alpha, or linewidth) will be passed on directly to matplotlib&#8217;s
 scatter method. For more information on these additional arguments,
@@ -508,7 +508,7 @@ see the <em>Optional keyword arguments</em> sections in the documentation for
 <dd><p>Overlay circles on the current plot.</p>
 <p>Required arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>xw</em>: [ list | numpy.ndarray ]</dt>
 <dd>The x postions of the circles (in world coordinates)</dd>
 <dt><em>yw</em>: [ list | numpy.ndarray ]</dt>
@@ -516,16 +516,16 @@ see the <em>Optional keyword arguments</em> sections in the documentation for
 <dt><em>radius</em>: [integer | float | list | numpy.ndarray ]</dt>
 <dd>The radii of the circles in degrees</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the circle layer. This is useful for giving
 custom names to layers (instead of circle_set_n) and for
 replacing existing layers.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Additional keyword arguments (such as facecolor, edgecolor, alpha,
 or linewidth) can be used to control the appearance of the circles,
 which are instances of the matplotlib Circle class. For more
@@ -538,7 +538,7 @@ information on available arguments, see <a class="reference external" href="http
 <dd><p>Overlay ellipses on the current plot.</p>
 <p>Required arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>xw</em>: [ list | numpy.ndarray ]</dt>
 <dd>The x postions of the ellipses (in world coordinates)</dd>
 <dt><em>yw</em>: [ list | numpy.ndarray ]</dt>
@@ -548,10 +548,10 @@ information on available arguments, see <a class="reference external" href="http
 <dt><em>height</em>: [integer | float | list | numpy.ndarray ]</dt>
 <dd>The height of the ellipse in degrees</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>angle</em>: [integer | float | list | numpy.ndarray ]</dt>
 <dd>rotation in degrees (anti-clockwise). Default
 angle is 0.0.</dd>
@@ -560,7 +560,7 @@ angle is 0.0.</dd>
 custom names to layers (instead of ellipse_set_n) and for
 replacing existing layers.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Additional keyword arguments (such as facecolor, edgecolor, alpha,
 or linewidth) can be used to control the appearance of the ellipses,
 which are instances of the matplotlib Ellipse class. For more
@@ -573,7 +573,7 @@ information on available arguments, see <a class="reference external" href="http
 <dd><p>Overlay rectangles on the current plot.</p>
 <p>Required arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>xw</em>: [ list | numpy.ndarray ]</dt>
 <dd>The x postions of the rectangles (in world coordinates)</dd>
 <dt><em>yw</em>: [ list | numpy.ndarray ]</dt>
@@ -583,16 +583,16 @@ information on available arguments, see <a class="reference external" href="http
 <dt><em>height</em>: [integer | float | list | numpy.ndarray ]</dt>
 <dd>The height of the rectangle in degrees</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the rectangle layer. This is useful for giving
 custom names to layers (instead of rectangle_set_n) and for
 replacing existing layers.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Additional keyword arguments (such as facecolor, edgecolor, alpha,
 or linewidth) can be used to control the appearance of the
 rectangles, which are instances of the matplotlib Rectangle class.
@@ -614,11 +614,11 @@ For more information on available arguments, see <a class="reference external" h
 <dd><p>Remove a layer</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the layer to remove</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -629,11 +629,11 @@ For more information on available arguments, see <a class="reference external" h
 it can be shown again using show_layer.</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the layer to hide</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -643,11 +643,11 @@ it can be shown again using show_layer.</p>
 <p>This shows a layer previously hidden with hide_layer</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the layer to show</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -656,11 +656,11 @@ it can be shown again using show_layer.</p>
 <dd><p>Return a layer object</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>layer</em>: [ string ]</dt>
 <dd>The name of the layer to return</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 </div>
@@ -672,13 +672,13 @@ it can be shown again using show_layer.</p>
 <dd><p>Convert world to pixel coordinates</p>
 <p>Required arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>xw</em>: [ scalar | list | numpy array ]</dt>
 <dd>x world coordinate</dd>
 <dt><em>yw</em>: [ scalar | list | numpy array ]</dt>
 <dd>y world coordinate</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Returns the pixel coordinates as a tuple of scalars, lists, or numpy arrays depending on the input</p>
 </dd></dl>
 
@@ -688,13 +688,13 @@ it can be shown again using show_layer.</p>
 <dd><p>Convert pixel to world coordinates</p>
 <p>Required arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>xp</em>: [ scalar | list | numpy array ]</dt>
 <dd>x pixel coordinate</dd>
 <dt><em>yp</em>: [ scalar | list | numpy array ]</dt>
 <dd>y pixel coordinate</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Returns the world coordinates as a tuple of scalars, lists, or numpy arrays depending on the input</p>
 </dd></dl>
 
@@ -710,11 +710,11 @@ it can be shown again using show_layer.</p>
 <dd><p>Set color of the frame</p>
 <p>Required arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>color</em>:</dt>
 <dd>The color to use for the frame.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -723,11 +723,11 @@ it can be shown again using show_layer.</p>
 <dd><p>Set line width of the frame</p>
 <p>Required arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>linewidth</em>:</dt>
 <dd>The linewidth to use for the frame.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 </dd></dl>
@@ -766,7 +766,7 @@ available, and can be used to control the aspect of the colorbar:</p>
 <dd><p>Set the font of the tick labels</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>family</em>:</dt>
 <dd>The family of the font to use. This can either be a generic font
 family name, either &#8216;serif&#8217;, &#8216;sans-serif&#8217;, &#8216;cursive&#8217;, &#8216;fantasy&#8217;, or
@@ -790,7 +790,7 @@ value in the range 0-1000 or one of &#8216;ultralight&#8217;, &#8216;light&#8217
 12), giving the size in points, or one of &#8216;xx-small&#8217;, &#8216;x-small&#8217;,
 &#8216;small&#8217;, &#8216;medium&#8217;, &#8216;large&#8217;, &#8216;x-large&#8217;, or &#8216;xx-large&#8217;.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Default values are set by matplotlib or previously set values if
 set_font has already been called. Global default values can be set by
 editing the matplotlibrc file.</p>
@@ -832,7 +832,7 @@ editing the matplotlibrc file.</p>
 <dd><p>Show a colorbar on the side of the image.</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>location</em>: [ string ]</dt>
 <dd>Where to place the colorbar. Should be one of &#8216;left&#8217;, &#8216;right&#8217;, &#8216;top&#8217;, &#8216;bottom&#8217;.</dd>
 <dt><em>width</em>: [ float ]</dt>
@@ -844,7 +844,7 @@ editing the matplotlibrc file.</p>
 <dt><em>labels</em>: [ True or False ]</dt>
 <dd>Whether to show numerical labels.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 </dd></dl>
@@ -883,13 +883,13 @@ and can be used to control the aspect of the grid:</p>
 <dd><p>Set the alpha (transparency) of the grid lines</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>alpha</em>: [ float ]</dt>
 <dd>The alpha value of the grid. This should be a floating
 point value between 0 and 1, where 0 is completely
 transparent, and 1 is completely opaque.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -898,11 +898,11 @@ transparent, and 1 is completely opaque.</dd>
 <dd><p>Set the color of the grid lines</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>color</em>: [ string ]</dt>
 <dd>The color of the grid lines</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -911,13 +911,13 @@ transparent, and 1 is completely opaque.</dd>
 <dd><p>Set the grid line spacing in the longitudinal direction</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>xspacing</em>: [ float | &#8216;tick&#8217; ]</dt>
 <dd>The spacing in the longitudinal direction, in degrees.
 To set the spacing to be the same as the ticks, set this
 to &#8216;tick&#8217;</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -926,13 +926,13 @@ to &#8216;tick&#8217;</dd>
 <dd><p>Set the grid line spacing in the latitudinal direction</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>yspacing</em>: [ float | &#8216;tick&#8217; ]</dt>
 <dd>The spacing in the latitudinal direction, in degrees.
 To set the spacing to be the same as the ticks, set this
 to &#8216;tick&#8217;</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 </dd></dl>
@@ -1049,14 +1049,14 @@ editing the matplotlibrc file.</p>
 <dd><p>Overlay a scale bar on the image.</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>length</em>:[ float ]</dt>
 <dd>The length of the scalebar, in degrees</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>label</em>: [ string ]</dt>
 <dd>Label to place below the scalebar</dd>
 <dt><em>corner</em>: [ integer ]</dt>
@@ -1066,13 +1066,13 @@ left&#8217; (default), &#8216;bottom right&#8217;</dd>
 <dt><em>frame</em>: [ True | False ]</dt>
 <dd>Whether to display a frame behind the scalebar (default is False)</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Advanced:</p>
 <blockquote>
-Additional arguments are passed to the matplotlib Rectangle and
+<div>Additional arguments are passed to the matplotlib Rectangle and
 Text classes. See the matplotlib documentation for more details.
 In cases where the same argument exists for the two objects, the
-argument is passed to both the Text and Rectangle instance.</blockquote>
+argument is passed to both the Text and Rectangle instance.</div></blockquote>
 </dd></dl>
 
 </dd></dl>
@@ -1218,7 +1218,7 @@ keywords in the FITS header to set the major and minor axes and the
 position angle on the sky.</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>major</em>: [ float ]</dt>
 <dd>Major axis of the beam in degrees (overrides BMAJ if present)</dd>
 <dt><em>minor</em>: [ float ]</dt>
@@ -1233,11 +1233,11 @@ BPA if present) in the anticlockwise direction.</dd>
 <dt><em>frame</em>: [ True | False ]</dt>
 <dd>Whether to display a frame behind the beam (default is False)</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Advanced:</p>
 <blockquote>
-Additional arguments are passed to the matplotlib Ellipse classe.
-See the matplotlib documentation for more details.</blockquote>
+<div>Additional arguments are passed to the matplotlib Ellipse classe.
+See the matplotlib documentation for more details.</div></blockquote>
 </dd></dl>
 
 </dd></dl>
@@ -1272,7 +1272,7 @@ See the matplotlib documentation for more details.</blockquote>
 <dd><p>Set the font of the axis labels</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>family</em>:</dt>
 <dd>The family of the font to use. This can either be a generic font
 family name, either &#8216;serif&#8217;, &#8216;sans-serif&#8217;, &#8216;cursive&#8217;, &#8216;fantasy&#8217;, or
@@ -1296,7 +1296,7 @@ value in the range 0-1000 or one of &#8216;ultralight&#8217;, &#8216;light&#8217
 12), giving the size in points, or one of &#8216;xx-small&#8217;, &#8216;x-small&#8217;,
 &#8216;small&#8217;, &#8216;medium&#8217;, &#8216;large&#8217;, &#8216;x-large&#8217;, or &#8216;xx-large&#8217;.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Default values are set by matplotlib or previously set values if
 set_font has already been called. Global default values can be set by
 editing the matplotlibrc file.</p>
@@ -1388,7 +1388,7 @@ editing the matplotlibrc file.</p>
 <dd><p>Set the font of the tick labels</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>family</em>:</dt>
 <dd>The family of the font to use. This can either be a generic font
 family name, either &#8216;serif&#8217;, &#8216;sans-serif&#8217;, &#8216;cursive&#8217;, &#8216;fantasy&#8217;, or
@@ -1412,7 +1412,7 @@ value in the range 0-1000 or one of &#8216;ultralight&#8217;, &#8216;light&#8217
 12), giving the size in points, or one of &#8216;xx-small&#8217;, &#8216;x-small&#8217;,
 &#8216;small&#8217;, &#8216;medium&#8217;, &#8216;large&#8217;, &#8216;x-large&#8217;, or &#8216;xx-large&#8217;.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Default values are set by matplotlib or previously set values if
 set_font has already been called. Global default values can be set by
 editing the matplotlibrc file.</p>
@@ -1423,11 +1423,11 @@ editing the matplotlibrc file.</p>
 <tt class="descname">set_style</tt><big>(</big><em>style</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_style" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the format of the x-axis tick labels. This can be &#8216;colons&#8217; or &#8216;plain&#8217;:</p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li>&#8216;colons&#8217; uses colons as separators, for example 31:41:59.26 +27:18:28.1</li>
 <li>&#8216;plain&#8217; uses letters and symbols as separators, for example 31h41m59.26s +27º18&#8216;28.1&#8221;</li>
 </ul>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -1435,14 +1435,14 @@ editing the matplotlibrc file.</p>
 <tt class="descname">set_xformat</tt><big>(</big><em>format</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_xformat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the format of the x-axis tick labels:</p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li><tt class="docutils literal"><span class="pre">ddd.ddddd</span></tt> - decimal degrees, where the number of decimal places can be varied</li>
 <li><tt class="docutils literal"><span class="pre">hh</span></tt> or <tt class="docutils literal"><span class="pre">dd</span></tt> - hours (or degrees)</li>
 <li><tt class="docutils literal"><span class="pre">hh:mm</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm</span></tt> - hours and minutes (or degrees and arcminutes)</li>
 <li><tt class="docutils literal"><span class="pre">hh:mm:ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds)</li>
 <li><tt class="docutils literal"><span class="pre">hh:mm:ss.ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss.ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds), where the number of decimal places can be varied.</li>
 </ul>
-</blockquote>
+</div></blockquote>
 <p>If one of these arguments is not specified, the format for that axis is left unchanged.</p>
 </dd></dl>
 
@@ -1457,14 +1457,14 @@ editing the matplotlibrc file.</p>
 <tt class="descname">set_yformat</tt><big>(</big><em>format</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_yformat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the format of the y-axis tick labels:</p>
 <blockquote>
-<ul class="simple">
+<div><ul class="simple">
 <li><tt class="docutils literal"><span class="pre">ddd.ddddd</span></tt> - decimal degrees, where the number of decimal places can be varied</li>
 <li><tt class="docutils literal"><span class="pre">hh</span></tt> or <tt class="docutils literal"><span class="pre">dd</span></tt> - hours (or degrees)</li>
 <li><tt class="docutils literal"><span class="pre">hh:mm</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm</span></tt> - hours and minutes (or degrees and arcminutes)</li>
 <li><tt class="docutils literal"><span class="pre">hh:mm:ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds)</li>
 <li><tt class="docutils literal"><span class="pre">hh:mm:ss.ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss.ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds), where the number of decimal places can be varied.</li>
 </ul>
-</blockquote>
+</div></blockquote>
 <p>If one of these arguments is not specified, the format for that axis is left unchanged.</p>
 </dd></dl>
 
@@ -1543,14 +1543,14 @@ automatically determined, set this to &#8216;auto&#8217;.</p>
 <dd><p>Set whether the display should refresh after each method call</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>refresh</em>: [ True | False ]</dt>
 <dd>Whether to refresh the display every time a FITSFigure
 method is called. The default is True. If set to false,
 the display can be refreshed manually using the refresh()
 method</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -1559,14 +1559,14 @@ method</dd>
 <dd><p>Refresh the display</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>force</em>: [ True | False ]</dt>
 <dd>If set to False, refresh() will only have an effect if
 auto refresh is on. If set to True, the display will be
 refreshed whatever the auto refresh setting is set to.
 The default is True.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -1575,13 +1575,13 @@ The default is True.</dd>
 <dd><p>Set whether to use a real LaTeX installation or the built-in matplotlib LaTeX</p>
 <p>Required Arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>usetex</em>: [ True | False ]</dt>
 <dd>Whether to use a real LaTex installation (True) or the built-in
 matplotlib LaTeX (False). Note that if the former is chosen, an
 installation of LaTex is required.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <span class="target" id="module-aplpy"></span></div>
@@ -1596,14 +1596,14 @@ projections/sizes/resolutions and uses Montage to reproject
 them all to the same projection.</p>
 <p>Required arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>files</em> [ tuple | list ]</dt>
 <dd>A list of the filenames of three FITS filename to reproject.
 The order is red, green, blue.</dd>
 <dt><em>output</em> [ string ]</dt>
 <dd>The filename of the output RGB FITS cube.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 </dd></dl>
 
 <dl class="function">
@@ -1612,7 +1612,7 @@ The order is red, green, blue.</dd>
 <dd><p>Make an RGB image from a FITS RGB cube or from three FITS files</p>
 <p>Required arguments:</p>
 <blockquote>
-<dl class="docutils">
+<div><dl class="docutils">
 <dt><em>data</em>: [ string | tuple | list ]</dt>
 <dd>If a string, this is the filename of an RGB FITS cube. If a tuple
 or list, this should give the filename of three files to use for
@@ -1622,56 +1622,56 @@ the red, green, and blue channel.</dd>
 will be determined from the extension. Any image type supported by
 the Python Imaging Library can be used.</dd>
 </dl>
-</blockquote>
+</div></blockquote>
 <p>Optional keyword arguments:</p>
 <blockquote>
-<p><em>vmin_r</em>: [ None | float ]</p>
+<div><p><em>vmin_r</em>: [ None | float ]</p>
 <p><em>vmin_g</em>: [ None | float ]</p>
 <p><em>vmin_b</em>: [ None | float ]</p>
 <blockquote>
-Minimum pixel value to use for the red, green, and blue channels.
+<div>Minimum pixel value to use for the red, green, and blue channels.
 If set to None for a given channel, the minimum pixel value for
 that channel is determined using the corresponding pmin_x argument
-(default).</blockquote>
+(default).</div></blockquote>
 <p><em>vmax_r</em>: [ None | float ]</p>
 <p><em>vmax_g</em>: [ None | float ]</p>
 <p><em>vmax_b</em>: [ None | float ]</p>
 <blockquote>
-Maximum pixel value to use for the red, green, and blue channels.
+<div>Maximum pixel value to use for the red, green, and blue channels.
 If set to None for a given channel, the maximum pixel value for
 that channel is determined using the corresponding pmax_x argument
-(default).</blockquote>
+(default).</div></blockquote>
 <p><em>pmin_r</em>: [ float ]</p>
 <p><em>pmin_g</em>: [ float ]</p>
 <p><em>pmin_b</em>: [ float ]</p>
 <blockquote>
-Percentile values used to determine for a given channel the
+<div>Percentile values used to determine for a given channel the
 minimum pixel value to use for that channel if the corresponding
-vmin_x is set to None. The default is 0.25% for all channels.</blockquote>
+vmin_x is set to None. The default is 0.25% for all channels.</div></blockquote>
 <p><em>pmax_r</em>: [ float ]</p>
 <p><em>pmax_g</em>: [ float ]</p>
 <p><em>pmax_b</em>: [ float ]</p>
 <blockquote>
-Percentile values used to determine for a given channel the
+<div>Percentile values used to determine for a given channel the
 maximum pixel value to use for that channel if the corresponding
-vmax_x is set to None. The default is 99.75% for all channels.</blockquote>
+vmax_x is set to None. The default is 99.75% for all channels.</div></blockquote>
 <p><em>stretch_r</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</p>
 <p><em>stretch_g</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</p>
 <p><em>stretch_b</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</p>
 <blockquote>
-The stretch function to use for the different channels.</blockquote>
+<div>The stretch function to use for the different channels.</div></blockquote>
 <p><em>vmid_r</em>: [ None | float ]</p>
 <p><em>vmid_g</em>: [ None | float ]</p>
 <p><em>vmid_b</em>: [ None | float ]</p>
 <blockquote>
-Mid-pixel value used for the log and arcsinh stretches. If
-set to None, this is set to a sensible value.</blockquote>
+<div>Mid-pixel value used for the log and arcsinh stretches. If
+set to None, this is set to a sensible value.</div></blockquote>
 <p><em>exponent_r</em>: [ float ]</p>
 <p><em>exponent_g</em>: [ float ]</p>
 <p><em>exponent_b</em>: [ float ]</p>
 <blockquote>
-If stretch_x is set to &#8216;power&#8217;, this is the exponent to use.</blockquote>
-</blockquote>
+<div>If stretch_x is set to &#8216;power&#8217;, this is the exponent to use.</div></blockquote>
+</div></blockquote>
 </dd></dl>
 
 </div>
@@ -1700,7 +1700,7 @@ If stretch_x is set to &#8216;power&#8217;, this is the exponent to use.</blockq
     </div>
     <div class="footer">
         &copy; Copyright 2010, Eli Bressert and Thomas Robitaille.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.6.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
     </div>
   </body>
 </html>
