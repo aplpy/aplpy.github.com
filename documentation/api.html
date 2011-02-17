@@ -534,7 +534,7 @@ information on available arguments, see <a class="reference external" href="http
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_ellipses">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_ellipses</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>width</em>, <em>height</em>, <em>layer=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_ellipses" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_ellipses</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>width</em>, <em>height</em>, <em>layer=False</em>, <em>angle=0</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_ellipses" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlay ellipses on the current plot.</p>
 <p>Required arguments:</p>
 <blockquote>
@@ -806,42 +806,6 @@ editing the matplotlibrc file.</p>
 <dt id="aplpy.colorbar.Colorbar.set_frame_linewidth">
 <tt class="descname">set_frame_linewidth</tt><big>(</big><em>linewidth</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_frame_linewidth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the linewidth of the colorbar frame, in points</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="aplpy.colorbar.Colorbar.set_label_font">
-<tt class="descname">set_label_font</tt><big>(</big><em>family=None</em>, <em>style=None</em>, <em>variant=None</em>, <em>stretch=None</em>, <em>weight=None</em>, <em>size=None</em>, <em>fontproperties=None</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_label_font" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the font of the colobar label</p>
-<p>Optional Keyword Arguments:</p>
-<blockquote>
-<dl class="docutils">
-<dt><em>family</em>:</dt>
-<dd>The family of the font to use. This can either be a generic font
-family name, either &#8216;serif&#8217;, &#8216;sans-serif&#8217;, &#8216;cursive&#8217;, &#8216;fantasy&#8217;, or
-&#8216;monospace&#8217;, or a list of font names in decreasing order of priority.</dd>
-<dt><em>style</em>:</dt>
-<dd>The font style. This can be &#8216;normal&#8217;, &#8216;italic&#8217; or &#8216;oblique&#8217;.</dd>
-<dt><em>variant</em>:</dt>
-<dd>The font variant. This can be &#8216;normal&#8217; or &#8216;small-caps&#8217;</dd>
-<dt><em>stretch</em>:</dt>
-<dd>The stretching (spacing between letters) for the font. This can either
-be a numeric value in the range 0-1000 or one of &#8216;ultra-condensed&#8217;,
-&#8216;extra-condensed&#8217;, &#8216;condensed&#8217;, &#8216;semi-condensed&#8217;, &#8216;normal&#8217;,
-&#8216;semi-expanded&#8217;, &#8216;expanded&#8217;, &#8216;extra-expanded&#8217; or &#8216;ultra-expanded&#8217;.</dd>
-<dt><em>weight</em>:</dt>
-<dd>The weight (or boldness) of the font. This can either be a numeric
-value in the range 0-1000 or one of &#8216;ultralight&#8217;, &#8216;light&#8217;, &#8216;normal&#8217;,
-&#8216;regular&#8217;, &#8216;book&#8217;, &#8216;medium&#8217;, &#8216;roman&#8217;, &#8216;semibold&#8217;, &#8216;demibold&#8217;, &#8216;demi&#8217;,
-&#8216;bold&#8217;, &#8216;heavy&#8217;, &#8216;extra bold&#8217;, &#8216;black&#8217;.</dd>
-<dt><em>size</em>:</dt>
-<dd>The size of the font. This can either be a numeric value (e.g.
-12), giving the size in points, or one of &#8216;xx-small&#8217;, &#8216;x-small&#8217;,
-&#8216;small&#8217;, &#8216;medium&#8217;, &#8216;large&#8217;, &#8216;x-large&#8217;, or &#8216;xx-large&#8217;.</dd>
-</dl>
-</blockquote>
-<p>Default values are set by matplotlib or previously set values if
-set_font has already been called. Global default values can be set by
-editing the matplotlibrc file.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1359,7 +1323,7 @@ editing the matplotlibrc file.</p>
 <dl class="method">
 <dt id="aplpy.axis_labels.AxisLabels.set_ypad">
 <tt class="descname">set_ypad</tt><big>(</big><em>pad</em><big>)</big><a class="headerlink" href="#aplpy.axis_labels.AxisLabels.set_ypad" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the x-axis label displacement, in points</p>
+<dd><p>Set the y-axis label displacement, in points</p>
 </dd></dl>
 
 <dl class="method">

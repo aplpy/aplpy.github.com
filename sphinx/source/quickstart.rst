@@ -5,7 +5,7 @@ Quickstart Guide
   :maxdepth: 1
 
 The following tutorial will take you, step by step, through the main features
-of APLpy. You will need to download the following :download:`file <tutorial.tar.gz>`.
+of APLpy. You will need to download the following `file <http://aplpy.github.com/downloads/tutorial.tar.gz>`_.
 
 First, unpack the example files and go to the ``tutorial`` directory::
 
@@ -61,7 +61,7 @@ to show the image showing a 'heat' map. For more information on
 example, you can control the minimum and maximum pixel values to show and the
 stretch function to use.
 
-.. _documentation: http://aplpy.sourceforge.net/doc/#image
+.. _documentation: http://aplpy.github.com/doc/#image
 
 Displaying a 3-color image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -96,7 +96,7 @@ There are a number of arguments that can be passed to ``show_contour`` to
 control the appearance of the contours as well as the number of levels to
 show. For more information, see the see the contour_ documentation.
 
-.. _contour: http://aplpy.sourceforge.net/doc/#contours
+.. _contour: http://aplpy.github.com/doc/#contours
 
 Coordinate grid
 ^^^^^^^^^^^^^^^
@@ -125,7 +125,7 @@ or numpy arrays that are already defined::
 
 For more information about ``show_markers``, see the see the markers_ documentation.
 
-.. _markers: http://aplpy.sourceforge.net/doc/#markers
+.. _markers: http://aplpy.github.com/doc/#markers
 
 Layers
 ^^^^^^
@@ -158,7 +158,7 @@ Note the presence of the ``layer='marker_set_1'`` which means that the
 current markers plot will be replaced. For more information about layers, see
 the see the layers_ documentation.
 
-.. _layers: http://aplpy.sourceforge.net/doc/#layers
+.. _layers: http://aplpy.github.com/doc/#layers
 
 Saving
 ^^^^^^
@@ -200,4 +200,4 @@ To summarize, the above plot was made using the following commands::
 There are many more methods and options, from setting the tick spacing and
 format to controling the label fonts. For more information, see the full api_.
 
-.. _api: http://aplpy.sourceforge.net/doc/
+.. _api: http://aplpy.github.com/doc/
