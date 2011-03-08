@@ -1594,6 +1594,14 @@ installation of LaTex is required.</dd>
 <p>This method can read in three FITS files with different
 projections/sizes/resolutions and uses Montage to reproject
 them all to the same projection.</p>
+<p>Two files are produced by this function. The first is a three-dimensional
+FITS cube with a filename give by <cite>output</cite>, where the third dimension
+contains the different channels. The second is a two-dimensional FITS
+image with a filename given by <cite>output</cite> with a <cite>_2d</cite> suffix. This file
+contains the mean of the different channels, and is required as input to
+FITSFigure if show_rgb is subsequently used to show a color image
+generated from the FITS cube (to provide the correct WCS information to
+FITSFigure).</p>
 <p>Required arguments:</p>
 <blockquote>
 <div><dl class="docutils">
