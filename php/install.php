@@ -46,7 +46,7 @@ include('menu.php');
     The easiest way to install APLpy and its remaining dependencies is through the 
     <a href="http://gist.github.com/raw/564472/auto_install_aplpy.py">auto-install-aplpy
     </a> script 
-    (<a href="http://gist.github.com/gists/564472">source</a>). 
+    (<a href="http://gist.github.com/564472">source</a>).
     Using the auto-install script is very quick and easy. Below is an example of 
     what you would type via the command line to get started.
 
