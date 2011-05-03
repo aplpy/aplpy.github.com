@@ -76,5 +76,6 @@ files, the following code will generate on plot for each
         f = aplpy.FITSFigure(fits_file)
         f.show_grayscale()
         f.save(fits_file.replace('.fits','.png'))
+        f.close()
 
 

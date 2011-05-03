@@ -504,7 +504,7 @@ see the <em>Optional keyword arguments</em> sections in the documentation for
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_circles">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_circles</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>radius</em>, <em>layer=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_circles" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_circles</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>radius</em>, <em>layer=False</em>, <em>zorder=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_circles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlay circles on the current plot.</p>
 <p>Required arguments:</p>
 <blockquote>
@@ -534,7 +534,7 @@ information on available arguments, see <a class="reference external" href="http
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_ellipses">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_ellipses</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>width</em>, <em>height</em>, <em>layer=False</em>, <em>angle=0</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_ellipses" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_ellipses</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>width</em>, <em>height</em>, <em>angle=0</em>, <em>layer=False</em>, <em>zorder=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_ellipses" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlay ellipses on the current plot.</p>
 <p>Required arguments:</p>
 <blockquote>
@@ -569,7 +569,7 @@ information on available arguments, see <a class="reference external" href="http
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_rectangles">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_rectangles</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>width</em>, <em>height</em>, <em>layer=False</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_rectangles" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_rectangles</tt><big>(</big><em>xw</em>, <em>yw</em>, <em>width</em>, <em>height</em>, <em>layer=False</em>, <em>zorder=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_rectangles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlay rectangles on the current plot.</p>
 <p>Required arguments:</p>
 <blockquote>
@@ -828,7 +828,7 @@ editing the matplotlibrc file.</p>
 
 <dl class="method">
 <dt id="aplpy.colorbar.Colorbar.show">
-<tt class="descname">show</tt><big>(</big><em>location='right'</em>, <em>width=0.20000000000000001</em>, <em>pad=0.050000000000000003</em>, <em>ticks=None</em>, <em>labels=True</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.show" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">show</tt><big>(</big><em>location='right'</em>, <em>width=0.2</em>, <em>pad=0.05</em>, <em>ticks=None</em>, <em>labels=True</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.show" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a colorbar on the side of the image.</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
@@ -1045,7 +1045,7 @@ editing the matplotlibrc file.</p>
 
 <dl class="method">
 <dt id="aplpy.overlays.ScaleBar.show">
-<tt class="descname">show</tt><big>(</big><em>length</em>, <em>label=None</em>, <em>corner='bottom right'</em>, <em>frame=False</em>, <em>borderpad=0.40000000000000002</em>, <em>pad=0.5</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.show" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">show</tt><big>(</big><em>length</em>, <em>label=None</em>, <em>corner='bottom right'</em>, <em>frame=False</em>, <em>borderpad=0.4</em>, <em>pad=0.5</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.show" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlay a scale bar on the image.</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -1094,12 +1094,21 @@ and can be used to control the aspect of the beam:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
 </pre></div>
 </div>
+<p>If more than one beam is added, the beam object becomes a list. In
+this case, to control the aspect of one of the beams, you will need tp
+specify the beam index:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">beam</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_hatch</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="o">...</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.remove_beam">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">remove_beam</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.remove_beam" title="Permalink to this definition">¶</a></dt>
-<dd><p>Removes the beam from the current figure</p>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">remove_beam</tt><big>(</big><em>beam_index=None</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.remove_beam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the beam from the current figure. If more than one beam is
+present, the index of the beam should be specified using beam_index=</p>
 </dd></dl>
 
 <span class="target" id="module-aplpy.overlays"></span><dl class="class">
@@ -1211,7 +1220,7 @@ corner/edge, relative to the canvas size.</p>
 
 <dl class="method">
 <dt id="aplpy.overlays.Beam.show">
-<tt class="descname">show</tt><big>(</big><em>major='BMAJ'</em>, <em>minor='BMIN'</em>, <em>angle='BPA'</em>, <em>corner='bottom left'</em>, <em>frame=False</em>, <em>borderpad=0.40000000000000002</em>, <em>pad=0.5</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.show" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">show</tt><big>(</big><em>major='BMAJ'</em>, <em>minor='BMIN'</em>, <em>angle='BPA'</em>, <em>corner='bottom left'</em>, <em>frame=False</em>, <em>borderpad=0.4</em>, <em>pad=0.5</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.show" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display the beam shape and size for the primary image</p>
 <p>By default, this method will search for the BMAJ, BMIN, and BPA
 keywords in the FITS header to set the major and minor axes and the
