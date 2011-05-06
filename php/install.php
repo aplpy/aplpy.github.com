@@ -23,8 +23,9 @@ include('menu.php');
     <ul>
     <li><a href="http://sourceforge.net/projects/pyparsing/">pyparsing </a></li>
     <li><a href="http://leejjoon.github.com/pyregion/">pyregion </a></li>
+    <li><a href="https://github.com/astrofrog/pyavm">pyavm</a></li>
     <li><a href="http://www.pythonware.com/products/pil/">PIL</a></li>
-    <li><a href="http://montage.ipac.caltech.edu/">montage</a></li>
+    <li><a href="https://github.com/astrofrog/python-montage">python-montage</a> and <a href="http://montage.ipac.caltech.edu/">Montage</a> (the first is a Python wrapper to the second)</li>
     
     </ul>
     </p>
