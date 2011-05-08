@@ -119,7 +119,9 @@
 <div><dl class="docutils">
 <dt><em>data</em>: [ string | pyfits.PrimaryHDU | pyfits.ImageHDU | pywcs.WCS ]</dt>
 <dd>Either the filename of the FITS file to open, a pyfits
-PrimaryHDU or ImageHDU object, or a pywcs WCS object.</dd>
+PrimaryHDU or ImageHDU object, or a pywcs WCS object. It is
+also possible to specify the filename of an RGB image tagged
+with AVM meta-data.</dd>
 </dl>
 </div></blockquote>
 <p>Optional Keyword Arguments:</p>
@@ -176,7 +178,7 @@ section in the documentation for <a class="reference external" href="http://matp
 <h2>General routines<a class="headerlink" href="#general-routines" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_grayscale">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_grayscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>invert='default'</em>, <em>smooth=None</em>, <em>kernel='gauss'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_grayscale" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_grayscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>invert='default'</em>, <em>smooth=None</em>, <em>kernel='gauss'</em>, <em>interpolation='nearest'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_grayscale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a grayscale image of the FITS file</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
@@ -215,6 +217,13 @@ smoothing kernels.</dd>
 <dd>Default kernel used for smoothing is &#8216;gauss&#8217;. The user can
 specify if they would prefer &#8216;gauss&#8217;, &#8216;box&#8217;, or a custom
 kernel. All kernels are normalized to ensure flux retention.</dd>
+<dt><em>interpolation</em>: [ string ]</dt>
+<dd>The type of interpolation to use for the image. The default is
+&#8216;nearest&#8217;. Other options include &#8216;none&#8217; (no interpolation,
+meaning that if exported to a postscript file, the grayscale
+will be output at native resolution irrespective of the dpi
+setting), &#8216;bilinear&#8217;, &#8216;bicubic&#8217;, and many more (see the
+matplotlib documentation for imshow).</dd>
 </dl>
 </div></blockquote>
 </dd></dl>
@@ -226,7 +235,7 @@ kernel. All kernels are normalized to ensure flux retention.</dd>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_colorscale">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_colorscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>cmap='default'</em>, <em>smooth=None</em>, <em>kernel='gauss'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_colorscale" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_colorscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>cmap='default'</em>, <em>smooth=None</em>, <em>kernel='gauss'</em>, <em>interpolation='nearest'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_colorscale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a colorscale image of the FITS file</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
@@ -263,6 +272,13 @@ smoothing kernels.</dd>
 <dd>Default kernel used for smoothing is &#8216;gauss&#8217;. The user can
 specify if they would prefer &#8216;gauss&#8217;, &#8216;box&#8217;, or a custom
 kernel. All kernels are normalized to ensure flux retention.</dd>
+<dt><em>interpolation</em>: [ string ]</dt>
+<dd>The type of interpolation to use for the image. The default is
+&#8216;nearest&#8217;. Other options include &#8216;none&#8217; (no interpolation,
+meaning that if exported to a postscript file, the colorscale
+will be output at native resolution irrespective of the dpi
+setting), &#8216;bilinear&#8217;, &#8216;bicubic&#8217;, and many more (see the
+matplotlib documentation for imshow).</dd>
 </dl>
 </div></blockquote>
 </dd></dl>
@@ -274,22 +290,20 @@ kernel. All kernels are normalized to ensure flux retention.</dd>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_rgb">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_rgb</tt><big>(</big><em>filename</em>, <em>interpolation='nearest'</em>, <em>flip=False</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_rgb" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_rgb</tt><big>(</big><em>filename=None</em>, <em>interpolation='nearest'</em>, <em>vertical_flip=False</em>, <em>horizontal_flip=False</em>, <em>flip=False</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_rgb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a 3-color image instead of the FITS file data</p>
-<p>Required Arguments:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt><em>filename</em></dt>
-<dd>The 3-color image should have exactly the same dimensions as the FITS file, and
-will be shown with exactly the same projection.</dd>
-</dl>
-</div></blockquote>
 <p>Optional Arguments:</p>
 <blockquote>
 <div><dl class="docutils">
-<dt><em>flip</em>: [ True | False ]</dt>
-<dd>Whether to vertically flip the RGB image in case it is the
-wrong way around.</dd>
+<dt><em>filename</em></dt>
+<dd>The 3-color image should have exactly the same dimensions
+as the FITS file, and will be shown with exactly the same
+projection. If FITSFigure was initialized with an
+AVM-tagged RGB image, the filename is not needed here.</dd>
+<dt><em>vertical_flip</em>: [ True | False ]</dt>
+<dd>Whether to vertically flip the RGB image</dd>
+<dt><em>horizontal_flip</em>: [ True | False ]</dt>
+<dd>Whether to horizontally flip the RGB image</dd>
 </dl>
 </div></blockquote>
 </dd></dl>
@@ -1641,7 +1655,7 @@ in the form YYYY. Default is J2000.</dd>
 
 <dl class="function">
 <dt id="aplpy.make_rgb_image">
-<tt class="descclassname">aplpy.</tt><tt class="descname">make_rgb_image</tt><big>(</big><em>data</em>, <em>output</em>, <em>vmin_r=None</em>, <em>vmax_r=None</em>, <em>pmin_r=0.25</em>, <em>pmax_r=99.75</em>, <em>stretch_r='linear'</em>, <em>vmid_r=None</em>, <em>exponent_r=2</em>, <em>vmin_g=None</em>, <em>vmax_g=None</em>, <em>pmin_g=0.25</em>, <em>pmax_g=99.75</em>, <em>stretch_g='linear'</em>, <em>vmid_g=None</em>, <em>exponent_g=2</em>, <em>vmin_b=None</em>, <em>vmax_b=None</em>, <em>pmin_b=0.25</em>, <em>pmax_b=99.75</em>, <em>stretch_b='linear'</em>, <em>vmid_b=None</em>, <em>exponent_b=2</em><big>)</big><a class="headerlink" href="#aplpy.make_rgb_image" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">aplpy.</tt><tt class="descname">make_rgb_image</tt><big>(</big><em>data</em>, <em>output</em>, <em>vmin_r=None</em>, <em>vmax_r=None</em>, <em>pmin_r=0.25</em>, <em>pmax_r=99.75</em>, <em>stretch_r='linear'</em>, <em>vmid_r=None</em>, <em>exponent_r=2</em>, <em>vmin_g=None</em>, <em>vmax_g=None</em>, <em>pmin_g=0.25</em>, <em>pmax_g=99.75</em>, <em>stretch_g='linear'</em>, <em>vmid_g=None</em>, <em>exponent_g=2</em>, <em>vmin_b=None</em>, <em>vmax_b=None</em>, <em>pmin_b=0.25</em>, <em>pmax_b=99.75</em>, <em>stretch_b='linear'</em>, <em>vmid_b=None</em>, <em>exponent_b=2</em>, <em>embed_avm_tags=False</em><big>)</big><a class="headerlink" href="#aplpy.make_rgb_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make an RGB image from a FITS RGB cube or from three FITS files</p>
 <p>Required arguments:</p>
 <blockquote>

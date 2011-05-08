@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>HOWTOs &mdash; APLpy v0.9.5 documentation</title>
+    <title>AVM tagging &mdash; APLpy v0.9.5 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -22,9 +22,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="APLpy v0.9.5 documentation" href="index.html" />
-    <link rel="next" title="APLpy in non-interactive mode" href="howto_noninteractive.html" />
-    <link rel="prev" title="Quick reference Guide" href="quick_reference.html" /> 
+    <link rel="top" title="APLpy v0.9.5 documentation" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -36,12 +34,6 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="howto_noninteractive.html" title="APLpy in non-interactive mode"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="quick_reference.html" title="Quick reference Guide"
-             accesskey="P">previous</a> |</li>
         <li><a href="index.html">APLpy v0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>
@@ -50,15 +42,9 @@
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/aplpy_web_py_blue.png" alt="Logo"/>
             </a></p>
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="quick_reference.html"
-                        title="previous chapter">Quick reference Guide</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="howto_noninteractive.html"
-                        title="next chapter">APLpy in non-interactive mode</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="_sources/howtos.txt"
+    <li><a href="_sources/howto_avm.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -82,17 +68,28 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="howtos">
-<h1>HOWTOs<a class="headerlink" href="#howtos" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="howto_noninteractive.html">APLpy in non-interactive mode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="howto_montage.html">Installing Montage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="howto_rgb.html">Making RGB images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="howto_avm.html">AVM tagging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="howto_subplot.html">Creating subplots</a></li>
-</ul>
+  <div class="section" id="avm-tagging">
+<h1>AVM tagging<a class="headerlink" href="#avm-tagging" title="Permalink to this headline">¶</a></h1>
+<p>The latest developer version of APLpy has experimental support for
+reading/writing AVM tags from/to RGB images. To make a plot with an AVM-tagged RGB image, say &#8216;example.jpg&#8217;, you can use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">aplpy</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">aplpy</span><span class="o">.</span><span class="n">FITSFigure</span><span class="p">(</span><span class="s">&#39;example.jpg&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">show_rgb</span><span class="p">()</span>
+</pre></div>
 </div>
+<p>Note that no filename is required for <cite>show_rgb()</cite> in this case.</p>
+<p>Optionally, <tt class="docutils literal"><span class="pre">aplpy.make_rgb_image</span></tt> can embed AVM meta-data into RGB images it creates, using the <tt class="docutils literal"><span class="pre">embed_avm_tags=True</span></tt> option:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">aplpy</span>
+<span class="n">aplpy</span><span class="o">.</span><span class="n">make_rgb_image</span><span class="p">(</span><span class="s">&#39;2mass_cube.fits&#39;</span><span class="p">,</span>\
+                     <span class="s">&#39;2mass_rgb.jpg&#39;</span><span class="p">,</span> \
+                     <span class="n">embed_avm_tags</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This means that when creating an RGB image with APLpy, it is no longer
+necessary to initialize <tt class="docutils literal"><span class="pre">FITSFigure</span></tt> with a FITS file and then use
+<tt class="docutils literal"><span class="pre">show_rgb</span></tt> with the RGB image filename - instead, <tt class="docutils literal"><span class="pre">FITSFigure</span></tt> can be
+directly initialized with the AVM-tagged image.</p>
+<p>These features require <a class="reference external" href="https://github.com/astrofrog/pyavm">PyAVM 0.1.1</a> or later. Please report any issues you encounter <a class="reference external" href="https://github.com/aplpy/aplpy/issues">here</a>.</p>
 </div>
 
 
@@ -110,12 +107,6 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="howto_noninteractive.html" title="APLpy in non-interactive mode"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="quick_reference.html" title="Quick reference Guide"
-             >previous</a> |</li>
         <li><a href="index.html">APLpy v0.9.5 documentation</a> &raquo;</li> 
       </ul>
     </div>

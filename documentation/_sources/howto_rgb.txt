@@ -49,3 +49,4 @@ mixed, such as in the following example::
     import aplpy
     aplpy.make_rgb_image('2mass_cube.fits','2mass_rgb.tif', \
                           vmin_r=0.,pmax_g=90.)
+
