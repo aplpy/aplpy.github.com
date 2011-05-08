@@ -10,7 +10,8 @@ reading/writing AVM tags from/to RGB images. To make a plot with an AVM-tagged R
     
 Note that no filename is required for `show_rgb()` in this case.
 
-Optionally, ``aplpy.make_rgb_image`` can embed AVM meta-data into RGB images it creates, using the ``embed_avm_tags=True`` option::
+Optionally, ``aplpy.make_rgb_image`` can embed AVM meta-data into RGB
+images it creates, using the ``embed_avm_tags=True`` option::
 
     import aplpy
     aplpy.make_rgb_image('2mass_cube.fits',\
@@ -22,4 +23,6 @@ necessary to initialize ``FITSFigure`` with a FITS file and then use
 ``show_rgb`` with the RGB image filename - instead, ``FITSFigure`` can be
 directly initialized with the AVM-tagged image.
 
-These features require `PyAVM 0.1.1 <https://github.com/astrofrog/pyavm>`_ or later. Please report any issues you encounter `here <https://github.com/aplpy/aplpy/issues>`_.
+These features require `PyAVM 0.1.2 <https://github.com/astrofrog/pyavm>`_
+or later. Please report any issues you encounter `here
+<https://github.com/aplpy/aplpy/issues>`_.
