@@ -44,7 +44,7 @@ from the left).
 The size of the canvas can be controlled through the ``figsize`` argument.
 Close the current canvas and create a new figure using::
 
-    gc = aplpy.FITSFigure('fits/2MASS_k.fits',figsize=(10,9))
+    gc = aplpy.FITSFigure('fits/2MASS_k.fits', figsize=(10, 9))
     gc.show_grayscale()
 
 This will create a figure that is 10 by 10 inches and will show the image as a grayscale.
@@ -82,7 +82,7 @@ It is very easy to modify the font properties of the various labels.
 For example, in this case, we can change the font size of the tick
 labels to be smaller than the default::
 
-    gc.set_tick_labels_font(size='small')
+    gc.tick_labels.set_font(size='small')
 
 Contours
 ^^^^^^^^
@@ -90,7 +90,7 @@ Contours
 APLpy can be used to overlay contours onto a grayscale/colorscale/3-color
 image. Try typing the following command::
 
-    gc.show_contour('fits/mips_24micron.fits',colors='white')
+    gc.show_contour('fits/mips_24micron.fits', colors='white')
 
 There are a number of arguments that can be passed to ``show_contour`` to
 control the appearance of the contours as well as the number of levels to
@@ -119,9 +119,9 @@ or numpy arrays that are already defined::
     # If the numpy.loadtxt() command does not work 
     # then do "import numpy", without the quotes. 
     data = numpy.loadtxt('data/yso_wcs_only.txt')
-    ra,dec = data[:,0],data[:,1]
-    gc.show_markers(ra,dec,edgecolor='green',facecolor='none',
-       marker='o',s=10,alpha=0.5)
+    ra, dec = data[:, 0], data[:, 1]
+    gc.show_markers(ra, dec, edgecolor='green', facecolor='none', 
+                    marker='o', s=10, alpha=0.5)
 
 For more information about ``show_markers``, see the see the markers_ documentation.
 
@@ -151,8 +151,8 @@ the layer you are creating with the name provided, and can also be used to
 replace an existing layer. For example, let's change the color of the markers
 from green to red::
 
-    gc.show_markers(ra,dec,layer='marker_set_1',edgecolor='green',
-           facecolor='none',marker='o',s=10,alpha=0.5)
+    gc.show_markers(ra, dec, layer='marker_set_1', edgecolor='green', 
+                    facecolor='none', marker='o', s=10, alpha=0.5)
 
 Note the presence of the ``layer='marker_set_1'`` which means that the
 current markers plot will be replaced. For more information about layers, see
@@ -182,22 +182,22 @@ To summarize, the above plot was made using the following commands::
     import aplpy
     import numpy
 
-    gc = aplpy.FITSFigure('fits/2MASS_k.fits',figsize=(10,9))
+    gc = aplpy.FITSFigure('fits/2MASS_k.fits', figsize=(10, 9))
     gc.show_rgb('graphics/2MASS_arcsinh_color.png')
 
-    gc.set_tick_labels_font(size='small')
+    gc.tick_labels.set_font(size='small')
 
-    gc.show_contour('fits/mips_24micron.fits',colors='white')
+    gc.show_contour('fits/mips_24micron.fits', colors='white')
 
     data = numpy.loadtxt('data/yso_wcs_only.txt')
-    ra,dec = data[:,0],data[:,1]
+    ra, dec = data[:, 0], data[:, 1]
 
-    gc.show_markers(ra,dec,layer='marker_set_1',edgecolor='red',
-    facecolor='none',marker='o',s=10,alpha=0.5)
+    gc.show_markers(ra, dec, layer='marker_set_1', edgecolor='red', 
+                    facecolor='none', marker='o', s=10, alpha=0.5)
 
     gc.save('myfirstplot.png')
 
 There are many more methods and options, from setting the tick spacing and
-format to controling the label fonts. For more information, see the full api_.
+format to controlling the label fonts. For more information, see the full api_.
 
 .. _api: http://aplpy.github.com/documentation/api.html

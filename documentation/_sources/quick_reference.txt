@@ -85,6 +85,14 @@ To overlay different shapes, the following methods are available::
 where ``x_world``, ``y_world``, ``radius``, ``width``, and ``height``
 should be 1D arrays specified in degrees.
 
+It is also possible to plot lines and polygons using
+
+    fig.show_lines(line_list)
+    fig.show_polygons(polygon_list)
+
+For these methods, `line_list` and `polygon_list` should be lists of 2xN
+Numpy arrays describing the coordinates of the vertices in degrees.
+
 DS9 region files can be overlaid with::
 
     fig.show_regions('myregions.reg')

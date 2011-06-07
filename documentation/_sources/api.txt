@@ -35,6 +35,8 @@ Shapes
 .. automethod:: FITSFigure.show_circles
 .. automethod:: FITSFigure.show_ellipses
 .. automethod:: FITSFigure.show_rectangles
+.. automethod:: FITSFigure.show_lines
+.. automethod:: FITSFigure.show_polygons
    
 Layers
 ^^^^^^

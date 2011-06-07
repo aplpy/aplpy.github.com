@@ -200,8 +200,9 @@ value is 99.75%.</dd>
 <dt><em>stretch</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</dt>
 <dd>The stretch function to use</dd>
 <dt><em>vmid</em>: [ None | float ]</dt>
-<dd>Mid-pixel value used for the log and arcsinh stretches. If
-set to None, this is set to a sensible value.</dd>
+<dd>Baseline value used for the log and arcsinh stretches. If
+set to None, this is set to zero for log stretches and to
+vmin - (vmax - vmin) / 30. for arcsinh stretches</dd>
 <dt><em>exponent</em>: [ float ]</dt>
 <dd>If stretch is set to &#8216;power&#8217;, this is the exponent to use</dd>
 <dt><em>invert</em>: [ True | False ]</dt>
@@ -257,8 +258,9 @@ value is 99.75%.</dd>
 <dt><em>stretch</em>: [ &#8216;linear&#8217; | &#8216;log&#8217; | &#8216;sqrt&#8217; | &#8216;arcsinh&#8217; | &#8216;power&#8217; ]</dt>
 <dd>The stretch function to use</dd>
 <dt><em>vmid</em>: [ None | float ]</dt>
-<dd>Mid-pixel value used for the log and arcsinh stretches. If
-set to None, this is set to a sensible value.</dd>
+<dd>Baseline value used for the log and arcsinh stretches. If
+set to None, this is set to zero for log stretches and to
+vmin - (vmax - vmin) / 30. for arcsinh stretches</dd>
 <dt><em>exponent</em>: [ float ]</dt>
 <dd>If stretch is set to &#8216;power&#8217;, this is the exponent to use</dd>
 <dt><em>cmap</em>: [ string ]</dt>
@@ -613,6 +615,61 @@ rectangles, which are instances of the matplotlib Rectangle class.
 For more information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Rectangle">Rectangle</a>.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_lines">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_lines</tt><big>(</big><em>line_list</em>, <em>layer=False</em>, <em>zorder=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_lines" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlay lines on the current plot.</p>
+<p>Required arguments:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><em>line_list</em>: [ list ]</dt>
+<dd>A list of one or more 2xN numpy arrays which contain
+the [x, y] positions of the vertices in world coordinates.</dd>
+</dl>
+</div></blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><em>layer</em>: [ string ]</dt>
+<dd>The name of the line(s) layer. This is useful for giving
+custom names to layers (instead of line_set_n) and for
+replacing existing layers.</dd>
+</dl>
+</div></blockquote>
+<p>Additional keyword arguments (such as color, offsets, cmap,
+or linewidth) can be used to control the appearance of the
+lines, which is an instances of the matplotlib LineCollection class.
+For more information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/collections_api.html?highlight=linecollection#matplotlib.collections.LineCollection">LineCollection</a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_polygons">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_polygons</tt><big>(</big><em>polygon_list</em>, <em>layer=False</em>, <em>zorder=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_polygons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlay polygons on the current plot.</p>
+<p>Required arguments:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><em>polygon_list</em>: [ list or tuple ]</dt>
+<dd>A list of one or more 2xN or Nx2 Numpy arrays which contain
+the [x, y] positions of the vertices in world coordinates.
+Note that N should be greater than 2.</dd>
+</dl>
+</div></blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><em>layer</em>: [ string ]</dt>
+<dd>The name of the circle layer. This is useful for giving
+custom names to layers (instead of circle_set_n) and for
+replacing existing layers.</dd>
+</dl>
+</div></blockquote>
+<p>Additional keyword arguments (such as facecolor, edgecolor, alpha,
+or linewidth) can be used to control the appearance of the circles,
+which are instances of the matplotlib Polygon class. For more
+information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Polygon">Polygon</a>.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="layers">
 <h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
@@ -775,6 +832,15 @@ available, and can be used to control the aspect of the colorbar:</p>
 <dt id="aplpy.colorbar.Colorbar">
 <em class="property">class </em><tt class="descclassname">aplpy.colorbar.</tt><tt class="descname">Colorbar</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
+<dt id="aplpy.colorbar.Colorbar.set_box">
+<tt class="descname">set_box</tt><big>(</big><em>box</em>, <em>box_orientation='vertical'</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the box within which to place the colorbar. This should be in the
+form [xmin, ymin, dx, dy] and be in relative figure units. The
+orientation of the colorbar within the box can be controlled with the
+box_orientation argument.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="aplpy.colorbar.Colorbar.set_font">
 <tt class="descname">set_font</tt><big>(</big><em>family=None</em>, <em>style=None</em>, <em>variant=None</em>, <em>stretch=None</em>, <em>weight=None</em>, <em>size=None</em>, <em>fontproperties=None</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_font" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the font of the tick labels</p>
@@ -823,6 +889,12 @@ editing the matplotlibrc file.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="aplpy.colorbar.Colorbar.set_labels">
+<tt class="descname">set_labels</tt><big>(</big><em>labels</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether to show numerical labels.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="aplpy.colorbar.Colorbar.set_location">
 <tt class="descname">set_location</tt><big>(</big><em>location</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_location" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the location of the colorbar. Should be one of &#8216;left&#8217;, &#8216;right&#8217;, &#8216;top&#8217;, &#8216;bottom&#8217;.</p>
@@ -835,6 +907,12 @@ editing the matplotlibrc file.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="aplpy.colorbar.Colorbar.set_ticks">
+<tt class="descname">set_ticks</tt><big>(</big><em>ticks</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_ticks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the position of the ticks on the colorbar.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="aplpy.colorbar.Colorbar.set_width">
 <tt class="descname">set_width</tt><big>(</big><em>width</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.set_width" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the width of the colorbar relative to the canvas size.</p>
@@ -842,7 +920,7 @@ editing the matplotlibrc file.</p>
 
 <dl class="method">
 <dt id="aplpy.colorbar.Colorbar.show">
-<tt class="descname">show</tt><big>(</big><em>location='right'</em>, <em>width=0.2</em>, <em>pad=0.05</em>, <em>ticks=None</em>, <em>labels=True</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.show" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">show</tt><big>(</big><em>location='right'</em>, <em>width=0.2</em>, <em>pad=0.05</em>, <em>ticks=None</em>, <em>labels=True</em>, <em>box=None</em>, <em>box_orientation='vertical'</em><big>)</big><a class="headerlink" href="#aplpy.colorbar.Colorbar.show" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a colorbar on the side of the image.</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
@@ -857,6 +935,13 @@ editing the matplotlibrc file.</p>
 <dd>The position of the ticks on the colorbar.</dd>
 <dt><em>labels</em>: [ True or False ]</dt>
 <dd>Whether to show numerical labels.</dd>
+<dt><em>box</em>: [ list ]</dt>
+<dd>A custom box within which to place the colorbar. This should
+be in the form [xmin, ymin, dx, dy] and be in relative figure
+units. This overrides the location argument.</dd>
+<dt><em>box_orientation</em> [ str ]</dt>
+<dd>The orientation of the colorbar within the box. Can be
+&#8216;horizontal&#8217; or &#8216;vertical&#8217;</dd>
 </dl>
 </div></blockquote>
 </dd></dl>
@@ -1711,8 +1796,9 @@ vmax_x is set to None. The default is 99.75% for all channels.</div></blockquote
 <p><em>vmid_g</em>: [ None | float ]</p>
 <p><em>vmid_b</em>: [ None | float ]</p>
 <blockquote>
-<div>Mid-pixel value used for the log and arcsinh stretches. If
-set to None, this is set to a sensible value.</div></blockquote>
+<div>Baseline values used for the log and arcsinh stretches. If
+set to None, this is set to zero for log stretches and to
+vmin - (vmax - vmin) / 30. for arcsinh stretches</div></blockquote>
 <p><em>exponent_r</em>: [ float ]</p>
 <p><em>exponent_g</em>: [ float ]</p>
 <p><em>exponent_b</em>: [ float ]</p>

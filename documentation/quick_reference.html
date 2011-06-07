@@ -187,6 +187,12 @@ specifying either a radius:</p>
 </div>
 <p>where <tt class="docutils literal"><span class="pre">x_world</span></tt>, <tt class="docutils literal"><span class="pre">y_world</span></tt>, <tt class="docutils literal"><span class="pre">radius</span></tt>, <tt class="docutils literal"><span class="pre">width</span></tt>, and <tt class="docutils literal"><span class="pre">height</span></tt>
 should be 1D arrays specified in degrees.</p>
+<p>It is also possible to plot lines and polygons using</p>
+<blockquote>
+<div>fig.show_lines(line_list)
+fig.show_polygons(polygon_list)</div></blockquote>
+<p>For these methods, <cite>line_list</cite> and <cite>polygon_list</cite> should be lists of 2xN
+Numpy arrays describing the coordinates of the vertices in degrees.</p>
 <p>DS9 region files can be overlaid with:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">show_regions</span><span class="p">(</span><span class="s">&#39;myregions.reg&#39;</span><span class="p">)</span>
 </pre></div>
