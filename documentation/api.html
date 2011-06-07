@@ -670,6 +670,43 @@ which are instances of the matplotlib Polygon class. For more
 information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html#matplotlib.patches.Polygon">Polygon</a>.</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="aplpy.FITSFigure.show_arrows">
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_arrows</tt><big>(</big><em>x</em>, <em>y</em>, <em>dx</em>, <em>dy</em>, <em>width='auto'</em>, <em>head_width='auto'</em>, <em>head_length='auto'</em>, <em>layer=False</em>, <em>zorder=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_arrows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overlay arrows on the current plot.</p>
+<p>Required arguments:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><em>x, y, dx, dy</em>: [ float | list | array ]</dt>
+<dd>Origin and displacement of the arrows in world coordinates.
+These can either be scalars to plot a single arrow, or lists or
+arrays to plot multiple arrows.</dd>
+</dl>
+</div></blockquote>
+<p>Optional Keyword Arguments:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><em>width</em>: [ float ]</dt>
+<dd>The width of the arrow body, in pixels (default: 2% of the
+arrow length)</dd>
+<dt><em>head_width</em>: [ float ]</dt>
+<dd>The width of the arrow head, in pixels (default: 5% of the
+arrow length)</dd>
+<dt><em>head_length</em>: [ float ]</dt>
+<dd>The length of the arrow head, in pixels (default: 5% of the
+arrow length)</dd>
+<dt><em>layer</em>: [ string ]</dt>
+<dd>The name of the arrow(s) layer. This is useful for giving
+custom names to layers (instead of line_set_n) and for
+replacing existing layers.</dd>
+</dl>
+</div></blockquote>
+<p>Additional keyword arguments (such as color, offsets, cmap,
+or linewidth) can be used to control the appearance of the
+arrows, which is an instances of the matplotlib FancyArrow class.
+For more information on available arguments, see <a class="reference external" href="http://matplotlib.sourceforge.net/api/artist_api.html?highlight=arrow#matplotlib.patches.FancyArrow">FancyArrow</a>.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="layers">
 <h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>

@@ -81,9 +81,10 @@ To overlay different shapes, the following methods are available::
     fig.show_circles(x_world, y_world, radius)
     fig.show_ellipses(x_world, y_world, width, height)
     fig.show_rectangles(x_world, y_world, width, height)
+    fig.show_arrows(x_world, y_world, dx, dy)
 
-where ``x_world``, ``y_world``, ``radius``, ``width``, and ``height``
-should be 1D arrays specified in degrees.
+where ``x_world``, ``y_world``, ``radius``, ``width``, ``height``, ``dx``,
+and ``dy`` should be 1D arrays specified in degrees.
 
 It is also possible to plot lines and polygons using
 
