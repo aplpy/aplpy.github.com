@@ -90,8 +90,8 @@ It is also possible to plot lines and polygons using
     fig.show_lines(line_list)
     fig.show_polygons(polygon_list)
 
-For these methods, `line_list` and `polygon_list` should be lists of 2xN
-Numpy arrays describing the coordinates of the vertices in degrees.
+For these methods, ``line_list`` and ``polygon_list`` should be lists of
+2xN Numpy arrays describing the coordinates of the vertices in degrees.
 
 DS9 region files can be overlaid with::
 
