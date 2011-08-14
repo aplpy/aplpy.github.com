@@ -1653,7 +1653,7 @@ editing the matplotlibrc file.</p>
 
 <dl class="method">
 <dt id="aplpy.ticks.Ticks.set_length">
-<tt class="descname">set_length</tt><big>(</big><em>length</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.set_length" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">set_length</tt><big>(</big><em>length</em>, <em>minor_factor=0.5</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.set_length" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the length of the ticks (in points)</p>
 </dd></dl>
 
@@ -1661,6 +1661,13 @@ editing the matplotlibrc file.</p>
 <dt id="aplpy.ticks.Ticks.set_linewidth">
 <tt class="descname">set_linewidth</tt><big>(</big><em>linewidth</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.set_linewidth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the linewidth of the ticks (in points)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.ticks.Ticks.set_minor_frequency">
+<tt class="descname">set_minor_frequency</tt><big>(</big><em>frequency</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.set_minor_frequency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the number of subticks per major tick. Set to one to hide minor
+ticks.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1777,7 +1784,7 @@ in the form YYYY. Default is J2000.</dd>
 
 <dl class="function">
 <dt id="aplpy.make_rgb_image">
-<tt class="descclassname">aplpy.</tt><tt class="descname">make_rgb_image</tt><big>(</big><em>data</em>, <em>output</em>, <em>vmin_r=None</em>, <em>vmax_r=None</em>, <em>pmin_r=0.25</em>, <em>pmax_r=99.75</em>, <em>stretch_r='linear'</em>, <em>vmid_r=None</em>, <em>exponent_r=2</em>, <em>vmin_g=None</em>, <em>vmax_g=None</em>, <em>pmin_g=0.25</em>, <em>pmax_g=99.75</em>, <em>stretch_g='linear'</em>, <em>vmid_g=None</em>, <em>exponent_g=2</em>, <em>vmin_b=None</em>, <em>vmax_b=None</em>, <em>pmin_b=0.25</em>, <em>pmax_b=99.75</em>, <em>stretch_b='linear'</em>, <em>vmid_b=None</em>, <em>exponent_b=2</em>, <em>embed_avm_tags=False</em><big>)</big><a class="headerlink" href="#aplpy.make_rgb_image" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">aplpy.</tt><tt class="descname">make_rgb_image</tt><big>(</big><em>data</em>, <em>output</em>, <em>indices=(0</em>, <em>1</em>, <em>2)</em>, <em>vmin_r=None</em>, <em>vmax_r=None</em>, <em>pmin_r=0.25</em>, <em>pmax_r=99.75</em>, <em>stretch_r='linear'</em>, <em>vmid_r=None</em>, <em>exponent_r=2</em>, <em>vmin_g=None</em>, <em>vmax_g=None</em>, <em>pmin_g=0.25</em>, <em>pmax_g=99.75</em>, <em>stretch_g='linear'</em>, <em>vmid_g=None</em>, <em>exponent_g=2</em>, <em>vmin_b=None</em>, <em>vmax_b=None</em>, <em>pmin_b=0.25</em>, <em>pmax_b=99.75</em>, <em>stretch_b='linear'</em>, <em>vmid_b=None</em>, <em>exponent_b=2</em>, <em>embed_avm_tags=False</em><big>)</big><a class="headerlink" href="#aplpy.make_rgb_image" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make an RGB image from a FITS RGB cube or from three FITS files</p>
 <p>Required arguments:</p>
 <blockquote>
@@ -1794,7 +1801,14 @@ the Python Imaging Library can be used.</dd>
 </div></blockquote>
 <p>Optional keyword arguments:</p>
 <blockquote>
-<div><p><em>vmin_r</em>: [ None | float ]</p>
+<div><dl class="docutils">
+<dt><em>indices</em>: [ tuple ]</dt>
+<dd>If data is the filename of a FITS cube, these indices are the
+positions in the third dimension to use for red, green, and
+blue respectively. The default is to use the first three
+indices.</dd>
+</dl>
+<p><em>vmin_r</em>: [ None | float ]</p>
 <p><em>vmin_g</em>: [ None | float ]</p>
 <p><em>vmin_b</em>: [ None | float ]</p>
 <blockquote>

@@ -426,6 +426,12 @@ The methods to control properties relating to the tick marks are the following:
 
     fig.ticks.set_linewidth(2) # points
 
+* Set the number of minor ticks per major tick::
+
+    fig.ticks.set_minor_frequency(5)
+
+  Set this to ``1`` to get rid of minor ticks
+
 Advanced
 ^^^^^^^^
 
