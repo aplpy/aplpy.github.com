@@ -96,6 +96,12 @@
             
   <div class="section" id="arbitrary-coordinate-systems">
 <span id="arbitrary"></span><h1>Arbitrary coordinate systems<a class="headerlink" href="#arbitrary-coordinate-systems" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">this page describes functionality that is only available in the
+developer version of APLpy in the source code repository, and
+will be included in the next stable release.</p>
+</div>
 <div class="section" id="coordinate-type">
 <h2>Coordinate type<a class="headerlink" href="#coordinate-type" title="Permalink to this headline">¶</a></h2>
 <p>In addition to standard longitude/latitude coordinates, APLpy supports any valid quantities for coordinates (e.g. velocity, frequency, ...) as long as the WCS header information is valid. To differentiate between longitudes, latitudes, and arbitrary scalar values, APLpy keeps track of the axis coordinate &#8216;type&#8217; for each axis, and will try and guess these based on the header. However, it is possible to explicitly specify the coordinate type with the <tt class="docutils literal"><span class="pre">set_xaxis_coord_type</span></tt> and <tt class="docutils literal"><span class="pre">set_yaxis_coord_type</span></tt> methods in the <tt class="docutils literal"><span class="pre">FITSFigure</span></tt> object:</p>

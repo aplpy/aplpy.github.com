@@ -87,6 +87,12 @@
             
   <div class="section" id="slicing-multi-dimensional-data-cubes">
 <h1>Slicing multi-dimensional data cubes<a class="headerlink" href="#slicing-multi-dimensional-data-cubes" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">this page describes functionality that is only available in the
+developer version of APLpy in the source code repository, and
+will be included in the next stable release.</p>
+</div>
 <p>APLpy supports extracting a slice from n-dimensional FITS cubes, and re-ordering dimensions. The two key arguments to <tt class="docutils literal"><span class="pre">FITSFigure</span></tt> to control this are <tt class="docutils literal"><span class="pre">dimensions</span></tt> and <tt class="docutils literal"><span class="pre">slices</span></tt>. These arguments can also be passed to <tt class="docutils literal"><span class="pre">show_contour</span></tt>.</p>
 <p>The <tt class="docutils literal"><span class="pre">dimensions</span></tt> argument is used to specify which dimensions should be used for the x- and y-axis respectively (zero based). The default values are <tt class="docutils literal"><span class="pre">[0,</span> <span class="pre">1]</span></tt> which means that the x-axis should use the first dimension in the FITS cube, and the y-axis should use the second dimension. For a 2-dimensional FITS file, this means that one can use <tt class="docutils literal"><span class="pre">[1,</span> <span class="pre">0]</span></tt> to flip the axes. For a FITS cube with R.A., Declination, and Velocity, <tt class="docutils literal"><span class="pre">[0,</span> <span class="pre">2]</span></tt> would make a R.A.-Velocity plot.</p>
 <p>The <tt class="docutils literal"><span class="pre">slices</span></tt> argument gives the pixels slice to extract from the remaining dimensions, skipping the dimensions used, so <tt class="docutils literal"><span class="pre">slices</span></tt> should be a list with length n-2 where n is the number of dimensions in the FITS file. For example, if one has a FITS file with R.A., Declination, Velocity, and Time (in that order), then:</p>
