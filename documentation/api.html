@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Complete API &mdash; APLpy v0.9.6 documentation</title>
+    <title>Complete API &mdash; APLpy 0.9.6 documentation</title>
+    
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -22,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="APLpy v0.9.6 documentation" href="index.html" />
+    <link rel="top" title="APLpy 0.9.6 documentation" href="index.html" />
     <link rel="prev" title="Creating subplots" href="howto_subplot.html" /> 
   </head>
   <body>
@@ -38,7 +41,7 @@
         <li class="right" >
           <a href="howto_subplot.html" title="Creating subplots"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">APLpy v0.9.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">APLpy 0.9.6 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -80,7 +83,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -108,11 +111,11 @@
 <span id="initialization"></span><h2>Initialization<a class="headerlink" href="#module-aplpy" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="aplpy.FITSFigure">
-<em class="property">class </em><tt class="descclassname">aplpy.</tt><tt class="descname">FITSFigure</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>figure=None</em>, <em>subplot=None</em>, <em>downsample=False</em>, <em>north=False</em>, <em>convention=None</em>, <em>slices=</em><span class="optional">[</span><span class="optional">]</span>, <em>auto_refresh=True</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descclassname">aplpy.</tt><tt class="descname">FITSFigure</tt><big>(</big><em>data, hdu=0, figure=None, subplot=None, downsample=False, north=False, convention=None, dimensions=[0, 1], slices=[], auto_refresh=True, **kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure" title="Permalink to this definition">¶</a></dt>
 <dd><p>A class for plotting FITS files.</p>
 <dl class="method">
 <dt id="aplpy.FITSFigure.__init__">
-<tt class="descname">__init__</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>figure=None</em>, <em>subplot=None</em>, <em>downsample=False</em>, <em>north=False</em>, <em>convention=None</em>, <em>slices=</em><span class="optional">[</span><span class="optional">]</span>, <em>auto_refresh=True</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.__init__" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">__init__</tt><big>(</big><em>data, hdu=0, figure=None, subplot=None, downsample=False, north=False, convention=None, dimensions=[0, 1], slices=[], auto_refresh=True, **kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a FITSFigure instance</p>
 <p>Required arguments:</p>
 <blockquote>
@@ -154,6 +157,9 @@ installed.</dd>
 in multiple ways. For example, for files with a -CAR
 projection and CRVAL2=0, this can be set to &#8216;wells&#8217; or
 &#8216;calabretta&#8217; to choose the appropriate convention.</dd>
+<dt><em>dimensions</em>: [ tuple or list]</dt>
+<dd>The index of the axes to use if the data has more than three
+dimensions.</dd>
 <dt><em>slices</em>: [ tuple or list ]</dt>
 <dd>If a FITS file with more than two dimensions is specified,
 then these are the slices to extract. If all extra dimensions
@@ -178,7 +184,7 @@ section in the documentation for <a class="reference external" href="http://matp
 <h2>General routines<a class="headerlink" href="#general-routines" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_grayscale">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_grayscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>invert='default'</em>, <em>smooth=None</em>, <em>kernel='gauss'</em>, <em>interpolation='nearest'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_grayscale" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_grayscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>invert='default'</em>, <em>smooth=None</em>, <em>kernel='gauss'</em>, <em>aspect='equal'</em>, <em>interpolation='nearest'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_grayscale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a grayscale image of the FITS file</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
@@ -218,6 +224,10 @@ smoothing kernels.</dd>
 <dd>Default kernel used for smoothing is &#8216;gauss&#8217;. The user can
 specify if they would prefer &#8216;gauss&#8217;, &#8216;box&#8217;, or a custom
 kernel. All kernels are normalized to ensure flux retention.</dd>
+<dt><em>aspect</em>: [&#8216;auto&#8217;, &#8216;equal&#8217;]</dt>
+<dd>Whether to change the aspect ratio of the image to match that
+of the axes (&#8216;auto&#8217;) or to change the aspect ratio of the axes
+to match that of the data (&#8216;equal&#8217;; default)</dd>
 <dt><em>interpolation</em>: [ string ]</dt>
 <dd>The type of interpolation to use for the image. The default is
 &#8216;nearest&#8217;. Other options include &#8216;none&#8217; (no interpolation,
@@ -236,7 +246,7 @@ matplotlib documentation for imshow).</dd>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_colorscale">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_colorscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>cmap='default'</em>, <em>smooth=None</em>, <em>kernel='gauss'</em>, <em>interpolation='nearest'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_colorscale" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_colorscale</tt><big>(</big><em>vmin=None</em>, <em>vmid=None</em>, <em>vmax=None</em>, <em>pmin=0.25</em>, <em>pmax=99.75</em>, <em>stretch='linear'</em>, <em>exponent=2</em>, <em>cmap='default'</em>, <em>smooth=None</em>, <em>kernel='gauss'</em>, <em>aspect='equal'</em>, <em>interpolation='nearest'</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_colorscale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Show a colorscale image of the FITS file</p>
 <p>Optional Keyword Arguments:</p>
 <blockquote>
@@ -274,6 +284,10 @@ smoothing kernels.</dd>
 <dd>Default kernel used for smoothing is &#8216;gauss&#8217;. The user can
 specify if they would prefer &#8216;gauss&#8217;, &#8216;box&#8217;, or a custom
 kernel. All kernels are normalized to ensure flux retention.</dd>
+<dt><em>aspect</em>: [&#8216;auto&#8217;, &#8216;equal&#8217;]</dt>
+<dd>Whether to change the aspect ratio of the image to match that
+of the axes (&#8216;auto&#8217;) or to change the aspect ratio of the axes
+to match that of the data (&#8216;equal&#8217;; default)</dd>
 <dt><em>interpolation</em>: [ string ]</dt>
 <dd>The type of interpolation to use for the image. The default is
 &#8216;nearest&#8217;. Other options include &#8216;none&#8217; (no interpolation,
@@ -341,7 +355,7 @@ conjunction with the width argument.</dd>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_contour">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_contour</tt><big>(</big><em>data</em>, <em>hdu=0</em>, <em>layer=None</em>, <em>levels=5</em>, <em>filled=False</em>, <em>cmap=None</em>, <em>colors=None</em>, <em>returnlevels=False</em>, <em>convention=None</em>, <em>slices=</em><span class="optional">[</span><span class="optional">]</span>, <em>smooth=None</em>, <em>kernel='gauss'</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_contour" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_contour</tt><big>(</big><em>data, hdu=0, layer=None, levels=5, filled=False, cmap=None, colors=None, returnlevels=False, convention=None, dimensions=[0, 1], slices=[], smooth=None, kernel='gauss', **kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_contour" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlay contours on the current plot</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -381,6 +395,9 @@ tuple element.</dd>
 in multiple ways. For example, for files with a -CAR
 projection and CRVAL2=0, this can be set to &#8216;wells&#8217; or
 &#8216;calabretta&#8217; to choose the appropriate convention.</dd>
+<dt><em>dimensions</em>: [ tuple or list]</dt>
+<dd>The index of the axes to use if the data has more than three
+dimensions.</dd>
 <dt><em>slices</em>: [ tuple or list ]</dt>
 <dd>If a FITS file with more than two dimensions is specified,
 then these are the slices to extract. If all extra dimensions
@@ -1132,7 +1149,7 @@ value between 0 and 1.</p>
 <dl class="method">
 <dt id="aplpy.overlays.ScaleBar.set_corner">
 <tt class="descname">set_corner</tt><big>(</big><em>corner</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.set_corner" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set where to place the scalebar. Acceptable values are &#8216;left&#8217;,&#8217;right&#8217;,
+<dd><p>Set where to place the scalebar. Acceptable values are &#8216;left&#8217;, &#8216;right&#8217;,
 &#8216;top&#8217;, &#8216;bottom&#8217;, &#8216;top left&#8217;, &#8216;top right&#8217;, &#8216;bottom left&#8217; (default), and
 &#8216;bottom right&#8217;.</p>
 </dd></dl>
@@ -1292,7 +1309,7 @@ canvas size.</p>
 <dl class="method">
 <dt id="aplpy.overlays.Beam.set_corner">
 <tt class="descname">set_corner</tt><big>(</big><em>corner</em><big>)</big><a class="headerlink" href="#aplpy.overlays.Beam.set_corner" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the beam location. Acceptable values are &#8216;left&#8217;,&#8217;right&#8217;, &#8216;top&#8217;,
+<dd><p>Set the beam location. Acceptable values are &#8216;left&#8217;, &#8216;right&#8217;, &#8216;top&#8217;,
 &#8216;bottom&#8217;, &#8216;top left&#8217;, &#8216;top right&#8217;, &#8216;bottom left&#8217; (default), and
 &#8216;bottom right&#8217;.</p>
 </dd></dl>
@@ -1372,7 +1389,7 @@ position angle on the sky.</p>
 <dd>Position angle of the beam on the sky in degrees (overrides
 BPA if present) in the anticlockwise direction.</dd>
 <dt><em>corner</em>: [ integer ]</dt>
-<dd>The beam location. Acceptable values are &#8216;left&#8217;,&#8217;right&#8217;,
+<dd>The beam location. Acceptable values are &#8216;left&#8217;, &#8216;right&#8217;,
 &#8216;top&#8217;, &#8216;bottom&#8217;, &#8216;top left&#8217;, &#8216;top right&#8217;, &#8216;bottom left&#8217;
 (default), and &#8216;bottom right&#8217;.</dd>
 <dt><em>frame</em>: [ True | False ]</dt>
@@ -1567,18 +1584,17 @@ editing the matplotlibrc file.</p>
 <dt id="aplpy.labels.TickLabels.set_style">
 <tt class="descname">set_style</tt><big>(</big><em>style</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_style" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the format of the x-axis tick labels. This can be &#8216;colons&#8217; or &#8216;plain&#8217;:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>&#8216;colons&#8217; uses colons as separators, for example 31:41:59.26 +27:18:28.1</li>
 <li>&#8216;plain&#8217; uses letters and symbols as separators, for example 31h41m59.26s +27º18&#8216;28.1&#8221;</li>
 </ul>
-</div></blockquote>
 </dd></dl>
 
 <dl class="method">
 <dt id="aplpy.labels.TickLabels.set_xformat">
 <tt class="descname">set_xformat</tt><big>(</big><em>format</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_xformat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the format of the x-axis tick labels:</p>
+<dd><p>Set the format of the x-axis tick labels. If the x-axis type is
+<tt class="docutils literal"><span class="pre">longitude</span></tt> or <tt class="docutils literal"><span class="pre">latitude</span></tt>, then the options are:</p>
 <blockquote>
 <div><ul class="simple">
 <li><tt class="docutils literal"><span class="pre">ddd.ddddd</span></tt> - decimal degrees, where the number of decimal places can be varied</li>
@@ -1588,7 +1604,10 @@ editing the matplotlibrc file.</p>
 <li><tt class="docutils literal"><span class="pre">hh:mm:ss.ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss.ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds), where the number of decimal places can be varied.</li>
 </ul>
 </div></blockquote>
-<p>If one of these arguments is not specified, the format for that axis is left unchanged.</p>
+<p>If the x-axis type is <tt class="docutils literal"><span class="pre">scalar</span></tt>, then the format should be a valid
+python string format beginning with a <tt class="docutils literal"><span class="pre">%</span></tt>.</p>
+<p>If one of these arguments is not specified, the format for that axis
+is left unchanged.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1600,7 +1619,8 @@ editing the matplotlibrc file.</p>
 <dl class="method">
 <dt id="aplpy.labels.TickLabels.set_yformat">
 <tt class="descname">set_yformat</tt><big>(</big><em>format</em><big>)</big><a class="headerlink" href="#aplpy.labels.TickLabels.set_yformat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the format of the y-axis tick labels:</p>
+<dd><p>Set the format of the y-axis tick labels. If the y-axis type is
+<tt class="docutils literal"><span class="pre">longitude</span></tt> or <tt class="docutils literal"><span class="pre">latitude</span></tt>, then the options are:</p>
 <blockquote>
 <div><ul class="simple">
 <li><tt class="docutils literal"><span class="pre">ddd.ddddd</span></tt> - decimal degrees, where the number of decimal places can be varied</li>
@@ -1610,7 +1630,10 @@ editing the matplotlibrc file.</p>
 <li><tt class="docutils literal"><span class="pre">hh:mm:ss.ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss.ss</span></tt> - hours, minutes, and seconds (or degrees, arcminutes, and arcseconds), where the number of decimal places can be varied.</li>
 </ul>
 </div></blockquote>
-<p>If one of these arguments is not specified, the format for that axis is left unchanged.</p>
+<p>If the y-axis type is <tt class="docutils literal"><span class="pre">scalar</span></tt>, then the format should be a valid
+python string format beginning with a <tt class="docutils literal"><span class="pre">%</span></tt>.</p>
+<p>If one of these arguments is not specified, the format for that axis
+is left unchanged.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1879,12 +1902,12 @@ vmin - (vmax - vmin) / 30. for arcsinh stretches</div></blockquote>
         <li class="right" >
           <a href="howto_subplot.html" title="Creating subplots"
              >previous</a> |</li>
-        <li><a href="index.html">APLpy v0.9.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">APLpy 0.9.6 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2010, Eli Bressert and Thomas Robitaille.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
   </body>
 </html>

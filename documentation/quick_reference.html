@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Quick reference Guide &mdash; APLpy v0.9.6 documentation</title>
+    <title>Quick reference Guide &mdash; APLpy 0.9.6 documentation</title>
+    
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -22,8 +25,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="APLpy v0.9.6 documentation" href="index.html" />
-    <link rel="next" title="HOWTOs" href="howtos.html" />
+    <link rel="top" title="APLpy 0.9.6 documentation" href="index.html" />
+    <link rel="next" title="Arbitrary coordinate systems" href="arbitrary_coordinate_systems.html" />
     <link rel="prev" title="Quickstart Guide" href="quickstart.html" /> 
   </head>
   <body>
@@ -37,12 +40,12 @@
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="howtos.html" title="HOWTOs"
+          <a href="arbitrary_coordinate_systems.html" title="Arbitrary coordinate systems"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="quickstart.html" title="Quickstart Guide"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">APLpy v0.9.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">APLpy 0.9.6 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -63,6 +66,7 @@
 <li><a class="reference internal" href="#coordinate-grid">Coordinate Grid</a></li>
 <li><a class="reference internal" href="#scalebar">Scalebar</a></li>
 <li><a class="reference internal" href="#beam">Beam</a></li>
+<li><a class="reference internal" href="#coordinate-types">Coordinate types</a></li>
 <li><a class="reference internal" href="#axis-labels">Axis labels</a></li>
 <li><a class="reference internal" href="#tick-labels">Tick labels</a></li>
 <li><a class="reference internal" href="#ticks">Ticks</a></li>
@@ -75,8 +79,8 @@
   <p class="topless"><a href="quickstart.html"
                         title="previous chapter">Quickstart Guide</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="howtos.html"
-                        title="next chapter">HOWTOs</a></p>
+  <p class="topless"><a href="arbitrary_coordinate_systems.html"
+                        title="next chapter">Arbitrary coordinate systems</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/quick_reference.txt"
@@ -85,7 +89,7 @@
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" size="18" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
@@ -445,6 +449,15 @@ fig.show_polygons(polygon_list)</div></blockquote>
 </li>
 </ul>
 </div>
+<div class="section" id="coordinate-types">
+<h2>Coordinate types<a class="headerlink" href="#coordinate-types" title="Permalink to this headline">¶</a></h2>
+<p>APLpy supports three types of coordinates: longitudes (in the range 0 to 360 with wrap-around), latitudes (in the range -90 to 90), and scalars (any arbitrary value). APLpy tries to guess the correct type of coordinate for each axis, but it is possible to override this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">fig</span><span class="o">.</span><span class="n">set_xaxis_coord_type</span><span class="p">(</span><span class="s">&#39;scalar&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_yaxis_coord_type</span><span class="p">(</span><span class="s">&#39;longitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Valid options are <tt class="docutils literal"><span class="pre">longitude</span></tt>, <tt class="docutils literal"><span class="pre">latitude</span></tt>, and <tt class="docutils literal"><span class="pre">scalar</span></tt>.</p>
+</div>
 <div class="section" id="axis-labels">
 <h2>Axis labels<a class="headerlink" href="#axis-labels" title="Permalink to this headline">¶</a></h2>
 <p>The methods to control the x- and y- axis labels are the following</p>
@@ -628,17 +641,17 @@ fig.show_polygons(polygon_list)</div></blockquote>
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="howtos.html" title="HOWTOs"
+          <a href="arbitrary_coordinate_systems.html" title="Arbitrary coordinate systems"
              >next</a> |</li>
         <li class="right" >
           <a href="quickstart.html" title="Quickstart Guide"
              >previous</a> |</li>
-        <li><a href="index.html">APLpy v0.9.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">APLpy 0.9.6 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2010, Eli Bressert and Thomas Robitaille.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
   </body>
 </html>

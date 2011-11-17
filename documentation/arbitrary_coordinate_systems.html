@@ -1,0 +1,161 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Arbitrary coordinate systems &mdash; APLpy 0.9.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.9.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="APLpy 0.9.6 documentation" href="index.html" />
+    <link rel="next" title="Slicing multi-dimensional data cubes" href="slicing.html" />
+    <link rel="prev" title="Quick reference Guide" href="quick_reference.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="slicing.html" title="Slicing multi-dimensional data cubes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quick_reference.html" title="Quick reference Guide"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">APLpy 0.9.6 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/aplpy_web_py_blue.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Arbitrary coordinate systems</a><ul>
+<li><a class="reference internal" href="#coordinate-type">Coordinate type</a></li>
+<li><a class="reference internal" href="#label-formatting">Label formatting</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="quick_reference.html"
+                        title="previous chapter">Quick reference Guide</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="slicing.html"
+                        title="next chapter">Slicing multi-dimensional data cubes</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/arbitrary_coordinate_systems.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="arbitrary-coordinate-systems">
+<span id="arbitrary"></span><h1>Arbitrary coordinate systems<a class="headerlink" href="#arbitrary-coordinate-systems" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="coordinate-type">
+<h2>Coordinate type<a class="headerlink" href="#coordinate-type" title="Permalink to this headline">¶</a></h2>
+<p>In addition to standard longitude/latitude coordinates, APLpy supports any valid quantities for coordinates (e.g. velocity, frequency, ...) as long as the WCS header information is valid. To differentiate between longitudes, latitudes, and arbitrary scalar values, APLpy keeps track of the axis coordinate &#8216;type&#8217; for each axis, and will try and guess these based on the header. However, it is possible to explicitly specify the coordinate type with the <tt class="docutils literal"><span class="pre">set_xaxis_coord_type</span></tt> and <tt class="docutils literal"><span class="pre">set_yaxis_coord_type</span></tt> methods in the <tt class="docutils literal"><span class="pre">FITSFigure</span></tt> object:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">FITSFigure</span><span class="p">(</span><span class="s">&#39;2MASS_k.fits&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">set_xaxis_coord_type</span><span class="p">(</span><span class="s">&#39;scalar&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">set_xaxis_coord_type</span><span class="p">(</span><span class="s">&#39;latitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Valid coordinate types are <tt class="docutils literal"><span class="pre">longitude</span></tt>, <tt class="docutils literal"><span class="pre">latitude</span></tt>, and <tt class="docutils literal"><span class="pre">scalar</span></tt>. Longitudes are forced to be in the 0 to 360 degree range, latitudes are forced to be in the -90 to 90 degree range, and scalars are not constrained.</p>
+</div>
+<div class="section" id="label-formatting">
+<h2>Label formatting<a class="headerlink" href="#label-formatting" title="Permalink to this headline">¶</a></h2>
+<p>How label formats are specified depends on the coordinate type. If the coordinate is a longitude or latitude, then the label format is specified using a special syntax which describes whether the label should be decimal or sexagesimal, in hours or degrees, and indicates the number of decimal places. For example:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ddd.ddddd</span></tt> means decimal degrees, where the number of decimal places can
+be varied</li>
+<li><tt class="docutils literal"><span class="pre">hh</span></tt> or <tt class="docutils literal"><span class="pre">dd</span></tt> means hours (or degrees)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm</span></tt> means hours and minutes (or degrees and arcminutes)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm:ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss</span></tt> means hours, minutes, and seconds (or degrees,
+arcminutes, and arcseconds)</li>
+<li><tt class="docutils literal"><span class="pre">hh:mm:ss.ss</span></tt> or <tt class="docutils literal"><span class="pre">dd:mm:ss.ss</span></tt> means hours, minutes, and seconds (or
+degrees, arcminutes, and arcseconds), where the number of decimal places can
+be varied.</li>
+</ul>
+<p>If the coordinate type is scalar, then the format should be specified as a valid Python format. For example, <tt class="docutils literal"><span class="pre">%g</span></tt> is the default Python format, <tt class="docutils literal"><span class="pre">%10.3f</span></tt> means decimal notation with three decimal places, etc. For more information, see <a class="reference external" href="http://docs.python.org/library/stdtypes.html#string-formatting">String Formatting Operations</a>.</p>
+<p>In both cases, the default label format can be overridden:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">set_xformat</span><span class="p">(</span><span class="s">&#39;dd.ddddd&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">set_yformat</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%11.3f</span><span class="s">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="slicing.html" title="Slicing multi-dimensional data cubes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quick_reference.html" title="Quick reference Guide"
+             >previous</a> |</li>
+        <li><a href="index.html">APLpy 0.9.6 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Eli Bressert and Thomas Robitaille.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+  </body>
+</html>

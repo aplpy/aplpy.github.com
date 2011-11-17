@@ -8,6 +8,7 @@ This is the documentation for APLpy. The APLpy homepage is located at http://apl
 
   quickstart.rst
   quick_reference.rst
+  arbitrary_coordinate_systems.rst
+  slicing.rst
   howtos.rst
   api.rst
-
