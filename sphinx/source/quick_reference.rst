@@ -314,6 +314,16 @@ Once ``add_beam()`` has been called, the ``fig.beam`` object is created and the 
 
     fig.beam.set(facecolor='red', linestyle='dashed', ...)
 
+Coordinate types
+^^^^^^^^^^^^^^^^
+
+APLpy supports three types of coordinates: longitudes (in the range 0 to 360 with wrap-around), latitudes (in the range -90 to 90), and scalars (any arbitrary value). APLpy tries to guess the correct type of coordinate for each axis, but it is possible to override this::
+
+    fig.set_xaxis_coord_type('scalar')
+    fig.set_yaxis_coord_type('longitude')
+
+Valid options are ``longitude``, ``latitude``, and ``scalar``.
+
 Axis labels
 ^^^^^^^^^^^
 
