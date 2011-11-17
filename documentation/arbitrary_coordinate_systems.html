@@ -58,6 +58,7 @@
 <li><a class="reference internal" href="#">Arbitrary coordinate systems</a><ul>
 <li><a class="reference internal" href="#coordinate-type">Coordinate type</a></li>
 <li><a class="reference internal" href="#label-formatting">Label formatting</a></li>
+<li><a class="reference internal" href="#aspect-ratio">Aspect ratio</a></li>
 </ul>
 </li>
 </ul>
@@ -132,6 +133,13 @@ be varied.</li>
 <span class="n">f</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">set_yformat</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%11.3f</span><span class="s">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="aspect-ratio">
+<h2>Aspect ratio<a class="headerlink" href="#aspect-ratio" title="Permalink to this headline">¶</a></h2>
+<p>When plotting images in sky coordinates, APLpy makes pixel square by default,
+but it is possible to change this, which can be useful for non-sky
+coordinates. When calling <tt class="docutils literal"><span class="pre">show_grayscale</span></tt> or <tt class="docutils literal"><span class="pre">show_colorscale</span></tt>, simply
+add <tt class="docutils literal"><span class="pre">aspect='auto'</span></tt> which will override the <tt class="docutils literal"><span class="pre">aspect='equal'</span></tt> default.</p>
 </div>
 </div>
 

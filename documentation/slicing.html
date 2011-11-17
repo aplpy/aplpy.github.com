@@ -53,6 +53,16 @@
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/aplpy_web_py_blue.png" alt="Logo"/>
             </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Slicing multi-dimensional data cubes</a><ul>
+<li><a class="reference internal" href="#how-to-slice-data-cubes">How to slice data cubes</a></li>
+<li><a class="reference internal" href="#aspect-ratio">Aspect ratio</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="arbitrary_coordinate_systems.html"
                         title="previous chapter">Arbitrary coordinate systems</a></p>
@@ -93,6 +103,8 @@
 developer version of APLpy in the source code repository, and
 will be included in the next stable release.</p>
 </div>
+<div class="section" id="how-to-slice-data-cubes">
+<h2>How to slice data cubes<a class="headerlink" href="#how-to-slice-data-cubes" title="Permalink to this headline">¶</a></h2>
 <p>APLpy supports extracting a slice from n-dimensional FITS cubes, and re-ordering dimensions. The two key arguments to <tt class="docutils literal"><span class="pre">FITSFigure</span></tt> to control this are <tt class="docutils literal"><span class="pre">dimensions</span></tt> and <tt class="docutils literal"><span class="pre">slices</span></tt>. These arguments can also be passed to <tt class="docutils literal"><span class="pre">show_contour</span></tt>.</p>
 <p>The <tt class="docutils literal"><span class="pre">dimensions</span></tt> argument is used to specify which dimensions should be used for the x- and y-axis respectively (zero based). The default values are <tt class="docutils literal"><span class="pre">[0,</span> <span class="pre">1]</span></tt> which means that the x-axis should use the first dimension in the FITS cube, and the y-axis should use the second dimension. For a 2-dimensional FITS file, this means that one can use <tt class="docutils literal"><span class="pre">[1,</span> <span class="pre">0]</span></tt> to flip the axes. For a FITS cube with R.A., Declination, and Velocity, <tt class="docutils literal"><span class="pre">[0,</span> <span class="pre">2]</span></tt> would make a R.A.-Velocity plot.</p>
 <p>The <tt class="docutils literal"><span class="pre">slices</span></tt> argument gives the pixels slice to extract from the remaining dimensions, skipping the dimensions used, so <tt class="docutils literal"><span class="pre">slices</span></tt> should be a list with length n-2 where n is the number of dimensions in the FITS file. For example, if one has a FITS file with R.A., Declination, Velocity, and Time (in that order), then:</p>
@@ -102,6 +114,54 @@ will be included in the next stable release.</p>
 <li><tt class="docutils literal"><span class="pre">dimensions=[3,</span> <span class="pre">2]</span></tt> means the plot will be a Time-Velocity plot, and <tt class="docutils literal"><span class="pre">slices=[10,</span> <span class="pre">22]</span></tt> means that pixel slices 10 and 22 will be used in R.A and Declination respectively.</li>
 </ul>
 <p>See <a class="reference internal" href="arbitrary_coordinate_systems.html#arbitrary"><em>Arbitrary coordinate systems</em></a> for information on formatting the labels when non-longitude/latitude coordinates are used.</p>
+</div>
+<div class="section" id="aspect-ratio">
+<h2>Aspect ratio<a class="headerlink" href="#aspect-ratio" title="Permalink to this headline">¶</a></h2>
+<p>When plotting images in sky coordinates, APLpy makes pixel square by default,
+but it is possible to change this. When calling <tt class="docutils literal"><span class="pre">show_grayscale</span></tt> or
+<tt class="docutils literal"><span class="pre">show_colorscale</span></tt>, simply add <tt class="docutils literal"><span class="pre">aspect='auto'</span></tt> which will override the
+<tt class="docutils literal"><span class="pre">aspect='equal'</span></tt> default. The <tt class="docutils literal"><span class="pre">aspect='auto'</span></tt> is demonstrated below.</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>The following script demonstrates this functionality in use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">&#39;Agg&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">aplpy</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">aplpy</span><span class="o">.</span><span class="n">FITSFigure</span><span class="p">(</span><span class="s">&#39;L1448_13CO.fits.gz&#39;</span><span class="p">,</span> <span class="n">slices</span><span class="o">=</span><span class="p">[</span><span class="mi">222</span><span class="p">],</span>
+                     <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">show_colorscale</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">add_grid</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="s">&#39;xx-small&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="s">&#39;x-small&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;slicing_1.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/slicing_1.png" src="_images/slicing_1.png" />
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">aplpy</span><span class="o">.</span><span class="n">FITSFigure</span><span class="p">(</span><span class="s">&#39;L1448_13CO.fits.gz&#39;</span><span class="p">,</span> <span class="n">slices</span><span class="o">=</span><span class="p">[</span><span class="mi">222</span><span class="p">],</span>
+                     <span class="n">dimensions</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">show_colorscale</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">add_grid</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="s">&#39;xx-small&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="s">&#39;x-small&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;slicing_2.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/slicing_2.png" src="_images/slicing_2.png" />
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">aplpy</span><span class="o">.</span><span class="n">FITSFigure</span><span class="p">(</span><span class="s">&#39;L1448_13CO.fits.gz&#39;</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                     <span class="n">slices</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">show_colorscale</span><span class="p">(</span><span class="n">aspect</span><span class="o">=</span><span class="s">&#39;auto&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">add_grid</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="s">&#39;xx-small&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">axis_labels</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="s">&#39;x-small&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">tick_labels</span><span class="o">.</span><span class="n">set_xformat</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%.1f</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;slicing_3.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/slicing_3.png" src="_images/slicing_3.png" />
+</div>
 </div>
 
 

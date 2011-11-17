@@ -1,9 +1,12 @@
 Slicing multi-dimensional data cubes
-------------------------------------
+====================================
 
 .. warning:: this page describes functionality that is only available in the
              developer version of APLpy in the source code repository, and
              will be included in the next stable release.
+
+How to slice data cubes
+-----------------------
 
 APLpy supports extracting a slice from n-dimensional FITS cubes, and re-ordering dimensions. The two key arguments to ``FITSFigure`` to control this are ``dimensions`` and ``slices``. These arguments can also be passed to ``show_contour``.
 
@@ -18,3 +21,56 @@ The ``slices`` argument gives the pixels slice to extract from the remaining dim
 * ``dimensions=[3, 2]`` means the plot will be a Time-Velocity plot, and ``slices=[10, 22]`` means that pixel slices 10 and 22 will be used in R.A and Declination respectively.
 
 See :ref:`arbitrary` for information on formatting the labels when non-longitude/latitude coordinates are used.
+
+Aspect ratio
+------------
+
+When plotting images in sky coordinates, APLpy makes pixel square by default,
+but it is possible to change this. When calling ``show_grayscale`` or
+``show_colorscale``, simply add ``aspect='auto'`` which will override the
+``aspect='equal'`` default. The ``aspect='auto'`` is demonstrated below.
+
+Example
+-------
+
+The following script demonstrates this functionality in use::
+
+    import matplotlib
+    matplotlib.use('Agg')
+
+    import aplpy
+
+    f = aplpy.FITSFigure('L1448_13CO.fits.gz', slices=[222],
+                         figsize=(5,5))
+    f.show_colorscale()
+    f.add_grid()
+    f.tick_labels.set_font(size='xx-small')
+    f.axis_labels.set_font(size='x-small')
+    f.save('slicing_1.png')
+
+.. image:: slicing_1.png
+
+::
+
+    f = aplpy.FITSFigure('L1448_13CO.fits.gz', slices=[222],
+                         dimensions=[1, 0], figsize=(5,5))
+    f.show_colorscale()
+    f.add_grid()
+    f.tick_labels.set_font(size='xx-small')
+    f.axis_labels.set_font(size='x-small')
+    f.save('slicing_2.png')
+
+.. image:: slicing_2.png
+
+::
+
+    f = aplpy.FITSFigure('L1448_13CO.fits.gz', dimensions=[2, 1],
+                         slices=[50], figsize=(5,5))
+    f.show_colorscale(aspect='auto')
+    f.add_grid()
+    f.tick_labels.set_font(size='xx-small')
+    f.axis_labels.set_font(size='x-small')
+    f.tick_labels.set_xformat('%.1f')
+    f.save('slicing_3.png')
+
+.. image:: slicing_3.png

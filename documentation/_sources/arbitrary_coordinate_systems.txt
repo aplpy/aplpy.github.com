@@ -40,3 +40,10 @@ In both cases, the default label format can be overridden::
     f.tick_labels.set_xformat('dd.ddddd')
     f.tick_labels.set_yformat('%11.3f')
 
+Aspect ratio
+------------
+
+When plotting images in sky coordinates, APLpy makes pixel square by default,
+but it is possible to change this, which can be useful for non-sky
+coordinates. When calling ``show_grayscale`` or ``show_colorscale``, simply
+add ``aspect='auto'`` which will override the ``aspect='equal'`` default.
