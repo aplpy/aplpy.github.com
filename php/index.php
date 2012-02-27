@@ -56,7 +56,7 @@ include('menu.php');
 
         <p class="mainText">
             Want to get started? Then download the package through
-            <a href="https://github.com/aplpy/aplpy/archives/master">GitHub</a>.
+            <a href="https://github.com/aplpy/aplpy/downloads">GitHub</a>.
             Follow the installation instructions in the downloaded folder and you should be
             set to use APLpy. Check out the <a href="documentation/quickstart.html">Tutorial</a> page on how
             to make some beautiful and simple plots.
