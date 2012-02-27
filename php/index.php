@@ -34,6 +34,8 @@ include('menu.php');
             <li>Make plots interactively or using scripts
             <li>Show grayscale, colorscale, and 3-color RGB images of FITS files
             <li>Generate co-aligned FITS cubes to make 3-color RGB images
+            <li>Make plots from FITS files with arbitrary WCS (e.g. position-velocity)
+            <li>Slice multi-dimensional FITS cubes
             <li>Overlay any number of contour sets
             <li>Overlay markers with fully customizable symbols
             <li>Plot customizable shapes like circles, ellipses, and rectangles
