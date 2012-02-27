@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Complete API &mdash; APLpy 0.9.6 documentation</title>
+    <title>Complete API &mdash; APLpy 0.9.7 documentation</title>
     
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.9.6',
+        VERSION:     '0.9.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="APLpy 0.9.6 documentation" href="index.html" />
+    <link rel="top" title="APLpy 0.9.7 documentation" href="index.html" />
     <link rel="prev" title="Creating subplots" href="howto_subplot.html" /> 
   </head>
   <body>
@@ -41,7 +41,7 @@
         <li class="right" >
           <a href="howto_subplot.html" title="Creating subplots"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">APLpy 0.9.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">APLpy 0.9.7 documentation</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -355,7 +355,7 @@ conjunction with the width argument.</dd>
 
 <dl class="method">
 <dt id="aplpy.FITSFigure.show_contour">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_contour</tt><big>(</big><em>data, hdu=0, layer=None, levels=5, filled=False, cmap=None, colors=None, returnlevels=False, convention=None, dimensions=[0, 1], slices=[], smooth=None, kernel='gauss', **kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_contour" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">show_contour</tt><big>(</big><em>data, hdu=0, layer=None, levels=5, filled=False, cmap=None, colors=None, returnlevels=False, convention=None, dimensions=[0, 1], slices=[], smooth=None, kernel='gauss', overlap=False, **kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.show_contour" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overlay contours on the current plot</p>
 <p>Required Arguments:</p>
 <blockquote>
@@ -411,6 +411,11 @@ smoothing kernels.</dd>
 <dd>Default kernel used for smoothing is &#8216;gauss&#8217;. The user can
 specify if they would prefer &#8216;gauss&#8217;, &#8216;box&#8217;, or a custom
 kernel. All kernels are normalized to ensure flux retention.</dd>
+<dt><em>overlap</em> [ True | False ]</dt>
+<dd>Whether to include only contours that overlap with the image
+area. This significantly speeds up the drawing of contours and
+reduces file size when using a file for the contours covering
+a much larger area than the image.</dd>
 </dl>
 <p>Additional keyword arguments (such as alpha, linewidths, or
 linestyles) will be passed on directly to matplotlib&#8217;s contour or
@@ -1902,7 +1907,7 @@ vmin - (vmax - vmin) / 30. for arcsinh stretches</div></blockquote>
         <li class="right" >
           <a href="howto_subplot.html" title="Creating subplots"
              >previous</a> |</li>
-        <li><a href="index.html">APLpy 0.9.6 documentation</a> &raquo;</li> 
+        <li><a href="index.html">APLpy 0.9.7 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
