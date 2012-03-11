@@ -120,7 +120,7 @@
 <p>Required arguments:</p>
 <blockquote>
 <div><dl class="docutils">
-<dt><em>data</em>: [ string | pyfits.PrimaryHDU | pyfits.ImageHDU | pywcs.WCS ]</dt>
+<dt><em>data</em>: [ string | pyfits.PrimaryHDU | pyfits.ImageHDU | pywcs.WCS | np.ndarray ]</dt>
 <dd>Either the filename of the FITS file to open, a pyfits
 PrimaryHDU or ImageHDU object, or a pywcs WCS object. It is
 also possible to specify the filename of an RGB image tagged
@@ -331,10 +331,8 @@ AVM-tagged RGB image, the filename is not needed here.</dd>
 <p>Required Arguments:</p>
 <blockquote>
 <div><dl class="docutils">
-<dt><em>x</em>: [ float ]</dt>
-<dd>Longitude of the position to center on (degrees)</dd>
-<dt><em>y</em>: [ float ]</dt>
-<dd>Latitude of the position to center on (degrees)</dd>
+<dt><em>x, y</em>: [ float ]</dt>
+<dd>Coordinates to center on</dd>
 </dl>
 </div></blockquote>
 <p>Optional Keyword Arguments:</p>
@@ -342,12 +340,12 @@ AVM-tagged RGB image, the filename is not needed here.</dd>
 <div><p>Either the radius or width/heigh arguments should be specified.</p>
 <dl class="docutils">
 <dt><em>radius</em>: [ float ]</dt>
-<dd>Radius of the region to view (degrees). This produces a square plot.</dd>
+<dd>Radius of the region to view. This produces a square plot.</dd>
 <dt><em>width</em>: [ float ]</dt>
-<dd>Width of the region to view (degrees). This should be given in
+<dd>Width of the region to view. This should be given in
 conjunction with the height argument.</dd>
 <dt><em>height</em>: [ float ]</dt>
-<dd>Height of the region to view (degrees). This should be given in
+<dd>Height of the region to view. This should be given in
 conjunction with the width argument.</dd>
 </dl>
 </div></blockquote>
@@ -552,7 +550,7 @@ see the <em>Optional keyword arguments</em> sections in the documentation for
 <dt><em>yw</em>: [ list | numpy.ndarray ]</dt>
 <dd>The y positions of the circles (in world coordinates)</dd>
 <dt><em>radius</em>: [integer | float | list | numpy.ndarray ]</dt>
-<dd>The radii of the circles in degrees</dd>
+<dd>The radii of the circles (in world coordinates)</dd>
 </dl>
 </div></blockquote>
 <p>Optional Keyword Arguments:</p>
@@ -582,9 +580,9 @@ information on available arguments, see <a class="reference external" href="http
 <dt><em>yw</em>: [ list | numpy.ndarray ]</dt>
 <dd>The y positions of the ellipses (in world coordinates)</dd>
 <dt><em>width</em>: [integer | float | list | numpy.ndarray ]</dt>
-<dd>The width of the ellipse in degrees</dd>
+<dd>The width of the ellipse (in world coordinates)</dd>
 <dt><em>height</em>: [integer | float | list | numpy.ndarray ]</dt>
-<dd>The height of the ellipse in degrees</dd>
+<dd>The height of the ellipse (in world coordinates)</dd>
 </dl>
 </div></blockquote>
 <p>Optional Keyword Arguments:</p>
@@ -617,9 +615,9 @@ information on available arguments, see <a class="reference external" href="http
 <dt><em>yw</em>: [ list | numpy.ndarray ]</dt>
 <dd>The y positions of the rectangles (in world coordinates)</dd>
 <dt><em>width</em>: [integer | float | list | numpy.ndarray ]</dt>
-<dd>The width of the rectangle in degrees</dd>
+<dd>The width of the rectangle (in world coordinates)</dd>
 <dt><em>height</em>: [integer | float | list | numpy.ndarray ]</dt>
-<dd>The height of the rectangle in degrees</dd>
+<dd>The height of the rectangle (in world coordinates)</dd>
 </dl>
 </div></blockquote>
 <p>Optional Keyword Arguments:</p>
@@ -1071,9 +1069,8 @@ transparent, and 1 is completely opaque.</dd>
 <blockquote>
 <div><dl class="docutils">
 <dt><em>xspacing</em>: [ float | &#8216;tick&#8217; ]</dt>
-<dd>The spacing in the longitudinal direction, in degrees.
-To set the spacing to be the same as the ticks, set this
-to &#8216;tick&#8217;</dd>
+<dd>The spacing in the longitudinal direction. To set the spacing
+to be the same as the ticks, set this to &#8216;tick&#8217;</dd>
 </dl>
 </div></blockquote>
 </dd></dl>
@@ -1086,9 +1083,8 @@ to &#8216;tick&#8217;</dd>
 <blockquote>
 <div><dl class="docutils">
 <dt><em>yspacing</em>: [ float | &#8216;tick&#8217; ]</dt>
-<dd>The spacing in the latitudinal direction, in degrees.
-To set the spacing to be the same as the ticks, set this
-to &#8216;tick&#8217;</dd>
+<dd>The spacing in the latitudinal direction. To set the spacing
+to be the same as the ticks, set this to &#8216;tick&#8217;</dd>
 </dl>
 </div></blockquote>
 </dd></dl>
@@ -1100,7 +1096,7 @@ to &#8216;tick&#8217;</dd>
 <h2>Scalebar<a class="headerlink" href="#scalebar" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="aplpy.FITSFigure.add_scalebar">
-<tt class="descclassname">FITSFigure.</tt><tt class="descname">add_scalebar</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.add_scalebar" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">FITSFigure.</tt><tt class="descname">add_scalebar</tt><big>(</big><em>length</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#aplpy.FITSFigure.add_scalebar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a scalebar to the current figure</p>
 <p>Once this method has been run, a scalebar attribute becomes
 available, and can be used to control the aspect of the scalebar:</p>
@@ -1185,7 +1181,7 @@ editing the matplotlibrc file.</p>
 <dl class="method">
 <dt id="aplpy.overlays.ScaleBar.set_length">
 <tt class="descname">set_length</tt><big>(</big><em>length</em><big>)</big><a class="headerlink" href="#aplpy.overlays.ScaleBar.set_length" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the length of the scale bar, in degrees.</p>
+<dd><p>Set the length of the scale bar.</p>
 </dd></dl>
 
 <dl class="method">
@@ -1209,7 +1205,7 @@ editing the matplotlibrc file.</p>
 <blockquote>
 <div><dl class="docutils">
 <dt><em>length</em>:[ float ]</dt>
-<dd>The length of the scalebar, in degrees</dd>
+<dd>The length of the scalebar</dd>
 </dl>
 </div></blockquote>
 <p>Optional Keyword Arguments:</p>
@@ -1674,6 +1670,24 @@ is left unchanged.</p>
 <dt id="aplpy.ticks.Ticks">
 <em class="property">class </em><tt class="descclassname">aplpy.ticks.</tt><tt class="descname">Ticks</tt><big>(</big><em>parent</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
+<dt id="aplpy.ticks.Ticks.hide">
+<tt class="descname">hide</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.hide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the x- and y-axis ticks</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.ticks.Ticks.hide_x">
+<tt class="descname">hide_x</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.hide_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the x-axis ticks</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.ticks.Ticks.hide_y">
+<tt class="descname">hide_y</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.hide_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hide the y-axis ticks</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="aplpy.ticks.Ticks.set_color">
 <tt class="descname">set_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.set_color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the color of the ticks</p>
@@ -1710,6 +1724,24 @@ automatically determined, set this to &#8216;auto&#8217;.</p>
 <tt class="descname">set_yspacing</tt><big>(</big><em>spacing</em><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.set_yspacing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the y-axis tick spacing, in degrees. To set the tick spacing to be
 automatically determined, set this to &#8216;auto&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.ticks.Ticks.show">
+<tt class="descname">show</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the x- and y-axis ticks</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.ticks.Ticks.show_x">
+<tt class="descname">show_x</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.show_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the x-axis ticks</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="aplpy.ticks.Ticks.show_y">
+<tt class="descname">show_y</tt><big>(</big><big>)</big><a class="headerlink" href="#aplpy.ticks.Ticks.show_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the y-axis ticks</p>
 </dd></dl>
 
 </dd></dl>

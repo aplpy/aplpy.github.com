@@ -207,7 +207,7 @@ Scalebar
 
 A scalebar can be added and removed using the following commands::
 
-    fig.add_scalebar(0.1) # length in degrees
+    fig.add_scalebar()
     fig.remove_scalebar()
 
 Once ``add_scalebar()`` has been called, the ``fig.scalebar`` object is created and the following methods are then available:
@@ -418,6 +418,21 @@ Ticks
 ^^^^^
 
 The methods to control properties relating to the tick marks are the following:
+
+* Show/hide all ticks::
+
+    fig.ticks.show()
+    fig.ticks.hide()
+
+* Show/hide the x-axis ticks::
+
+    fig.ticks.show_x()
+    fig.ticks.hide_x()
+
+* Show/hide the y-axis ticks::
+
+    fig.ticks.show_y()
+    fig.ticks.hide_y()
 
 * Change the tick spacing for the x- and y-axis::
 
