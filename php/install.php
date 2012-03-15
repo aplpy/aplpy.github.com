@@ -18,37 +18,47 @@ include('menu.php');
     <li><a href="https://trac6.assembla.com/astrolib">pywcs</a></li>
     </ul>
     </p>
-    
-    <p class="mainText">In addition, the following optional packages enhance the functionality of APLpy: 
+
+    <p class="mainText">In addition, the following optional packages enhance the functionality of APLpy:
     <ul>
     <li><a href="http://sourceforge.net/projects/pyparsing/">pyparsing </a></li>
     <li><a href="http://leejjoon.github.com/pyregion/">pyregion </a></li>
     <li><a href="https://github.com/astrofrog/pyavm">pyavm</a></li>
     <li><a href="http://www.pythonware.com/products/pil/">PIL</a></li>
     <li><a href="https://github.com/astrofrog/python-montage">python-montage</a> and <a href="http://montage.ipac.caltech.edu/">Montage</a> (the first is a Python wrapper to the second)</li>
-    
+
     </ul>
     </p>
 
-    <h2>Easy Installation</h2>
+    <h2>MacPorts</h2>
+
+    <p class="mainText">
+    If you are using a Mac, you might want to consider using MacPorts to
+    manage your Python installation. See <a
+    href="http://astrofrog.github.com/macports-python/">here</a> for
+    instructions on getting a full Python environment set up with MacPorts,
+    including Numpy, Scipy, Matplotlib, APLpy, and all its dependencies!
+    </p>
+
+    <h2>Installing dependencies</h2>
 
     <h3>NumPy and Matplotlib</h3>
 
     <p class="mainText">
     Numpy and matplotlib provide pre-compiled packages for most platforms.
     For Mac OS X, you can download .dmg files for Numpy and Matplotlib from
-    <a href="http://new.scipy.org/download.html">here</a> and 
-    <a href="http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-1.0/">here</a>. 
+    <a href="http://new.scipy.org/download.html">here</a> and
+    <a href="http://sourceforge.net/projects/matplotlib/files/matplotlib/matplotlib-1.0/">here</a>.
     On Linux, most package managers will be able to install numpy and matplotlib.
     </p>
-    
-    <h3>Other Dependencies and <code>APLpy</code></h3>
+
+    <h3>Other Dependencies and APLpy</h3>
     <p class="mainText">
-    The easiest way to install APLpy and its remaining dependencies is through the 
+    The easiest way to install APLpy and its remaining dependencies is through the
     <a href="http://gist.github.com/raw/564472/auto_install_aplpy.py">auto-install-aplpy
-    </a> script 
+    </a> script
     (<a href="http://gist.github.com/564472">source</a>).
-    Using the auto-install script is very quick and easy. Below is an example of 
+    Using the auto-install script is very quick and easy. Below is an example of
     what you would type via the command line to get started.
 
     <p class="Code">
@@ -57,13 +67,13 @@ include('menu.php');
 
     <p class="mainText">
         We recommend this method, but if you prefer to installing everything manually
-        then feel free to do so. 
+        then feel free to do so.
     </p>
-    <h2><code>APLpy</code></h2>
+    <h2>Installing APLpy</h2>
 
     <p class="mainText">
         If you have <code>easy_install</code>, you can install APLpy by simply typing
-    </p>    
+    </p>
 
     <p class="Code">
         easy_install aplpy
@@ -75,13 +85,13 @@ include('menu.php');
         and follow the standard installation method:
     </p>
 
-    <p class="Code">  
+    <p class="Code">
         tar xvzf APLpy-0.9.x.tar.gz<br>
         cd APLpy-0.9.x<br>
         sudo python setup.py install
     </p>
-    
-    <h2><code>Montage</code></h2>
+
+    <h2>Montage</h2>
 
     <p class="mainText">
         Currently, one of the features in APLpy (re-projecting a FITS file to point
