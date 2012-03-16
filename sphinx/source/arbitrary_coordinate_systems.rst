@@ -3,10 +3,6 @@
 Arbitrary coordinate systems
 ============================
 
-.. warning:: this page describes functionality that is only available in the
-             developer version of APLpy in the source code repository, and
-             will be included in the next stable release.
-
 Coordinate type
 ---------------
 
