@@ -46,7 +46,7 @@ include('menu.php');
     <p class="mainText">
     If you are not using the Anaconda distribution, ensure that <a
     href="http://numpy.scipy.org/">Numpy</a>, <a
-    href="http://matplotlib.org/">Matplotlib</a>, and <a
+    href="http://www.matplotlib.org/">Matplotlib</a>, and <a
     href="http://www.astropy.org">Astropy</a> are installed, then install
     APLpy with:
     </p>
